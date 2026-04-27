@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile Layouts</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #f0f0f0; font-family: Inter, sans-serif; padding: 24px; }
+
+  h1 { font-size: 18px; font-weight: 700; color: #1a1a1a; margin-bottom: 6px; }
+  .subtitle { color: #666; font-size: 13px; margin-bottom: 28px; }
+
+  .compare { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  @media (max-width: 700px) { .compare { grid-template-columns: 1fr; } }
+
+  .phone-wrap {
+    display: flex; flex-direction: column; gap: 12px;
+    cursor: pointer;
+  }
+  .phone-label {
+    font-size: 13px; font-weight: 700; color: #1a1a1a;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .phone-label span { font-weight: 400; color: #666; font-size: 12px; }
+
+  .phone {
+    width: 100%;
+    aspect-ratio: 9/16;
+    border-radius: 24px;
+    border: 3px solid #1a1a1a;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    transition: box-shadow 0.15s, border-color 0.15s;
+  }
+  .phone-wrap:hover .phone { border-color: #D61F3C; box-shadow: 0 8px 32px rgba(214,31,60,0.25); }
+  .phone-wrap.selected .phone { border-color: #D61F3C; box-shadow: 0 8px 32px rgba(214,31,60,0.3); }
+  .phone-wrap.selected .phone-label { color: #D61F3C; }
+
+  /* notch */
+  .phone::before {
+    content: '';
+    position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
+    width: 60px; height: 6px; background: #1a1a1a; border-radius: 3px; z-index: 10;
+  }
+
+  /* OPTION A mobile — same as desktop, centered, works perfectly */
+  .phone-a {
+    background: linear-gradient(160deg, #1c4a60 0%, #0d2535 100%);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 10px; padding: 24px 16px;
+    position: relative;
+  }
+  .phone-a::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.65) 100%);
+  }
+  .phone-a .inner { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%; }
+  .logo-w { background: white; width: 80px; height: 26px; border-radius: 3px; opacity: .95; }
+  .loc { color: rgba(255,255,255,0.6); font-size: 7px; letter-spacing: 2.5px; text-transform: uppercase; }
+  .tagline { color: rgba(255,255,255,0.8); font-size: 9px; text-align: center; line-height: 1.5; max-width: 140px; }
+  .btn-red { background: #D61F3C; color: white; padding: 6px 16px; border-radius: 5px; font-size: 8px; letter-spacing: 1.5px; text-transform: uppercase; }
+
+  /* OPTION B mobile — stacks: cream content panel on top, photo strip below */
+  .phone-b {
+    display: flex; flex-direction: column;
+    background: #F0EAD2;
+  }
+  .phone-b .b-top {
+    flex: 0 0 58%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 8px; padding: 28px 16px 12px;
+  }
+  .phone-b .b-photo {
+    flex: 1;
+    background: linear-gradient(160deg, #1c4a60 0%, #0d2535 100%);
+    position: relative; overflow: hidden;
+  }
+  .phone-b .b-photo::after {
+    content: 'beach photo';
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.25); font-size: 8px; letter-spacing: 2px; text-transform: uppercase;
+  }
+  .logo-d { background: #1A1A1A; width: 80px; height: 26px; border-radius: 3px; opacity: .85; }
+  .loc-d { color: #888; font-size: 7px; letter-spacing: 2px; text-transform: uppercase; }
+  .tagline-d { color: #555; font-size: 9px; text-align: center; line-height: 1.5; max-width: 140px; }
+  .btn-d { background: #D61F3C; color: white; padding: 6px 16px; border-radius: 5px; font-size: 8px; letter-spacing: 1.5px; text-transform: uppercase; }
+
+  /* OPTION D mobile — full bleed photo, lighter overlay, centered */
+  .phone-d {
+    background: linear-gradient(160deg, #1c4a60 0%, #0d2535 100%);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 10px; padding: 24px 16px;
+    position: relative;
+  }
+  .phone-d::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.45) 100%);
+  }
+  .phone-d .inner { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%; }
+  .btn-outline { border: 1.5px solid white; color: white; padding: 6px 16px; border-radius: 5px; font-size: 8px; letter-spacing: 1.5px; text-transform: uppercase; background: transparent; }
+
+  .desc {
+    background: white; border-radius: 10px; padding: 12px 14px;
+    font-size: 11px; color: #444; line-height: 1.5;
+  }
+  .desc strong { display: block; font-size: 12px; color: #1a1a1a; margin-bottom: 4px; }
+  .pro { color: #16a34a; font-size: 10px; margin-top: 4px; }
+  .con { color: #dc2626; font-size: 10px; }
+
+  #indicator {
+    position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+    background: #1a1a1a; color: white; padding: 10px 20px; border-radius: 20px;
+    font-size: 13px; opacity: 0; transition: opacity 0.2s; pointer-events: none;
+    white-space: nowrap;
+  }
+  #indicator.show { opacity: 1; }
+</style>
+</head>
+<body>
+
+<h1>Mobile Layout Comparison</h1>
+<p class="subtitle">How A, B, and D look on a phone screen. Click to select your preference.</p>
+
+<div class="compare">
+
+  <!-- Option A Mobile -->
+  <div class="phone-wrap" data-choice="a" onclick="pick(this)">
+    <div class="phone-label">Option A <span>Full bleed · dark overlay</span></div>
+    <div class="phone phone-a">
+      <div class="inner">
+        <div class="logo-w"></div>
+        <div class="loc">📍 Saccorgiana Beach · Pula</div>
+        <div class="tagline">Your base for chill — and the start of every adventure.</div>
+        <div class="btn-red">Book Adventure ↗</div>
+      </div>
+    </div>
+    <div class="desc">
+      <strong>No changes needed on mobile.</strong>
+      Photo fills the full screen, overlay darkens it, content stays centered.
+      <div class="pro">✓ Works identically on all screen sizes</div>
+      <div class="pro">✓ Immersive, hotel-like feel</div>
+      <div class="con">✗ Heavy overlay hides the photo somewhat</div>
+    </div>
+  </div>
+
+  <!-- Option B Mobile -->
+  <div class="phone-wrap" data-choice="b" onclick="pick(this)">
+    <div class="phone-label">Option B <span>Stacked on mobile</span></div>
+    <div class="phone">
+      <div class="phone-b">
+        <div class="b-top">
+          <div class="logo-d"></div>
+          <div class="loc-d">📍 Saccorgiana Beach, Pula</div>
+          <div class="tagline-d">Your base for chill — and the start of every adventure.</div>
+          <div class="btn-d">Book Adventure ↗</div>
+        </div>
+        <div class="b-photo"></div>
+      </div>
+    </div>
+    <div class="desc">
+      <strong>Side-by-side collapses to stacked.</strong>
+      Cream panel with content on top, photo strip below it.
+      <div class="pro">✓ Clean and readable on mobile</div>
+      <div class="pro">✓ Cream stays on brand</div>
+      <div class="con">✗ Photo gets cropped to a strip — less impactful</div>
+    </div>
+  </div>
+
+  <!-- Option D Mobile -->
+  <div class="phone-wrap" data-choice="d" onclick="pick(this)">
+    <div class="phone-label">Option D <span>Full bleed · airy overlay</span></div>
+    <div class="phone phone-d">
+      <div class="inner">
+        <div class="logo-w"></div>
+        <div class="loc">📍 Saccorgiana Beach · Pula</div>
+        <div class="tagline">Your base for chill — and the start of every adventure.</div>
+        <div class="btn-outline">Book Adventure ↗</div>
+      </div>
+    </div>
+    <div class="desc">
+      <strong>Same as desktop — full photo, lighter touch.</strong>
+      Photo shows through more. Outline button keeps it minimal.
+      <div class="pro">✓ Photo is the hero, not the overlay</div>
+      <div class="pro">✓ Feels fresh and modern</div>
+      <div class="con">✗ Readability depends on the photo brightness</div>
+    </div>
+  </div>
+
+</div>
+
+<div id="indicator"></div>
+
+<script>
+  function pick(el) {
+    document.querySelectorAll('.phone-wrap').forEach(w => w.classList.remove('selected'));
+    el.classList.add('selected');
+    const c = el.dataset.choice.toUpperCase();
+    const indicator = document.getElementById('indicator');
+    indicator.textContent = `Selected: Option ${c}`;
+    indicator.classList.add('show');
+    try {
+      fetch('/__superpowers__/event', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: 'click', choice: el.dataset.choice, text: `Option ${c}` })
+      });
+    } catch(e) {}
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hero Transition</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #111; font-family: Inter, sans-serif; padding: 32px 24px; display: flex; flex-direction: column; gap: 32px; }
+  h1 { color: white; font-size: 17px; font-weight: 700; }
+  .subtitle { color: #888; font-size: 13px; margin-top: 4px; margin-bottom: 8px; }
+
+  .cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+  @media (max-width: 800px) { .cards { grid-template-columns: 1fr; } }
+
+  .card {
+    border-radius: 12px; overflow: hidden;
+    border: 2.5px solid #333; cursor: pointer;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    background: #1a1a1a;
+  }
+  .card:hover { border-color: #D61F3C; box-shadow: 0 4px 20px rgba(214,31,60,0.2); }
+  .card.selected { border-color: #D61F3C; box-shadow: 0 4px 24px rgba(214,31,60,0.3); }
+
+  .preview {
+    width: 100%; height: 340px; display: flex; flex-direction: column; overflow: hidden;
+    position: relative;
+  }
+
+  /* Hero portion */
+  .hero-part {
+    flex: 1;
+    background: linear-gradient(160deg, #2a6070 0%, #1a3d50 50%, #0d2535 100%);
+    position: relative;
+    display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 10px;
+  }
+  .hero-part::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0.18) 40%, rgba(0,0,0,0.4) 100%);
+  }
+  .logo-sim { position: relative; z-index: 2; background: white; width: 80px; height: 24px; border-radius: 3px; opacity: .9; }
+  .btn-sim { position: relative; z-index: 2; border: 1.5px solid rgba(255,255,255,0.8); color: rgba(255,255,255,0.9); padding: 5px 14px; border-radius: 5px; font-size: 8px; letter-spacing: 2px; text-transform: uppercase; }
+
+  /* Cream portion */
+  .cream-part {
+    background: #F0EAD2; flex: 0 0 90px;
+    display: flex; flex-direction: column; justify-content: center; padding: 0 16px; gap: 4px;
+  }
+  .cream-tag { background: #D61F3C; color: white; display: inline-block; width: 60px; height: 8px; border-radius: 2px; }
+  .cream-head { background: #1a1a1a; width: 100px; height: 10px; border-radius: 2px; opacity: .7; }
+  .cream-text { background: #888; width: 140px; height: 6px; border-radius: 2px; opacity: .5; }
+
+  /* OPTION A: Simple gradient fade to cream */
+  .opt-a .hero-part::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 60px;
+    background: linear-gradient(to bottom, transparent, #F0EAD2);
+    z-index: 5;
+  }
+
+  /* OPTION B: Organic wave drip (SVG) */
+  .opt-b .wave-wrap {
+    position: absolute; bottom: -1px; left: 0; right: 0; z-index: 5;
+  }
+
+  /* OPTION C: Layered waves — deeper liquid effect */
+  .opt-c .wave-wrap { position: absolute; bottom: -1px; left: 0; right: 0; z-index: 5; }
+
+  .card-body { padding: 14px 16px 16px; }
+  .card-body h3 { color: #fff; font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+  .card-body p { color: #888; font-size: 11px; line-height: 1.5; }
+
+  #indicator {
+    position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+    background: white; color: #111; padding: 10px 22px; border-radius: 20px;
+    font-size: 13px; font-weight: 600; opacity: 0; transition: opacity 0.2s; pointer-events: none;
+  }
+  #indicator.show { opacity: 1; }
+</style>
+</head>
+<body>
+
+<h1>Hero → BarRelax Transition</h1>
+<p class="subtitle">How should the dark photo bleed into the cream section? Click to choose.</p>
+
+<div class="cards">
+
+  <!-- Option A: Gradient fade -->
+  <div class="card" data-choice="a" onclick="pick(this)">
+    <div class="preview">
+      <div class="hero-part opt-a">
+        <div class="logo-sim"></div>
+        <div class="btn-sim">Book Adventure ↗</div>
+      </div>
+      <div class="cream-part">
+        <div class="cream-tag"></div>
+        <div class="cream-head"></div>
+        <div class="cream-text"></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Gradient Fade</h3>
+      <p>Bottom of the hero gently fades to cream. Clean, subtle, seamless. Works on any photo.</p>
+    </div>
+  </div>
+
+  <!-- Option B: Single organic wave -->
+  <div class="card" data-choice="b" onclick="pick(this)">
+    <div class="preview" style="position:relative;">
+      <div class="hero-part" style="flex:1; position:relative;">
+        <div class="logo-sim"></div>
+        <div class="btn-sim">Book Adventure ↗</div>
+        <div class="wave-wrap" style="position:absolute;bottom:-1px;left:0;right:0;z-index:5;">
+          <svg viewBox="0 0 400 50" preserveAspectRatio="none" style="width:100%;height:44px;display:block;" fill="#F0EAD2">
+            <path d="M0,38 C60,15 100,48 160,30 C210,15 250,45 310,25 C350,12 380,38 400,28 L400,50 L0,50 Z"/>
+          </svg>
+        </div>
+      </div>
+      <div class="cream-part">
+        <div class="cream-tag"></div>
+        <div class="cream-head"></div>
+        <div class="cream-text"></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Organic Wave</h3>
+      <p>A single flowing cream wave drips across the bottom of the photo. Liquid, elegant.</p>
+    </div>
+  </div>
+
+  <!-- Option C: Layered cream drips — deepest effect -->
+  <div class="card" data-choice="c" onclick="pick(this)">
+    <div class="preview" style="position:relative;">
+      <div class="hero-part" style="flex:1;position:relative;">
+        <div class="logo-sim"></div>
+        <div class="btn-sim">Book Adventure ↗</div>
+        <div style="position:absolute;bottom:-1px;left:0;right:0;z-index:5;">
+          <!-- Back wave — slightly transparent for depth -->
+          <svg viewBox="0 0 400 70" preserveAspectRatio="none" style="position:absolute;bottom:0;width:100%;height:60px;" fill="#F0EAD2" opacity="0.45">
+            <path d="M0,30 C50,8 110,55 180,25 C240,5 300,50 360,20 C385,10 395,35 400,22 L400,70 L0,70 Z"/>
+          </svg>
+          <!-- Front wave — fully opaque -->
+          <svg viewBox="0 0 400 70" preserveAspectRatio="none" style="position:absolute;bottom:0;width:100%;height:44px;" fill="#F0EAD2">
+            <path d="M0,38 C60,15 100,50 165,28 C215,12 255,46 315,24 C352,10 382,38 400,26 L400,70 L0,70 Z"/>
+          </svg>
+        </div>
+      </div>
+      <div class="cream-part">
+        <div class="cream-tag"></div>
+        <div class="cream-head"></div>
+        <div class="cream-text"></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Layered Waves</h3>
+      <p>Two cream waves — a ghost layer behind, solid in front. Gives depth, like liquid pooling. The "leaking cream" feel.</p>
+    </div>
+  </div>
+
+</div>
+
+<div id="indicator"></div>
+<script>
+  function pick(el) {
+    document.querySelectorAll('.card').forEach(c => c.classList.remove('selected'));
+    el.classList.add('selected');
+    const c = el.dataset.choice.toUpperCase();
+    const ind = document.getElementById('indicator');
+    ind.textContent = `Selected: Option ${c}`;
+    ind.classList.add('show');
+    try {
+      fetch('/__superpowers__/event', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: 'click', choice: el.dataset.choice, text: `Option ${c}` })
+      });
+    } catch(e) {}
+  }
+</script>
+</body>
+</html>

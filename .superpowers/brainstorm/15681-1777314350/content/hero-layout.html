@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hero Layout Options</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #f5f5f5; font-family: Inter, sans-serif; padding: 24px; }
+
+  h1 { font-family: Inter, sans-serif; font-size: 18px; font-weight: 600; color: #1a1a1a; margin-bottom: 6px; }
+  .subtitle { color: #666; font-size: 13px; margin-bottom: 28px; }
+
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px; }
+  @media (max-width: 700px) { .grid { grid-template-columns: 1fr; } }
+
+  .card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2.5px solid transparent;
+    cursor: pointer;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .card:hover { border-color: #D61F3C; box-shadow: 0 4px 16px rgba(214,31,60,0.15); }
+  .card.selected { border-color: #D61F3C; box-shadow: 0 4px 20px rgba(214,31,60,0.25); }
+
+  .preview { height: 260px; position: relative; overflow: hidden; }
+  .card-body { padding: 16px 18px 18px; }
+  .card-body h3 { font-size: 14px; font-weight: 700; color: #1a1a1a; margin-bottom: 4px; }
+  .card-body p { font-size: 12px; color: #666; line-height: 1.5; }
+
+  /* OPTION A — Full bleed photo, strong dark overlay, centered content */
+  .preview-a {
+    background: #1a3a4a;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+    position: relative;
+  }
+  .preview-a::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(10,20,30,0.55) 0%, rgba(10,20,30,0.75) 100%);
+    z-index: 1;
+  }
+  .preview-a .photo-bg {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, #2a5f7a 0%, #1a3a50 40%, #0d2535 100%);
+  }
+  .preview-a .content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .logo-pill { background: white; width: 110px; height: 34px; border-radius: 4px; opacity: 0.95; }
+  .location-tag { color: rgba(255,255,255,0.6); font-size: 9px; letter-spacing: 3px; text-transform: uppercase; }
+  .sub { color: rgba(255,255,255,0.75); font-size: 10px; text-align: center; max-width: 180px; line-height: 1.5; }
+  .cta-red { background: #D61F3C; color: white; padding: 7px 20px; border-radius: 6px; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; margin-top: 2px; }
+
+  /* OPTION B — Photo right half, content left, cream panel */
+  .preview-b {
+    display: grid; grid-template-columns: 1fr 1fr; height: 100%;
+  }
+  .preview-b .left {
+    background: #F0EAD2;
+    display: flex; flex-direction: column; align-items: flex-start; justify-content: center;
+    padding: 20px 16px; gap: 8px;
+  }
+  .preview-b .right {
+    background: linear-gradient(135deg, #2a6070 0%, #1a3d50 100%);
+    position: relative; overflow: hidden;
+  }
+  .preview-b .right::after {
+    content: 'photo';
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.25); font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  }
+  .preview-b .logo-dark { background: #1A1A1A; width: 90px; height: 28px; border-radius: 3px; }
+  .preview-b .loc { color: #888; font-size: 8px; letter-spacing: 2.5px; text-transform: uppercase; }
+  .preview-b .sub-dark { color: #555; font-size: 9px; max-width: 130px; line-height: 1.5; }
+  .preview-b .cta { background: #D61F3C; color: white; padding: 6px 14px; border-radius: 5px; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; margin-top: 2px; }
+
+  /* OPTION C — Photo bottom half, content floats above on cream top */
+  .preview-c {
+    position: relative; overflow: hidden;
+    background: #F0EAD2;
+    display: flex; flex-direction: column;
+  }
+  .preview-c .top-content {
+    padding: 22px 20px 14px;
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    flex: 0 0 auto; z-index: 2;
+  }
+  .preview-c .photo-strip {
+    flex: 1;
+    background: linear-gradient(135deg, #2a6070 0%, #1a3d50 100%);
+    position: relative; overflow: hidden;
+  }
+  .preview-c .photo-strip::after {
+    content: 'beach complex photo';
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.3); font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  }
+  .preview-c .logo-c { background: #1A1A1A; width: 100px; height: 30px; border-radius: 3px; }
+  .preview-c .loc-c { color: #888; font-size: 8px; letter-spacing: 2.5px; text-transform: uppercase; }
+  .preview-c .cta-c { background: #D61F3C; color: white; padding: 6px 16px; border-radius: 5px; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; }
+
+  /* OPTION D — Full bleed photo, gradient fade to cream at bottom, content top-left anchored */
+  .preview-d {
+    position: relative; overflow: hidden;
+    background: linear-gradient(135deg, #2a6070 0%, #1a3d50 100%);
+  }
+  .preview-d::after {
+    content: 'beach complex photo';
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.15); font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  }
+  .preview-d::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.6) 100%);
+    z-index: 1;
+  }
+  .preview-d .content-d {
+    position: absolute; inset: 0; z-index: 2;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+    padding: 20px;
+  }
+  .preview-d .logo-w { background: white; width: 110px; height: 34px; border-radius: 4px; opacity: 0.95; }
+  .preview-d .loc-w { color: rgba(255,255,255,0.65); font-size: 9px; letter-spacing: 3px; text-transform: uppercase; }
+  .preview-d .sub-w { color: rgba(255,255,255,0.8); font-size: 10px; text-align: center; max-width: 180px; line-height: 1.5; }
+  .preview-d .cta-w { border: 1.5px solid white; color: white; padding: 7px 20px; border-radius: 6px; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; margin-top: 2px; background: transparent; }
+
+  .selected-indicator {
+    position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+    background: #1a1a1a; color: white; padding: 10px 20px; border-radius: 20px;
+    font-size: 13px; opacity: 0; transition: opacity 0.2s; pointer-events: none;
+  }
+  .selected-indicator.show { opacity: 1; }
+</style>
+</head>
+<body>
+
+<h1>Hero Layout — Photo Integration</h1>
+<p class="subtitle">Which layout feels right? All options use the real beach complex photo. Click to select.</p>
+
+<div class="grid">
+
+  <!-- A: Full bleed dark overlay centered -->
+  <div class="card" data-choice="a" onclick="pick(this)">
+    <div class="preview preview-a">
+      <div class="photo-bg"></div>
+      <div class="content">
+        <div class="logo-pill"></div>
+        <div class="location-tag">📍 Saccorgiana Beach · Pula</div>
+        <div class="sub">Your base for chill — and the start of every adventure.</div>
+        <div class="cta-red">Book Adventure ↗</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Full Bleed · Dark Overlay · Centered</h3>
+      <p>Photo fills the entire hero with a strong dark overlay. Logo + tagline + CTA centered. Classic, immersive feel.</p>
+    </div>
+  </div>
+
+  <!-- B: Split — cream left panel + photo right -->
+  <div class="card" data-choice="b" onclick="pick(this)">
+    <div class="preview">
+      <div class="preview-b">
+        <div class="left">
+          <div class="logo-dark"></div>
+          <div class="loc">📍 Saccorgiana Beach, Pula</div>
+          <div class="sub-dark">Your base for chill — and the start of every adventure.</div>
+          <div class="cta">Book Adventure ↗</div>
+        </div>
+        <div class="right"></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Split · Cream Panel + Photo</h3>
+      <p>Content sits on the cream brand background on the left; photo takes the right half. Structured and modern.</p>
+    </div>
+  </div>
+
+  <!-- C: Cream top content + photo strip below -->
+  <div class="card" data-choice="c" onclick="pick(this)">
+    <div class="preview">
+      <div class="preview-c">
+        <div class="top-content">
+          <div class="logo-c"></div>
+          <div class="loc-c">📍 Saccorgiana Beach, Pula</div>
+          <div style="color:#555;font-size:9px;max-width:160px;text-align:center;line-height:1.5;">Your base for chill — and the start of every adventure.</div>
+          <div class="cta-c">Book Adventure ↗</div>
+        </div>
+        <div class="photo-strip"></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Stacked · Content Top + Photo Below</h3>
+      <p>Cream section with all content on top, photo reveals below as a cinematic strip. Clean and editorial.</p>
+    </div>
+  </div>
+
+  <!-- D: Full bleed photo, minimal overlay, centered white text -->
+  <div class="card" data-choice="d" onclick="pick(this)">
+    <div class="preview preview-d">
+      <div class="content-d">
+        <div class="logo-w"></div>
+        <div class="loc-w">📍 Saccorgiana Beach · Pula</div>
+        <div class="sub-w">Your base for chill — and the start of every adventure.</div>
+        <div class="cta-w">Book Adventure ↗</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>D — Full Bleed · Minimal Overlay · White Text</h3>
+      <p>Photo breathes through a lighter overlay. White text + outline button. Airy and modern, lets the scenery speak.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="selected-indicator" id="indicator"></div>
+
+<script>
+  const CHOICES = { a: 'A', b: 'B', c: 'C', d: 'D' };
+  let selected = null;
+
+  function pick(card) {
+    document.querySelectorAll('.card').forEach(c => c.classList.remove('selected'));
+    card.classList.add('selected');
+    selected = card.dataset.choice;
+    const indicator = document.getElementById('indicator');
+    indicator.textContent = `Selected: Option ${CHOICES[selected]}`;
+    indicator.classList.add('show');
+
+    // Try to record to superpowers events if available
+    try {
+      fetch('/__superpowers__/event', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: 'click', choice: selected, text: card.querySelector('h3').textContent })
+      });
+    } catch(e) {}
+  }
+</script>
+</body>
+</html>

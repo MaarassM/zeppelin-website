@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hero Final Mockup</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #1a1a1a; font-family: Inter, sans-serif; display: flex; flex-direction: column; align-items: center; padding: 32px 24px; gap: 32px; }
+
+  h1 { color: white; font-family: Inter, sans-serif; font-size: 16px; font-weight: 600; text-align: center; }
+  .note { color: #888; font-size: 12px; text-align: center; max-width: 500px; line-height: 1.6; }
+
+  .screens { display: flex; gap: 32px; align-items: flex-start; flex-wrap: wrap; justify-content: center; }
+
+  /* DESKTOP mockup */
+  .desktop-frame {
+    width: 580px;
+    aspect-ratio: 16/9;
+    border-radius: 12px;
+    border: 2px solid #333;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+    background: #1c4a60;
+  }
+
+  /* MOBILE mockup */
+  .mobile-frame {
+    width: 180px;
+    aspect-ratio: 9/19.5;
+    border-radius: 28px;
+    border: 3px solid #333;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+    background: #1c4a60;
+  }
+  .mobile-frame::before {
+    content: '';
+    position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
+    width: 48px; height: 5px; background: #333; border-radius: 3px; z-index: 10;
+  }
+
+  /* Shared hero style */
+  .hero-inner {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 0;
+  }
+
+  /* Photo simulation — teal-to-deep gradient mimicking beach photo */
+  .photo-bg {
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(160deg,
+        #3a7a95 0%,
+        #1e5570 25%,
+        #0f3347 55%,
+        #081e2d 100%
+      );
+  }
+  /* Subtle warm light at horizon */
+  .photo-bg::after {
+    content: '';
+    position: absolute;
+    top: 35%; left: 0; right: 0; height: 25%;
+    background: linear-gradient(to bottom, transparent, rgba(255,200,100,0.07), transparent);
+  }
+
+  /* Overlay — light touch */
+  .overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.28) 0%,
+      rgba(0,0,0,0.18) 40%,
+      rgba(0,0,0,0.40) 100%
+    );
+  }
+
+  /* Content */
+  .content {
+    position: relative; z-index: 2;
+    display: flex; flex-direction: column; align-items: center;
+    gap: 28px;
+  }
+  .content.mobile-content { gap: 18px; }
+
+  /* Logo placeholder — styled like the real logo shape */
+  .logo {
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-inner {
+    background: white;
+    border-radius: 4px;
+    opacity: 0.96;
+    display: flex; align-items: center; justify-content: center;
+    color: #D61F3C;
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .logo-inner.desktop-logo { width: 220px; height: 68px; font-size: 13px; }
+  .logo-inner.mobile-logo { width: 110px; height: 34px; font-size: 7px; }
+
+  /* Book Adventure button */
+  .btn {
+    border: 1.5px solid rgba(255,255,255,0.85);
+    color: rgba(255,255,255,0.92);
+    background: transparent;
+    border-radius: 8px;
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn:hover { background: rgba(255,255,255,0.12); }
+  .btn.desktop-btn { padding: 14px 36px; font-size: 13px; }
+  .btn.mobile-btn { padding: 8px 18px; font-size: 7px; letter-spacing: 2px; }
+
+  /* Scroll cue */
+  .scroll-cue {
+    position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 5px;
+    opacity: 0.45; z-index: 2;
+  }
+  .scroll-cue span { color: white; font-size: 8px; letter-spacing: 2.5px; text-transform: uppercase; font-family: Inter, sans-serif; }
+  .scroll-line { width: 1px; height: 24px; background: white; animation: scrollDrop 1.6s ease-in-out infinite; }
+  @keyframes scrollDrop { 0%,100% { opacity: 0; transform: scaleY(0); transform-origin: top; } 50% { opacity: 1; transform: scaleY(1); transform-origin: top; } }
+
+  .mobile-scroll-cue {
+    position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
+    opacity: 0.4; z-index: 2;
+  }
+  .mobile-scroll-line { width: 1px; height: 14px; background: white; }
+
+  /* Labels */
+  .frame-label { color: #555; font-size: 11px; text-align: center; margin-top: 8px; }
+
+  .design-notes {
+    max-width: 580px; width: 100%;
+    background: #222; border-radius: 10px; padding: 20px 24px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px;
+  }
+  .note-item { display: flex; flex-direction: column; gap: 2px; }
+  .note-item .label { color: #666; font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; }
+  .note-item .val { color: #e0e0e0; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<h1>Final Hero Design — Option D</h1>
+<p class="note">Full-bleed beach photo · subtle gradient overlay · logo + one button · nothing else</p>
+
+<div class="screens">
+
+  <!-- Desktop -->
+  <div>
+    <div class="desktop-frame">
+      <div class="photo-bg"></div>
+      <div class="overlay"></div>
+      <div class="hero-inner">
+        <div class="content">
+          <div class="logo">
+            <div class="logo-inner desktop-logo">ZEPPELIN BEACH COMPLEX</div>
+          </div>
+          <button class="btn desktop-btn">Book Adventure ↗</button>
+        </div>
+      </div>
+      <div class="scroll-cue">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </div>
+    <p class="frame-label">Desktop</p>
+  </div>
+
+  <!-- Mobile -->
+  <div>
+    <div class="mobile-frame">
+      <div class="photo-bg"></div>
+      <div class="overlay"></div>
+      <div class="hero-inner">
+        <div class="content mobile-content">
+          <div class="logo">
+            <div class="logo-inner mobile-logo">ZEPPELIN</div>
+          </div>
+          <button class="btn mobile-btn">Book Adventure ↗</button>
+        </div>
+      </div>
+      <div class="mobile-scroll-cue">
+        <div class="mobile-scroll-line"></div>
+      </div>
+    </div>
+    <p class="frame-label">Mobile</p>
+  </div>
+
+</div>
+
+<!-- Design specs -->
+<div class="design-notes">
+  <div class="note-item">
+    <span class="label">Photo</span>
+    <span class="val">hero.jpg — full bleed, object-cover</span>
+  </div>
+  <div class="note-item">
+    <span class="label">Overlay</span>
+    <span class="val">Black 28% → 18% → 40% gradient</span>
+  </div>
+  <div class="note-item">
+    <span class="label">Logo</span>
+    <span class="val">logo-extended.png — kept as-is</span>
+  </div>
+  <div class="note-item">
+    <span class="label">Button</span>
+    <span class="val">White outline · "Book Adventure ↗" · external link</span>
+  </div>
+  <div class="note-item">
+    <span class="label">Font</span>
+    <span class="val">Anton (display) · unchanged</span>
+  </div>
+  <div class="note-item">
+    <span class="label">Scroll cue</span>
+    <span class="val">Subtle animated line at bottom</span>
+  </div>
+  <div class="note-item">
+    <span class="label">Removed</span>
+    <span class="val">Location badge, tagline, second button, SVG backgrounds</span>
+  </div>
+  <div class="note-item">
+    <span class="label">Height</span>
+    <span class="val">100dvh — full viewport</span>
+  </div>
+</div>
+
+</body>
+</html>

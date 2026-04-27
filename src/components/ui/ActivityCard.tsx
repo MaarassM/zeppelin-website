@@ -1,0 +1,29 @@
+import Image from "next/image";
+import { LucideIcon } from "lucide-react";
+
+interface ActivityCardProps {
+  icon: LucideIcon;
+  name: string;
+  pricing: string;
+  image: string;
+}
+
+export function ActivityCard({ icon: Icon, name, pricing, image }: ActivityCardProps) {
+  return (
+    <div className="relative flex flex-col justify-end gap-1 p-4 rounded-xl overflow-hidden min-h-[180px] lg:min-h-[220px]">
+      <Image
+        src={image}
+        alt={name}
+        fill
+        className="object-cover"
+        sizes="(max-width: 1024px) 50vw, 25vw"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+      <div className="relative flex flex-col gap-1">
+        <Icon className="text-white/80 mb-1" size={22} strokeWidth={1.5} />
+        <p className="font-display text-white text-sm leading-tight">{name}</p>
+        <p className="text-white/60 text-xs">{pricing}</p>
+      </div>
+    </div>
+  );
+}

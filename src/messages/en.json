@@ -1,0 +1,113 @@
+{
+  "nav": {
+    "gastro": "Gastro",
+    "beach": "Beach & Fun",
+    "lokacija": "Location",
+    "karijere": "Careers",
+    "rezerviraj": "Book Adventure"
+  },
+  "hero": {
+    "location": "Saccorgiana Beach, Pula",
+    "title": "ZEPPELIN\nBEACH COMPLEX",
+    "subtitle": "Your base for chill — and the start of every adventure.",
+    "cta_primary": "Explore Offer",
+    "cta_secondary": "Book Tours Online"
+  },
+  "bar": {
+    "tag": "BAR & RELAX",
+    "heading": "Chill at the highest level.",
+    "description": "Kick back with perfect cocktails, music, and a view of the sea. Great vibes, sunbeds, and shaded terraces waiting for you every day.",
+    "menu_btn": "Digital Menu",
+    "sunbed_label": "Sunbed rental",
+    "sunbed_info": "Info at the water sports desk"
+  },
+  "action": {
+    "tag": "ACTION ZONE",
+    "heading": "On water, in the air, on land.",
+    "note": "Pay at the water sports info desk",
+    "activities": [
+      { "id": "wibit", "name": "Wibit Park", "pricing": "1h · 3h · Day" },
+      { "id": "tramp", "name": "Trampoline", "pricing": "1h · 3h · Day" },
+      {
+        "id": "pedaline",
+        "name": "Pedal Boat & SUP",
+        "pricing": "1h · 3h · Day"
+      },
+      { "id": "tube", "name": "Tube rides", "pricing": "1h · 3h · Day" }
+    ]
+  },
+  "adventure": {
+    "tag": "ZEPPELIN ADVENTURE",
+    "heading": "Book your adventure.",
+    "subtitle": "Unforgettable experiences — book online, depart from our beach.",
+    "cta": "Book Now →",
+    "items": [
+      {
+        "id": "jetski",
+        "name": "Jet-Ski Safari",
+        "url": "https://www.zeppelin-adventure.com"
+      },
+      {
+        "id": "buggy",
+        "name": "Buggy / Quad",
+        "url": "https://www.zeppelin-adventure.com"
+      },
+      {
+        "id": "flyboard",
+        "name": "Flyboard",
+        "url": "https://www.zeppelin-adventure.com"
+      },
+      {
+        "id": "parasail",
+        "name": "Parasailing",
+        "url": "https://www.zeppelin-adventure.com"
+      }
+    ]
+  },
+  "gastro": {
+    "tag": "BITES & SWEETS",
+    "heading": "Fast food &\nGelato.",
+    "menu_btn": "View Menu",
+    "fastfood_name": "Fast Food",
+    "fastfood_desc": "Burgers, sandwiches, grill",
+    "gelato_name": "Gelato Bar",
+    "gelato_desc": "Ice cream, smoothie bowls"
+  },
+  "careers": {
+    "tag": "CAREERS",
+    "heading": "Join the Zeppelin team.",
+    "subtitle": "Apply for the season and work on the most beautiful beach in Pula.",
+    "position_select_heading": "Which position are you applying for?",
+    "back_btn": "Back",
+    "name_label": "Full name",
+    "phone_label": "Phone",
+    "email_label": "Email",
+    "position_label": "Position",
+    "position_options": [
+      "Bar",
+      "Kitchen",
+      "Sports instructor",
+      "Skipper",
+      "Promotion"
+    ],
+    "cv_label": "CV (PDF)",
+    "notes_label": "Additional notes",
+    "submit_btn": "Submit Application",
+    "success_msg": "Thank you! We'll be in touch soon."
+  },
+  "location": {
+    "heading": "Find us.",
+    "directions": "We're on Saccorgiana Beach in Pula. Follow signs for \"Zeppelin Beach\" from the city centre."
+  },
+  "footer": {
+    "hours_title": "Opening hours",
+    "hours_bar": "Bar — 9:00–02:00",
+    "hours_sports": "Sports — 9:00–19:00",
+    "contact_title": "Contact",
+    "phone": "+385 91 25 45 117",
+    "whatsapp": "WhatsApp",
+    "social_title": "Follow us",
+    "instagram": "@zeppelinbar",
+    "copyright": "© 2025 Zeppelin Beach Complex"
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "nav": {
+    "gastro": "Gastro",
+    "beach": "Beach & Fun",
+    "lokacija": "Lokacija",
+    "karijere": "Karijere",
+    "rezerviraj": "Rezerviraj Avanturu"
+  },
+  "hero": {
+    "location": "Saccorgiana Beach, Pula",
+    "title": "ZEPPELIN\nBEACH BAR",
+    "subtitle": "Tvoja baza za chill i polazište za svaku avanturu.",
+    "cta_primary": "Istraži Ponudu",
+    "cta_secondary": "Book Tours Online"
+  },
+  "bar": {
+    "tag": "BAR & RELAX",
+    "heading": "Chill na visokom nivou.",
+    "description": "Opusti se uz savršene koktele, glazbu i pogled na more. Ugodna atmosfera, ležaljke i hlad terasa čekaju te svakog dana.",
+    "menu_btn": "Menu",
+    "sunbed_label": "Najam ležaljki",
+    "sunbed_info": "Info na licu mjesta — info pult"
+  },
+  "action": {
+    "tag": "ACTION ZONE",
+    "heading": "Na vodi, u zraku, na tlu.",
+    "note": "Plaćanje na info pultu vodenih sportova",
+    "activities": [
+      { "id": "wibit", "name": "Wibit Park", "pricing": "1h · 3h · Dan" },
+      { "id": "tramp", "name": "Trampolin", "pricing": "1h · 3h · Dan" },
+      {
+        "id": "pedaline",
+        "name": "Pedaline & SUP",
+        "pricing": "1h · 3h · Dan"
+      },
+      { "id": "tube", "name": "Tube rides", "pricing": "1h · 3h · Dan" }
+    ]
+  },
+  "adventure": {
+    "tag": "ZEPPELIN ADVENTURE",
+    "heading": "Rezerviraj svoju avanturu.",
+    "subtitle": "Iskustva koja se pamte — booking online, polazak s naše plaže.",
+    "cta": "Rezerviraj →",
+    "items": [
+      {
+        "id": "jetski",
+        "name": "Jet-Ski Safari",
+        "url": "https://www.zeppelin-adventure.com"
+      },
+      {
+        "id": "buggy",
+        "name": "Buggy / Quad",
+        "url": "https://www.zeppelin-adventure.com"
+      },
+      {
+        "id": "flyboard",
+        "name": "Flyboard",
+        "url": "https://www.zeppelin-adventure.com"
+      },
+      {
+        "id": "parasail",
+        "name": "Parasailing",
+        "url": "https://www.zeppelin-adventure.com"
+      }
+    ]
+  },
+  "gastro": {
+    "tag": "BITES & SWEETS",
+    "heading": "Fast food &\nGelaterija.",
+    "menu_btn": "Pogledaj Jelovnik",
+    "fastfood_name": "Fast Food",
+    "fastfood_desc": "Burgeri, sendviči, grill",
+    "gelato_name": "Gelaterija",
+    "gelato_desc": "Sladoled, smoothie bowl"
+  },
+  "careers": {
+    "tag": "KARIJERE",
+    "heading": "Postani dio Zeppelin tima.",
+    "subtitle": "Prijavi se za sezonu i radi na najljepšoj plaži u Puli.",
+    "position_select_heading": "Za koju poziciju se prijavljuješ?",
+    "back_btn": "Natrag",
+    "name_label": "Ime i prezime",
+    "phone_label": "Mobitel",
+    "email_label": "Email",
+    "position_label": "Pozicija",
+    "position_options": [
+      "Bar",
+      "Kuhinja",
+      "Sportski instruktor",
+      "Skipper",
+      "Promocija"
+    ],
+    "cv_label": "Životopis (PDF)",
+    "notes_label": "Dodatne napomene",
+    "submit_btn": "Pošalji Prijavu",
+    "success_msg": "Hvala! Kontaktirat ćemo te uskoro."
+  },
+  "location": {
+    "heading": "Pronađi nas.",
+    "directions": "Nalazimo se na Saccorgiana plaži u Puli. Pratite oznake za \"Zeppelin Beach\" od centra grada."
+  },
+  "footer": {
+    "hours_title": "Radno vrijeme",
+    "hours_bar": "Bar — 9:00–02:00",
+    "hours_sports": "Sportovi — 9:00–19:00",
+    "contact_title": "Kontakt",
+    "phone": "+385 91 25 45 117",
+    "whatsapp": "WhatsApp",
+    "social_title": "Pratite nas",
+    "instagram": "@zeppelinbar",
+    "copyright": "© 2025 Zeppelin Beach Complex"
+  }
+}
