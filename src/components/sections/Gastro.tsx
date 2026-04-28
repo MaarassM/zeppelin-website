@@ -10,7 +10,7 @@ export function Gastro() {
   return (
     <section
       id="gastro"
-      className="bg-red py-16 lg:py-20 px-6 lg:px-[120px] relative overflow-hidden"
+      className="bg-red pt-16 pb-32 lg:pt-20 lg:pb-44 px-6 lg:px-[120px] relative overflow-hidden"
     >
       <div className="max-w-[1200px] mx-auto flex flex-col lg:flex-row items-start gap-10 lg:gap-16">
         {/* Left: title + CTA */}

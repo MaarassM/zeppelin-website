@@ -26,7 +26,7 @@ export function ActionZone() {
   return (
     <section
       id="action"
-      className="bg-red py-16 lg:py-20 px-6 lg:px-[120px] relative overflow-hidden"
+      className="bg-red pt-16 pb-32 lg:pt-20 lg:pb-44 px-6 lg:px-[120px] relative overflow-hidden"
     >
       <div className="max-w-[1200px] mx-auto flex flex-col gap-8">
         {/* Header row */}

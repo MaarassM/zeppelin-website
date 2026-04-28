@@ -7,6 +7,7 @@
     "rezerviraj": "Rezerviraj Avanturu"
   },
   "hero": {
+    "find_us": "Pronađi nas",
     "location": "Saccorgiana Beach, Pula",
     "title": "ZEPPELIN\nBEACH BAR",
     "subtitle": "Tvoja baza za chill i polazište za svaku avanturu.",
@@ -83,13 +84,7 @@
     "phone_label": "Mobitel",
     "email_label": "Email",
     "position_label": "Pozicija",
-    "position_options": [
-      "Bar",
-      "Kuhinja",
-      "Sportski instruktor",
-      "Skipper",
-      "Promocija"
-    ],
+    "position_options": ["Bar", "Kuhinja", "Skipper", "Promocija"],
     "cv_label": "Životopis (PDF)",
     "notes_label": "Dodatne napomene",
     "submit_btn": "Pošalji Prijavu",
@@ -107,7 +102,7 @@
     "phone": "+385 91 25 45 117",
     "whatsapp": "WhatsApp",
     "social_title": "Pratite nas",
-    "instagram": "@zeppelinbar",
+    "instagram": "@zeppelin_bar_pula",
     "copyright": "© 2025 Zeppelin Beach Complex"
   }
 }

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hero Button Options</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #111;
+      color: white;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .label {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      text-align: center;
+    }
+
+    /* Hero mockup */
+    .hero {
+      position: relative;
+      height: 380px;
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      background: linear-gradient(160deg, #1a3a4a 0%, #0d2535 40%, #0a1e2e 100%);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 30% 60%, rgba(255,180,80,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 30%, rgba(80,160,200,0.10) 0%, transparent 55%);
+    }
+
+    .logo {
+      position: relative;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: white;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .logo span {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      color: rgba(255,255,255,0.5);
+      margin-top: 4px;
+    }
+
+    .btn-group {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* Shared base for primary CTA */
+    .btn-primary {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 12px 28px;
+      border-radius: 8px;
+      cursor: pointer;
+      border: 2px solid white;
+      color: white;
+      background: transparent;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    /* ---- Option A: plain text link ---- */
+    .btn-text-link {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.25);
+    }
+
+    /* ---- Option B: map pin pill ---- */
+    .btn-pill {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 999px;
+      padding: 8px 18px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      backdrop-filter: blur(6px);
+      text-decoration: none;
+    }
+
+    .btn-pill svg {
+      opacity: 0.7;
+    }
+
+    /* ---- Option C: ghost (no border) ---- */
+    .btn-ghost {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 8px 0;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      background: rgba(255,255,255,0.12);
+      border-radius: 4px;
+      padding: 2px 6px;
+      margin-left: 4px;
+      text-transform: uppercase;
+    }
+
+    .option-desc {
+      font-size: 12px;
+      color: rgba(255,255,255,0.45);
+      text-align: center;
+      line-height: 1.6;
+      padding: 0 8px;
+    }
+
+    .recommended {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #7ec8a0;
+      text-align: center;
+      margin-top: -8px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hero — "Pronađi nas" button options</h1>
+
+  <div class="grid">
+
+    <!-- Option A -->
+    <div class="card">
+      <div class="label">A — Text link</div>
+      <div class="hero">
+        <div class="logo">
+          Zeppelin<br/>Beach Complex
+          <span>Saccorgiana Beach, Pula</span>
+        </div>
+        <div class="btn-group">
+          <a class="btn-primary">Rezerviraj avanturu ↗</a>
+          <a class="btn-text-link">Pronađi nas ↗</a>
+        </div>
+      </div>
+      <p class="option-desc">Underlined text — clearly secondary, minimal visual weight. Classic link feel.</p>
+    </div>
+
+    <!-- Option B -->
+    <div class="card">
+      <div class="label">B — Frosted pill</div>
+      <div class="hero">
+        <div class="logo">
+          Zeppelin<br/>Beach Complex
+          <span>Saccorgiana Beach, Pula</span>
+        </div>
+        <div class="btn-group">
+          <a class="btn-primary">Rezerviraj avanturu ↗</a>
+          <a class="btn-pill">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Pronađi nas
+          </a>
+        </div>
+      </div>
+      <p class="option-desc">Frosted glass pill with map pin icon. Distinct shape from the main CTA, feels modern.</p>
+      <p class="recommended">★ Recommended</p>
+    </div>
+
+    <!-- Option C -->
+    <div class="card">
+      <div class="label">C — Ghost text</div>
+      <div class="hero">
+        <div class="logo">
+          Zeppelin<br/>Beach Complex
+          <span>Saccorgiana Beach, Pula</span>
+        </div>
+        <div class="btn-group">
+          <a class="btn-primary">Rezerviraj avanturu ↗</a>
+          <a class="btn-ghost">
+            Pronađi nas
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <p class="option-desc">No border, no background — just faint text. Quietest option, strong visual hierarchy.</p>
+    </div>
+
+  </div>
+</body>
+</html>

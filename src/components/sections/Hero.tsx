@@ -9,7 +9,7 @@ export function Hero() {
   const { t } = useT();
 
   return (
-    <section className="relative w-full h-[95dvh] flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative w-full h-[95dvh] flex flex-col items-center justify-center overflow-hidden pb-16 lg:pb-24">
       {/* Full-bleed beach photo */}
       <Image
         src="/assets/hero.jpg"
@@ -21,7 +21,7 @@ export function Hero() {
       />
 
       {/* Gradient overlay — light touch so photo stays visible */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/[0.28] via-black/[0.18] to-black/40" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/[0.42] via-black/[0.32] to-black/55" />
 
       {/* Centered content — logo + single CTA */}
       <div className="relative z-10 flex flex-col items-center gap-7">
@@ -36,10 +36,21 @@ export function Hero() {
         />
         <Button
           as="a"
-          href="https://www.zeppelin-adventure.com"
+          href="https://www.google.com/maps/search/Zeppelin+Beach+lounge+bar+Pula"
           target="_blank"
           rel="noopener noreferrer"
           variant="outline"
+          onClick={() => trackOutbound("hero-maps")}
+          className="font-display tracking-widest text-sm lg:text-base"
+        >
+          {t.hero.find_us.toUpperCase()} ↗
+        </Button>
+        <Button
+          as="a"
+          href="https://www.zeppelin-adventure.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="primary"
           onClick={() => trackOutbound("hero-cta")}
           className="font-display tracking-widest text-sm lg:text-base"
         >
@@ -59,7 +70,10 @@ export function Hero() {
       </div>
 
       {/* Cream wave — bleeds into the BarRelax section below */}
-      <div className="absolute bottom-0 left-0 right-0 z-20 leading-none" aria-hidden="true">
+      <div
+        className="absolute bottom-0 left-0 right-0 z-20 leading-none"
+        aria-hidden="true"
+      >
         <svg
           viewBox="0 0 1440 80"
           xmlns="http://www.w3.org/2000/svg"

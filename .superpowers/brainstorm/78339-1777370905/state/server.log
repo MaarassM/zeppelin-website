@@ -1,0 +1,4 @@
+{"type":"server-started","port":54316,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:54316","screen_dir":"/Users/mihaelmaras/Desktop/private work/zeppelin-website/.superpowers/brainstorm/78339-1777370905/content","state_dir":"/Users/mihaelmaras/Desktop/private work/zeppelin-website/.superpowers/brainstorm/78339-1777370905/state"}
+{"type":"screen-added","file":"/Users/mihaelmaras/Desktop/private work/zeppelin-website/.superpowers/brainstorm/78339-1777370905/content/wave-animations.html"}
+{"type":"screen-updated","file":"/Users/mihaelmaras/Desktop/private work/zeppelin-website/.superpowers/brainstorm/78339-1777370905/content/wave-animations.html"}
+{"type":"server-stopped","reason":"idle timeout"}

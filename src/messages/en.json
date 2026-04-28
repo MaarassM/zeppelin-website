@@ -7,6 +7,7 @@
     "rezerviraj": "Book Adventure"
   },
   "hero": {
+    "find_us": "Find us",
     "location": "Saccorgiana Beach, Pula",
     "title": "ZEPPELIN\nBEACH COMPLEX",
     "subtitle": "Your base for chill — and the start of every adventure.",
@@ -83,13 +84,7 @@
     "phone_label": "Phone",
     "email_label": "Email",
     "position_label": "Position",
-    "position_options": [
-      "Bar",
-      "Kitchen",
-      "Sports instructor",
-      "Skipper",
-      "Promotion"
-    ],
+    "position_options": ["Bar", "Kitchen", "Skipper", "Promotion"],
     "cv_label": "CV (PDF)",
     "notes_label": "Additional notes",
     "submit_btn": "Submit Application",
@@ -107,7 +102,7 @@
     "phone": "+385 91 25 45 117",
     "whatsapp": "WhatsApp",
     "social_title": "Follow us",
-    "instagram": "@zeppelinbar",
+    "instagram": "@zeppelin_bar_pula",
     "copyright": "© 2025 Zeppelin Beach Complex"
   }
 }

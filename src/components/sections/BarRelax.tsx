@@ -1,17 +1,18 @@
 "use client";
 
+import { useState } from "react";
 import { useT } from "@/lib/i18n";
 import { SectionTag } from "@/components/ui/SectionTag";
+import { PdfModal } from "@/components/ui/PdfModal";
 
 export function BarRelax() {
   const { t } = useT();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <section id="bar" className="bg-cream relative overflow-hidden">
-      {/* Full-width photo */}
-
       {/* Text content */}
-      <div className="px-6 lg:px-[120px] py-12 lg:py-20">
+      <div className="px-6 lg:px-[120px] pt-12 pb-28 lg:pt-20 lg:pb-44">
         <div className="max-w-[1200px] mx-auto flex flex-col lg:flex-row items-start gap-10 lg:gap-20">
           <div className="flex flex-col gap-5 lg:w-[500px]">
             <SectionTag>{t.bar.tag}</SectionTag>
@@ -21,15 +22,21 @@ export function BarRelax() {
             <p className="text-body text-sm lg:text-base leading-relaxed">
               {t.bar.description}
             </p>
-            <a
-              href="/menu"
+            <button
+              onClick={() => setMenuOpen(true)}
               className="self-start flex items-center justify-center h-12 px-8 bg-red text-white font-display text-sm tracking-widest rounded-lg hover:bg-red-dark transition-colors cursor-pointer"
             >
               {t.bar.menu_btn.toUpperCase()} →
-            </a>
+            </button>
           </div>
         </div>
       </div>
+
+      <PdfModal
+        src="/assets/menus/bar-menu.pdf"
+        isOpen={menuOpen}
+        onClose={() => setMenuOpen(false)}
+      />
 
       {/* Red wave — bleeds into the ActionZone section below */}
       <div

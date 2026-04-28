@@ -10,7 +10,7 @@ export function Careers() {
   return (
     <section
       id="karijere"
-      className="bg-dark py-20 lg:py-20 px-6 lg:px-[120px] relative overflow-hidden"
+      className="bg-dark pt-20 pb-36 lg:pb-44 px-6 lg:px-[120px] relative overflow-hidden"
     >
       <div className="max-w-[680px] mx-auto flex flex-col gap-6">
         <SectionTag light>{t.careers.tag}</SectionTag>

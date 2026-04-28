@@ -307,7 +307,7 @@ git commit -m "chore: add brand design tokens to Tailwind config"
     "phone": "+385 91 25 45 117",
     "whatsapp": "WhatsApp",
     "social_title": "Pratite nas",
-    "instagram": "@zeppelinbar",
+    "instagram": "@zeppelin_bar_pula",
     "copyright": "© 2025 Zeppelin Beach Complex"
   }
 }
@@ -431,7 +431,7 @@ git commit -m "chore: add brand design tokens to Tailwind config"
     "phone": "+385 91 25 45 117",
     "whatsapp": "WhatsApp",
     "social_title": "Follow us",
-    "instagram": "@zeppelinbar",
+    "instagram": "@zeppelin_bar_pula",
     "copyright": "© 2025 Zeppelin Beach Complex"
   }
 }
