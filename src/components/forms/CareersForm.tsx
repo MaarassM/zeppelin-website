@@ -74,7 +74,8 @@ export function CareersForm({
     formData.append("name", data.name);
     formData.append("phone", data.phone);
     formData.append("email", data.email);
-    formData.append("position", position!);
+    if (!position) return;
+    formData.append("position", position);
     if (data.notes) formData.append("notes", data.notes);
     if (cvRef[0]?.[0]) formData.append("cv", cvRef[0][0]);
 
@@ -256,7 +257,7 @@ export function CareersForm({
         disabled={submitting}
         className="h-14 bg-red text-white font-display text-sm tracking-widest rounded-lg hover:bg-red-dark transition-colors cursor-pointer mt-2 disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        {submitting ? "..." : t.careers.submit_btn.toUpperCase()}
+        {submitting ? "..." : t.careers.submit_btn.toLocaleUpperCase()}
       </button>
     </form>
   );
