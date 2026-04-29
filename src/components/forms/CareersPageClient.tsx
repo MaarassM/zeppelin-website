@@ -6,7 +6,18 @@ import { useT } from "@/lib/i18n";
 
 export function CareersPageClient() {
   const { t } = useT();
+  const [category, setCategory] = useState<string | null>(null);
   const [position, setPosition] = useState<string | null>(null);
+
+  const categoryLabel = category
+    ? t.careers.position_categories.find((c) => c.key === category)?.label
+    : null;
+
+  const headerTitle = position
+    ? position.toUpperCase()
+    : categoryLabel
+    ? categoryLabel.toUpperCase()
+    : t.careers.tag;
 
   return (
     <>
@@ -21,12 +32,17 @@ export function CareersPageClient() {
           Zeppelin Beach
         </p>
         <h1 className="font-display text-white text-5xl lg:text-6xl tracking-wide">
-          {position ? position.toUpperCase() : t.careers.tag}
+          {headerTitle}
         </h1>
       </div>
 
       <div className="px-6 py-12 max-w-[680px] mx-auto">
-        <CareersForm position={position} onPositionChange={setPosition} />
+        <CareersForm
+          category={category}
+          position={position}
+          onCategorySelect={setCategory}
+          onPositionSelect={setPosition}
+        />
       </div>
     </>
   );
