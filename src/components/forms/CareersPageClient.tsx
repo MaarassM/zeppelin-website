@@ -14,9 +14,9 @@ export function CareersPageClient() {
     : null;
 
   const headerTitle = position
-    ? position.toUpperCase()
+    ? position.toLocaleUpperCase()
     : categoryLabel
-    ? categoryLabel.toUpperCase()
+    ? categoryLabel.toLocaleUpperCase()
     : t.careers.tag;
 
   return (

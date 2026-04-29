@@ -7,20 +7,23 @@ import { z } from "zod";
 import {
   CheckCircle,
   ArrowLeft,
+  ArrowRight,
   Wine,
   ChefHat,
-  Anchor,
-  Megaphone,
+  Waves,
+  IceCream,
+  Briefcase,
+  Compass,
 } from "lucide-react";
 import { useT } from "@/lib/i18n";
 
-const POSITION_ICONS: Record<string, React.ReactNode> = {
-  Bar: <Wine size={28} />,
-  Kuhinja: <ChefHat size={28} />,
-  Kitchen: <ChefHat size={28} />,
-  Skipper: <Anchor size={28} />,
-  Promocija: <Megaphone size={28} />,
-  Promotion: <Megaphone size={28} />,
+const CATEGORY_ICONS: Record<string, React.ReactNode> = {
+  bar: <Wine size={28} />,
+  kuhinja: <ChefHat size={28} />,
+  vodeni_sportovi: <Waves size={28} />,
+  sladoled: <IceCream size={28} />,
+  ostale: <Briefcase size={28} />,
+  adventures: <Compass size={28} />,
 };
 
 const schema = z.object({
@@ -37,13 +40,19 @@ const inputCls =
 const labelCls = "text-xs font-semibold text-muted tracking-wide uppercase";
 
 interface CareersFormProps {
+  category: string | null;
   position: string | null;
-  onPositionChange: (p: string | null) => void;
+  onCategorySelect: (key: string | null) => void;
+  onPositionSelect: (p: string | null) => void;
 }
 
-export function CareersForm({ position, onPositionChange }: CareersFormProps) {
+export function CareersForm({
+  category,
+  position,
+  onCategorySelect,
+  onPositionSelect,
+}: CareersFormProps) {
   const { t } = useT();
-  const setPosition = onPositionChange;
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [serverError, setServerError] = useState(false);
@@ -90,28 +99,36 @@ export function CareersForm({ position, onPositionChange }: CareersFormProps) {
     );
   }
 
-  if (!position) {
+  // Step 1: Category grid
+  if (!category && !position) {
+    const cats = t.careers.position_categories;
     return (
       <div className="flex flex-col gap-6">
         <p className="text-xs font-semibold text-muted tracking-wide uppercase text-center">
           {t.careers.position_select_heading}
         </p>
         <div className="grid grid-cols-2 gap-3">
-          {t.careers.position_options.map((opt: string, i: number) => {
-            const isLast = i === t.careers.position_options.length - 1;
-            const isOdd = t.careers.position_options.length % 2 !== 0;
+          {cats.map((cat, i) => {
+            const isLast = i === cats.length - 1;
+            const isOdd = cats.length % 2 !== 0;
             return (
               <button
-                key={opt}
+                key={cat.key}
                 type="button"
-                onClick={() => setPosition(opt)}
+                onClick={() => {
+                  if (cat.sub_roles.length === 0) {
+                    onPositionSelect(cat.label);
+                  } else {
+                    onCategorySelect(cat.key);
+                  }
+                }}
                 className={`group flex flex-col items-center justify-center gap-3 bg-white border border-border rounded-2xl px-4 py-8 hover:border-red hover:shadow-md transition-all duration-200 cursor-pointer ${isLast && isOdd ? "col-span-2" : ""}`}
               >
                 <span className="text-muted group-hover:text-red transition-colors">
-                  {POSITION_ICONS[opt] ?? <Wine size={28} />}
+                  {CATEGORY_ICONS[cat.key] ?? <Wine size={28} />}
                 </span>
                 <span className="font-display text-dark text-base tracking-wide group-hover:text-red transition-colors leading-tight text-center">
-                  {opt}
+                  {cat.label}
                 </span>
               </button>
             );
@@ -121,11 +138,55 @@ export function CareersForm({ position, onPositionChange }: CareersFormProps) {
     );
   }
 
+  // Step 2: Sub-role screen
+  if (category && !position) {
+    const cat = t.careers.position_categories.find((c) => c.key === category)!;
+    return (
+      <div className="flex flex-col gap-6">
+        <button
+          type="button"
+          onClick={() => onCategorySelect(null)}
+          className="flex items-center gap-2 text-xs font-semibold text-muted tracking-wide uppercase hover:text-red transition-colors cursor-pointer w-fit"
+        >
+          <ArrowLeft size={14} />
+          {t.careers.back_btn}
+        </button>
+
+        <p className="text-xs font-semibold text-muted tracking-wide uppercase text-center">
+          {cat.label}
+        </p>
+
+        {cat.notice && (
+          <div className="bg-amber-50 border border-amber-200 rounded-xl px-5 py-4">
+            <p className="text-sm text-amber-800">{cat.notice}</p>
+          </div>
+        )}
+
+        <div className="flex flex-col gap-3">
+          {cat.sub_roles.map((role) => (
+            <button
+              key={role}
+              type="button"
+              onClick={() => onPositionSelect(role)}
+              className="group flex items-center justify-between bg-white border border-border rounded-2xl px-6 py-5 hover:border-red hover:shadow-md transition-all duration-200 cursor-pointer"
+            >
+              <span className="font-display text-dark text-base tracking-wide group-hover:text-red transition-colors">
+                {role}
+              </span>
+              <ArrowRight size={16} className="text-muted group-hover:text-red transition-colors" />
+            </button>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  // Step 3: Application form
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5">
       <button
         type="button"
-        onClick={() => setPosition(null)}
+        onClick={() => onPositionSelect(null)}
         className="flex items-center gap-2 text-xs font-semibold text-muted tracking-wide uppercase hover:text-red transition-colors cursor-pointer w-fit"
       >
         <ArrowLeft size={14} />
