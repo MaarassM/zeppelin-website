@@ -20,6 +20,13 @@ const IMAGES: Record<string, string> = {
   tube: "/assets/tube.jpg",
 };
 
+const HREFS: Record<string, string> = {
+  wibit: "/wibit",
+  tramp: "/trampoline",
+  pedaline: "/pedaline",
+  tube: "/tube",
+};
+
 export function ActionZone() {
   const { t } = useT();
 
@@ -54,6 +61,7 @@ export function ActionZone() {
               image={IMAGES[activity.id] ?? ""}
               name={activity.name}
               pricing={activity.pricing}
+              href={HREFS[activity.id]}
             />
           ))}
         </div>

@@ -37,6 +37,36 @@
       { "id": "tube", "name": "Tube rides", "pricing": "1h · 3h · Day" }
     ]
   },
+  "zones": {
+    "wibit": {
+      "tagline": "Jump, climb, slide.",
+      "description": "An inflatable obstacle course on open water — test your balance, race your friends, and battle the obstacles. Open for all ages.",
+      "features": ["Climbing walls", "Slides", "Balance beams", "Jump platforms"],
+      "pricing": "1h · 3h · Day pass",
+      "pay_note": "Pay at the water sports desk"
+    },
+    "tramp": {
+      "tagline": "Bounce into the sea.",
+      "description": "A water trampoline anchored just off the shore — jump high, flip, and land in the sea. Pure fun for all ages.",
+      "features": ["Anchored offshore", "All ages welcome", "Jump & flip"],
+      "pricing": "1h · 3h · Day pass",
+      "pay_note": "Pay at the water sports desk"
+    },
+    "pedaline": {
+      "tagline": "Explore at your own pace.",
+      "description": "Pedal boats for families and groups, stand-up paddleboards for those who like a challenge. Navigate the bay and enjoy the view.",
+      "features": ["Pedal boats", "Stand-up paddleboard (SUP)", "All levels welcome"],
+      "pricing": "1h · 3h · Day pass",
+      "pay_note": "Pay at the water sports desk"
+    },
+    "tube": {
+      "tagline": "Hold on tight.",
+      "description": "High-speed rides on the sea — pick your tube, grab the handles, and get dragged across the waves at full throttle. Multiple configurations available.",
+      "features": ["Single", "Twister", "Banana", "Family Couch", "Group Couch"],
+      "pricing": "Per ride",
+      "pay_note": "Pay at the water sports desk"
+    }
+  },
   "adventure": {
     "tag": "ZEPPELIN ADVENTURE",
     "heading": "Book your adventure.",

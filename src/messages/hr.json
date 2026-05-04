@@ -37,6 +37,36 @@
       { "id": "tube", "name": "Tube rides", "pricing": "1h · 3h · Dan" }
     ]
   },
+  "zones": {
+    "wibit": {
+      "tagline": "Skoči, penjaj se, klizaj.",
+      "description": "Napuhani poligon prepreka na otvorenom moru — testiraj ravnotežu, natječi se s prijateljima i osvoji prepreke. Otvoreno za sve uzraste.",
+      "features": ["Penjačke stijene", "Tobogani", "Greble za ravnotežu", "Skakaonice"],
+      "pricing": "1h · 3h · Dnevna karta",
+      "pay_note": "Plaćanje na info pultu vodenih sportova"
+    },
+    "tramp": {
+      "tagline": "Odskoči u more.",
+      "description": "Trampolin usidren uz obalu — skači visoko, napravi salto i sruši se u more. Čista zabava za sve generacije.",
+      "features": ["Usidreno uz obalu", "Za sve uzraste", "Skakanje i saltosi"],
+      "pricing": "1h · 3h · Dnevna karta",
+      "pay_note": "Plaćanje na info pultu vodenih sportova"
+    },
+    "pedaline": {
+      "tagline": "Istraži vlastitim tempom.",
+      "description": "Pedaline za obitelj i grupe, SUP daske za one koji vole izazov. Prošetaj uvalom i uživaj u pogledu.",
+      "features": ["Pedaline", "Stand-up paddleboard (SUP)", "Za sve razine"],
+      "pricing": "1h · 3h · Dnevna karta",
+      "pay_note": "Plaćanje na info pultu vodenih sportova"
+    },
+    "tube": {
+      "tagline": "Drži se čvrsto.",
+      "description": "Adrenalinske vožnje morem — odaberi svoju tubu, uhvati drške i daj se vući valovima punom brzinom. Dostupno u više konfiguracija.",
+      "features": ["Single", "Twister", "Banana", "Family Couch", "Group Couch"],
+      "pricing": "Po vožnji",
+      "pay_note": "Plaćanje na info pultu vodenih sportova"
+    }
+  },
   "adventure": {
     "tag": "ZEPPELIN ADVENTURE",
     "heading": "Rezerviraj svoju avanturu.",
