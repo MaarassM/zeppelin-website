@@ -17,7 +17,7 @@ export function Hero() {
         fill
         priority
         sizes="100vw"
-        className="object-cover"
+        className="object-cover object-[70%_center] md:object-center"
       />
 
       {/* Gradient overlay — light touch so photo stays visible */}
@@ -26,7 +26,7 @@ export function Hero() {
       {/* Centered content — logo + single CTA */}
       <div className="relative z-10 flex flex-col items-center gap-7">
         <Image
-          src="/assets/zeppelin-logo-white.png"
+          src="/assets/logo-extended.png"
           alt="Zeppelin Beach Complex"
           width={360}
           height={130}
