@@ -23,7 +23,7 @@ export function ZonePageClient({ zoneId, name }: ZonePageClientProps) {
   const image = IMAGES[zoneId];
 
   return (
-    <div className="min-h-screen bg-[#1a1a1a]">
+    <div className="min-h-screen bg-cream">
       {/* Hero */}
       <div className="relative h-[60vh] min-h-[360px]">
         <Image
@@ -64,20 +64,20 @@ export function ZonePageClient({ zoneId, name }: ZonePageClientProps) {
         <div className="grid lg:grid-cols-[1fr_280px] gap-12 lg:gap-20">
           {/* Left: description + features */}
           <div className="flex flex-col gap-8">
-            <p className="text-white/80 text-base lg:text-lg leading-relaxed max-w-[600px]">
+            <p className="text-dark/80 text-base lg:text-lg leading-relaxed max-w-[600px]">
               {zone.description}
             </p>
 
             {zone.features.length > 0 && (
               <div className="flex flex-col gap-3">
-                <p className="text-white/40 text-xs uppercase tracking-widest">
+                <p className="text-dark/40 text-xs uppercase tracking-widest">
                   What&apos;s included
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {zone.features.map((feature: string) => (
                     <span
                       key={feature}
-                      className="px-3 py-1.5 rounded-full border border-white/20 text-white/70 text-sm"
+                      className="px-3 py-1.5 rounded-full border border-dark/20 text-dark/70 text-sm"
                     >
                       {feature}
                     </span>
@@ -89,16 +89,16 @@ export function ZonePageClient({ zoneId, name }: ZonePageClientProps) {
 
           {/* Right: pricing info */}
           <div className="flex flex-col gap-4">
-            <div className="rounded-xl border border-white/10 bg-white/5 p-6 flex flex-col gap-4">
+            <div className="rounded-xl border border-dark/10 bg-dark/5 p-6 flex flex-col gap-4">
               <div>
-                <p className="text-white/40 text-xs uppercase tracking-widest mb-1">
+                <p className="text-dark/40 text-xs uppercase tracking-widest mb-1">
                   Pricing
                 </p>
-                <p className="font-display text-white text-2xl">{zone.pricing}</p>
+                <p className="font-display text-dark text-2xl">{zone.pricing}</p>
               </div>
-              <div className="border-t border-white/10 pt-4 flex items-start gap-2">
-                <MapPin size={14} className="text-white/40 mt-0.5 shrink-0" />
-                <p className="text-white/50 text-sm leading-relaxed">
+              <div className="border-t border-dark/10 pt-4 flex items-start gap-2">
+                <MapPin size={14} className="text-dark/40 mt-0.5 shrink-0" />
+                <p className="text-dark/50 text-sm leading-relaxed">
                   {zone.pay_note}
                 </p>
               </div>
