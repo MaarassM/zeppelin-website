@@ -1,3 +1,217 @@
+# Careers Sub-category Redesign Implementation Plan
+
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+
+**Goal:** Restructure the careers application flow from a flat 4-box position picker to a two-level category → sub-role → form flow with 6 categories.
+
+**Architecture:** `CareersPageClient` gains a second piece of state (`category`) alongside the existing `position`. `CareersForm` renders one of three screens based on which states are set. Translation files replace the flat `position_options` array with a structured `position_categories` array; TypeScript types update automatically because `type Messages = typeof hr`.
+
+**Tech Stack:** Next.js, React, TypeScript, Lucide React icons, custom i18n via `useT()` hook.
+
+---
+
+## File Map
+
+| File | Change |
+|---|---|
+| `src/messages/hr.json` | Replace `position_options` with `position_categories` structured array |
+| `src/messages/en.json` | Same (must mirror `hr.json` shape exactly — `Messages = typeof hr`) |
+| `src/components/forms/CareersPageClient.tsx` | Add `category` state, update header title logic, update `CareersForm` props |
+| `src/components/forms/CareersForm.tsx` | New props interface, three-screen render, updated icons, notice banner |
+
+---
+
+## Task 1: Update Translation Files
+
+**Files:**
+- Modify: `src/messages/hr.json`
+- Modify: `src/messages/en.json`
+
+- [ ] **Step 1: Replace `position_options` in `hr.json`**
+
+In `src/messages/hr.json`, replace lines 87 (`"position_options": ["Bar", "Kuhinja", "Skipper", "Promocija"]`) with:
+
+```json
+"position_categories": [
+  {
+    "key": "bar",
+    "label": "Bar",
+    "sub_roles": ["Šanker", "Servir", "Konobar"]
+  },
+  {
+    "key": "kuhinja",
+    "label": "Kuhinja",
+    "sub_roles": ["Grill majstor", "Pomoćnik"]
+  },
+  {
+    "key": "vodeni_sportovi",
+    "label": "Vodeni sportovi",
+    "sub_roles": ["Banjin", "Radnik na vodenim sportovima", "Skipper"]
+  },
+  {
+    "key": "sladoled",
+    "label": "Radnik na sladoledu",
+    "sub_roles": []
+  },
+  {
+    "key": "ostale",
+    "label": "Ostale djelatnosti",
+    "sub_roles": ["Marketing", "Voditelj poslovanja (menadžer)"]
+  },
+  {
+    "key": "adventures",
+    "label": "Zeppelin Adventures",
+    "sub_roles": [
+      "Voditelj tura — Buggy",
+      "Voditelj tura — Quad",
+      "Voditelj tura — Jetski"
+    ],
+    "notice": "Buggy i Quad zahtijevaju važeću vozačku dozvolu. Za Jetski potrebna je valjana skiper dozvola."
+  }
+]
+```
+
+- [ ] **Step 2: Replace `position_options` in `en.json`**
+
+In `src/messages/en.json`, replace line 87 (`"position_options": ["Bar", "Kitchen", "Skipper", "Promotion"]`) with the same structure — identical keys and shape, English labels and notice text:
+
+```json
+"position_categories": [
+  {
+    "key": "bar",
+    "label": "Bar",
+    "sub_roles": ["Bartender", "Server", "Waiter"]
+  },
+  {
+    "key": "kuhinja",
+    "label": "Kitchen",
+    "sub_roles": ["Grill Master", "Kitchen Assistant"]
+  },
+  {
+    "key": "vodeni_sportovi",
+    "label": "Water Sports",
+    "sub_roles": ["Beach Attendant", "Water Sports Worker", "Skipper"]
+  },
+  {
+    "key": "sladoled",
+    "label": "Ice Cream Worker",
+    "sub_roles": []
+  },
+  {
+    "key": "ostale",
+    "label": "Other Positions",
+    "sub_roles": ["Marketing", "Operations Manager"]
+  },
+  {
+    "key": "adventures",
+    "label": "Zeppelin Adventures",
+    "sub_roles": [
+      "Tour Guide — Buggy",
+      "Tour Guide — Quad",
+      "Tour Guide — Jetski"
+    ],
+    "notice": "Buggy and Quad require a valid driving licence. Jetski requires a valid skipper licence."
+  }
+]
+```
+
+- [ ] **Step 3: Verify JSON is valid**
+
+Run:
+```bash
+node -e "require('./src/messages/hr.json'); require('./src/messages/en.json'); console.log('OK')"
+```
+Expected output: `OK`
+
+- [ ] **Step 4: Commit**
+
+```bash
+git add src/messages/hr.json src/messages/en.json
+git commit -m "feat: replace flat position_options with position_categories structure"
+```
+
+---
+
+## Task 2: Update CareersPageClient
+
+**Files:**
+- Modify: `src/components/forms/CareersPageClient.tsx`
+
+- [ ] **Step 1: Rewrite CareersPageClient.tsx**
+
+Replace the entire file content with:
+
+```tsx
+"use client";
+
+import { useState } from "react";
+import { CareersForm } from "./CareersForm";
+import { useT } from "@/lib/i18n";
+
+export function CareersPageClient() {
+  const { t } = useT();
+  const [category, setCategory] = useState<string | null>(null);
+  const [position, setPosition] = useState<string | null>(null);
+
+  const categoryLabel = category
+    ? t.careers.position_categories.find((c) => c.key === category)?.label
+    : null;
+
+  const headerTitle = position
+    ? position.toUpperCase()
+    : categoryLabel
+    ? categoryLabel.toUpperCase()
+    : t.careers.tag;
+
+  return (
+    <>
+      <div className="bg-red px-6 py-14 text-center relative">
+        <a
+          href="./"
+          className="absolute left-6 top-1/2 -translate-y-1/2 font-display text-white/60 text-[11px] tracking-[0.25em] uppercase hover:text-white transition-colors"
+        >
+          ← Natrag
+        </a>
+        <p className="font-display text-white/50 text-[11px] tracking-[0.35em] uppercase mb-3">
+          Zeppelin Beach
+        </p>
+        <h1 className="font-display text-white text-5xl lg:text-6xl tracking-wide">
+          {headerTitle}
+        </h1>
+      </div>
+
+      <div className="px-6 py-12 max-w-[680px] mx-auto">
+        <CareersForm
+          category={category}
+          position={position}
+          onCategorySelect={setCategory}
+          onPositionSelect={setPosition}
+        />
+      </div>
+    </>
+  );
+}
+```
+
+- [ ] **Step 2: Commit**
+
+```bash
+git add src/components/forms/CareersPageClient.tsx
+git commit -m "feat: add category state and three-step header to CareersPageClient"
+```
+
+---
+
+## Task 3: Update CareersForm
+
+**Files:**
+- Modify: `src/components/forms/CareersForm.tsx`
+
+- [ ] **Step 1: Rewrite CareersForm.tsx**
+
+Replace the entire file content with:
+
+```tsx
 "use client";
 
 import { useState } from "react";
@@ -74,8 +288,7 @@ export function CareersForm({
     formData.append("name", data.name);
     formData.append("phone", data.phone);
     formData.append("email", data.email);
-    if (!position) return;
-    formData.append("position", position);
+    formData.append("position", position!);
     if (data.notes) formData.append("notes", data.notes);
     if (cvRef[0]?.[0]) formData.append("cv", cvRef[0][0]);
 
@@ -257,8 +470,41 @@ export function CareersForm({
         disabled={submitting}
         className="h-14 bg-red text-white font-display text-sm tracking-widest rounded-lg hover:bg-red-dark transition-colors cursor-pointer mt-2 disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        {submitting ? "..." : t.careers.submit_btn.toLocaleUpperCase()}
+        {submitting ? "..." : t.careers.submit_btn.toUpperCase()}
       </button>
     </form>
   );
 }
+```
+
+- [ ] **Step 2: Run TypeScript check**
+
+```bash
+npx tsc --noEmit
+```
+Expected: no errors. If errors appear, they will be in `CareersForm.tsx` or `CareersPageClient.tsx` — fix mismatched prop names.
+
+- [ ] **Step 3: Start dev server and verify manually**
+
+```bash
+npm run dev
+```
+
+Open `http://localhost:3000/careers` and verify:
+
+1. **Category grid:** 6 boxes display — Bar, Kuhinja, Vodeni sportovi, Radnik na sladoledu, Ostale djelatnosti, Zeppelin Adventures. Each has correct icon. Odd-count last box spans 2 columns.
+2. **Bar → sub-roles:** Clicking Bar shows "Šanker", "Servir", "Konobar" as list cards. Back button returns to category grid. Header shows "BAR".
+3. **Kuhinja → sub-roles:** "Grill majstor", "Pomoćnik".
+4. **Vodeni sportovi → sub-roles:** "Banjin", "Radnik na vodenim sportovima", "Skipper".
+5. **Radnik na sladoledu:** Clicking goes directly to form (no sub-role screen). Header shows "RADNIK NA SLADOLEDU". Back button on form returns to category grid.
+6. **Ostale djelatnosti → sub-roles:** "Marketing", "Voditelj poslovanja (menadžer)".
+7. **Zeppelin Adventures → sub-roles:** Notice banner (amber) showing driving/skipper licence info appears above the 3 options. "Voditelj tura — Buggy", "Voditelj tura — Quad", "Voditelj tura — Jetski" listed.
+8. **Form:** Clicking any sub-role opens the form with the sub-role name shown in the position badge. Back returns to sub-role screen. Form submits correctly.
+9. **Language switch:** Switching to EN shows English labels. Structure is identical.
+
+- [ ] **Step 4: Commit**
+
+```bash
+git add src/components/forms/CareersForm.tsx
+git commit -m "feat: implement three-step careers flow with category and sub-role screens"
+```

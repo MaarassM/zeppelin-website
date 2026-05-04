@@ -84,7 +84,43 @@
     "phone_label": "Phone",
     "email_label": "Email",
     "position_label": "Position",
-    "position_options": ["Bar", "Kitchen", "Skipper", "Promotion"],
+    "position_categories": [
+      {
+        "key": "bar",
+        "label": "Bar",
+        "sub_roles": ["Bartender", "Server", "Waiter"]
+      },
+      {
+        "key": "kuhinja",
+        "label": "Kitchen",
+        "sub_roles": ["Grill Master", "Kitchen Assistant"]
+      },
+      {
+        "key": "vodeni_sportovi",
+        "label": "Water Sports",
+        "sub_roles": ["Beach Attendant", "Water Sports Worker", "Skipper"]
+      },
+      {
+        "key": "sladoled",
+        "label": "Ice Cream Worker",
+        "sub_roles": []
+      },
+      {
+        "key": "ostale",
+        "label": "Other Positions",
+        "sub_roles": ["Marketing", "Operations Manager"]
+      },
+      {
+        "key": "adventures",
+        "label": "Zeppelin Adventures",
+        "sub_roles": [
+          "Tour Guide — Buggy",
+          "Tour Guide — Quad",
+          "Tour Guide — Jetski"
+        ],
+        "notice": "Buggy and Quad require a valid driving licence. Jetski requires a valid skipper licence."
+      }
+    ],
     "cv_label": "CV (PDF)",
     "notes_label": "Additional notes",
     "submit_btn": "Submit Application",

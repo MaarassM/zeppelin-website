@@ -84,7 +84,43 @@
     "phone_label": "Mobitel",
     "email_label": "Email",
     "position_label": "Pozicija",
-    "position_options": ["Bar", "Kuhinja", "Skipper", "Promocija"],
+    "position_categories": [
+      {
+        "key": "bar",
+        "label": "Bar",
+        "sub_roles": ["Šanker", "Servir", "Konobar"]
+      },
+      {
+        "key": "kuhinja",
+        "label": "Kuhinja",
+        "sub_roles": ["Grill majstor", "Pomoćnik"]
+      },
+      {
+        "key": "vodeni_sportovi",
+        "label": "Vodeni sportovi",
+        "sub_roles": ["Banjin", "Radnik na vodenim sportovima", "Skipper"]
+      },
+      {
+        "key": "sladoled",
+        "label": "Radnik na sladoledu",
+        "sub_roles": []
+      },
+      {
+        "key": "ostale",
+        "label": "Ostale djelatnosti",
+        "sub_roles": ["Marketing", "Voditelj poslovanja (menadžer)"]
+      },
+      {
+        "key": "adventures",
+        "label": "Zeppelin Adventures",
+        "sub_roles": [
+          "Voditelj tura — Buggy",
+          "Voditelj tura — Quad",
+          "Voditelj tura — Jetski"
+        ],
+        "notice": "Buggy i Quad zahtijevaju važeću vozačku dozvolu. Za Jetski potrebna je valjana skiper dozvola."
+      }
+    ],
     "cv_label": "Životopis (PDF)",
     "notes_label": "Dodatne napomene",
     "submit_btn": "Pošalji Prijavu",
