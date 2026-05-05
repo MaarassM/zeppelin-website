@@ -60,7 +60,6 @@ export function ActionZone() {
               icon={ICONS[activity.id] ?? Waves}
               image={IMAGES[activity.id] ?? ""}
               name={activity.name}
-              pricing={activity.pricing}
               href={HREFS[activity.id]}
             />
           ))}
