@@ -102,7 +102,19 @@
     "fastfood_name": "Fast Food",
     "fastfood_desc": "Burgers, sandwiches, grill",
     "gelato_name": "Gelato Bar",
-    "gelato_desc": "Ice cream, smoothie bowls"
+    "gelato_desc": "Ice cream, smoothie bowls",
+    "fastfood_page": {
+      "tagline": "Fresh, fast, satisfying.",
+      "description": "Burgers, sandwiches, and grilled favourites made fresh on-site. Quick service so you spend less time in line and more time on the beach.",
+      "features": ["Burgers", "Sandwiches", "Grill", "Fries"],
+      "hours": "9:00 – 22:00"
+    },
+    "gelato_page": {
+      "tagline": "Cool down, sweet up.",
+      "description": "Handcrafted gelato and smoothie bowls made with fresh ingredients. The perfect stop between dips in the sea.",
+      "features": ["Gelato", "Smoothie bowls", "Fresh fruit", "Seasonal flavours"],
+      "hours": "9:00 – 22:00"
+    }
   },
   "careers": {
     "tag": "CAREERS",

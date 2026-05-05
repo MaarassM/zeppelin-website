@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useT } from "@/lib/i18n";
 import { SectionTag } from "@/components/ui/SectionTag";
 
@@ -29,7 +30,7 @@ export function Gastro() {
 
         {/* Right: 2 photo cards */}
         <div className="grid grid-cols-2 gap-4 w-full lg:flex-1">
-          <div className="relative overflow-hidden rounded-2xl h-40 lg:h-56">
+          <Link href="/fastfood" className="relative overflow-hidden rounded-2xl h-40 lg:h-56 block">
             <Image
               src="/assets/food/DSC09600.jpg"
               alt="Fast food"
@@ -38,6 +39,7 @@ export function Gastro() {
               sizes="(max-width: 1024px) 50vw, 300px"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+            <div className="absolute inset-0 bg-white/0 hover:bg-white/10 transition-colors duration-200" />
             <div className="absolute bottom-0 left-0 right-0 p-5 lg:p-8 flex flex-col gap-1">
               <p className="font-display text-white text-lg lg:text-2xl">
                 {t.gastro.fastfood_name}
@@ -46,8 +48,8 @@ export function Gastro() {
                 {t.gastro.fastfood_desc}
               </p>
             </div>
-          </div>
-          <div className="relative overflow-hidden rounded-2xl h-40 lg:h-56">
+          </Link>
+          <Link href="/gelato" className="relative overflow-hidden rounded-2xl h-40 lg:h-56 block">
             <Image
               src="/assets/gelato.jpg"
               alt="Gelato"
@@ -56,6 +58,7 @@ export function Gastro() {
               sizes="(max-width: 1024px) 50vw, 300px"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+            <div className="absolute inset-0 bg-white/0 hover:bg-white/10 transition-colors duration-200" />
             <div className="absolute bottom-0 left-0 right-0 p-5 lg:p-8 flex flex-col gap-1">
               <p className="font-display text-white text-lg lg:text-2xl">
                 {t.gastro.gelato_name}
@@ -64,7 +67,7 @@ export function Gastro() {
                 {t.gastro.gelato_desc}
               </p>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
 

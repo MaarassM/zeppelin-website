@@ -102,7 +102,19 @@
     "fastfood_name": "Fast Food",
     "fastfood_desc": "Burgeri, sendviči, grill",
     "gelato_name": "Gelaterija",
-    "gelato_desc": "Sladoled, smoothie bowl"
+    "gelato_desc": "Sladoled, smoothie bowl",
+    "fastfood_page": {
+      "tagline": "Svježe, brzo, ukusno.",
+      "description": "Burgeri, sendviči i roštilj pripremljeni na licu mjesta. Brza usluga — više vremena za plažu, manje za čekanje.",
+      "features": ["Burgeri", "Sendviči", "Roštilj", "Pomfrit"],
+      "hours": "9:00 – 22:00"
+    },
+    "gelato_page": {
+      "tagline": "Rashladi se, zasladi se.",
+      "description": "Ručno rađeni sladoled i smoothie bowlovi od svježih sastojaka. Savršena pauza između urona u more.",
+      "features": ["Sladoled", "Smoothie bowl", "Svježe voće", "Sezonski okusi"],
+      "hours": "9:00 – 22:00"
+    }
   },
   "careers": {
     "tag": "KARIJERE",
