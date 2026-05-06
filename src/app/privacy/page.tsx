@@ -15,6 +15,12 @@ export const metadata: Metadata = {
     locale: "hr_HR",
     type: "website",
   },
+  twitter: {
+    card: "summary",
+    title: "Privacy Policy | Zeppelin Beach Complex",
+    description:
+      "How Zeppelin Beach Complex collects, uses, and protects your personal data.",
+  },
 };
 
 export default function PrivacyPage() {
