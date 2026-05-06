@@ -3,9 +3,26 @@ import Image from "next/image";
 import { foodMenu } from "@/data/food";
 
 export const metadata: Metadata = {
-  title: "Jelovnik | Zeppelin Beach",
+  title: "Jelovnik | Hrana na Plaži Pula | Zeppelin Beach",
   description:
-    "Fast food i gelaterija na Zeppelin beach-u — burgeri, sendviči, sladoled.",
+    "Jelovnik Zeppelin Beacha — fast food, gelato, burgeri, sendviči, sladoled. Saccorgiana plaža, Pula.",
+  keywords: ["jelovnik pula", "hrana plaža pula", "fast food pula", "sladoled pula", "zeppelin jelovnik"],
+  alternates: { canonical: "https://zeppelinbar.com/food" },
+  openGraph: {
+    title: "Jelovnik | Hrana na Plaži Pula | Zeppelin Beach",
+    description: "Jelovnik Zeppelin Beacha — fast food, gelato, burgeri, sendviči i sladoled. Saccorgiana plaža, Pula.",
+    url: "https://zeppelinbar.com/food",
+    siteName: "Zeppelin Beach Complex",
+    images: [{ url: "https://zeppelinbar.com/assets/hero.jpg", width: 1280, height: 853, alt: "Jelovnik — Zeppelin Beach Pula" }],
+    locale: "hr_HR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Jelovnik | Hrana na Plaži Pula | Zeppelin Beach",
+    description: "Jelovnik Zeppelin Beacha — burgeri, sendviči, sladoled. Saccorgiana, Pula.",
+    images: ["https://zeppelinbar.com/assets/hero.jpg"],
+  },
 };
 
 export default function FoodPage() {

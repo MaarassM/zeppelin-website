@@ -2,9 +2,26 @@ import type { Metadata } from "next";
 import { barMenu } from "@/data/menu";
 
 export const metadata: Metadata = {
-  title: "Bar Menu | Zeppelin Beach",
+  title: "Bar Menu | Kokteli & Pića | Zeppelin Beach Pula",
   description:
-    "Digitalni menu Zeppelin beach bara — kokteli, pivo, bezalkoholna pića i kava.",
+    "Digitalni menu Zeppelin beach bara u Puli — kokteli, pivo, vino, bezalkoholna pića i kava. Saccorgiana plaža.",
+  keywords: ["bar menu pula", "kokteli pula", "pića plaža pula", "bar karta pula", "zeppelin bar menu"],
+  alternates: { canonical: "https://zeppelinbar.com/menu" },
+  openGraph: {
+    title: "Bar Menu | Kokteli & Pića | Zeppelin Beach Pula",
+    description: "Digitalni menu Zeppelin beach bara — kokteli, pivo, vino i kava. Saccorgiana plaža, Pula.",
+    url: "https://zeppelinbar.com/menu",
+    siteName: "Zeppelin Beach Complex",
+    images: [{ url: "https://zeppelinbar.com/assets/bar.jpg", width: 1280, height: 853, alt: "Bar Menu — Zeppelin Beach Pula" }],
+    locale: "hr_HR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bar Menu | Kokteli & Pića | Zeppelin Beach Pula",
+    description: "Digitalni menu bara — kokteli, pivo, vino i kava. Zeppelin Beach, Pula.",
+    images: ["https://zeppelinbar.com/assets/bar.jpg"],
+  },
 };
 
 export default function MenuPage() {

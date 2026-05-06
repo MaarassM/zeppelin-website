@@ -20,7 +20,23 @@
     "description": "Kick back with perfect cocktails, music, and a view of the sea. Great vibes, sunbeds, and shaded terraces waiting for you every day.",
     "menu_btn": "Digital Menu",
     "sunbed_label": "Sunbed rental",
-    "sunbed_info": "Info at the water sports desk"
+    "sunbed_info": "Info at the water sports desk",
+    "bar_name": "Bar",
+    "bar_desc": "Cocktails & drinks",
+    "relax_name": "Sunbeds & Relax",
+    "relax_desc": "Chill, shade & sunbeds",
+    "bar_page": {
+      "tagline": "Cold drinks, warm vibes.",
+      "description": "Our beach bar serves handcrafted cocktails, refreshing drinks, and cold beer from morning till late. Enjoy the sea view from the terrace, find your spot at the bar, and let the music set the pace.",
+      "features": ["Cocktails", "Beer & wine", "Soft drinks", "Coffee", "Terrace"],
+      "hours": "9:00 – 02:00"
+    },
+    "relax_page": {
+      "tagline": "Your spot in the sun.",
+      "description": "Rent a sunbed and claim your corner of paradise. Shaded terraces and open sun spots available — settle in, order a drink from the bar, and let the day unfold.",
+      "features": ["Sunbed rental", "Shaded terrace", "Sun spots", "Bar service"],
+      "hours": "9:00 – 19:00"
+    }
   },
   "action": {
     "tag": "ACTION ZONE",
@@ -28,13 +44,15 @@
     "note": "Pay at the water sports info desk",
     "activities": [
       { "id": "wibit", "name": "Wibit Park", "pricing": "1h · 3h · Day" },
-      { "id": "tramp", "name": "Trampoline", "pricing": "1h · 3h · Day" },
+      { "id": "jetski", "name": "Jet Ski", "pricing": "Per ride" },
+      { "id": "tube", "name": "Tube rides", "pricing": "1h · 3h · Day" },
       {
         "id": "pedaline",
         "name": "Pedal Boat & SUP",
         "pricing": "1h · 3h · Day"
       },
-      { "id": "tube", "name": "Tube rides", "pricing": "1h · 3h · Day" }
+      { "id": "tramp", "name": "Trampoline", "pricing": "1h · 3h · Day" },
+      { "id": "scuba", "name": "Scuba Diving", "pricing": "Per session" }
     ]
   },
   "zones": {
@@ -64,6 +82,20 @@
       "description": "High-speed rides on the sea — pick your tube, grab the handles, and get dragged across the waves at full throttle. Multiple configurations available.",
       "features": ["Single", "Twister", "Banana", "Family Couch", "Group Couch"],
       "pricing": "Per ride",
+      "pay_note": "Pay at the water sports desk"
+    },
+    "jetski": {
+      "tagline": "Full throttle on open water.",
+      "description": "Rent a jet ski and tear across the Adriatic. Whether you want a guided safari or solo exploration, our jet skis are ready to go. No experience needed — our team will brief you before you head out.",
+      "features": ["Solo rental", "Guided safari", "All levels welcome", "Safety briefing included"],
+      "pricing": "Per ride",
+      "pay_note": "Pay at the water sports desk"
+    },
+    "scuba": {
+      "tagline": "Dive into another world.",
+      "description": "Explore the underwater Adriatic with a certified instructor by your side. Perfect for first-timers and experienced divers alike — crystal clear water, rich marine life, and unforgettable visibility.",
+      "features": ["Beginner sessions", "Certified instructors", "Equipment included", "All ages welcome"],
+      "pricing": "Per session",
       "pay_note": "Pay at the water sports desk"
     }
   },
@@ -171,6 +203,9 @@
   "location": {
     "heading": "Find us.",
     "directions": "We're on Saccorgiana Beach in Pula. Follow signs for \"Zeppelin Beach\" from the city centre."
+  },
+  "ui": {
+    "cards_hint": "Click on a card to learn more."
   },
   "footer": {
     "hours_title": "Opening hours",

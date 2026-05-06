@@ -1,6 +1,14 @@
 "use client";
 
-import { Waves, Dumbbell, Sailboat, Rows3, Info } from "lucide-react";
+import {
+  Waves,
+  ChevronsUp,
+  Sailboat,
+  Wind,
+  Info,
+  Zap,
+  Fish,
+} from "lucide-react";
 import { LucideIcon } from "lucide-react";
 import { useT } from "@/lib/i18n";
 import { SectionTag } from "@/components/ui/SectionTag";
@@ -8,9 +16,11 @@ import { ActivityCard } from "@/components/ui/ActivityCard";
 
 const ICONS: Record<string, LucideIcon> = {
   wibit: Waves,
-  tramp: Dumbbell,
+  tramp: ChevronsUp,
   pedaline: Sailboat,
-  tube: Rows3,
+  tube: Wind,
+  jetski: Zap,
+  scuba: Fish,
 };
 
 const IMAGES: Record<string, string> = {
@@ -18,6 +28,8 @@ const IMAGES: Record<string, string> = {
   tramp: "/assets/trampoline.jpg",
   pedaline: "/assets/pedaline.jpg",
   tube: "/assets/tube.jpg",
+  jetski: "/assets/jet-ski.jpg",
+  scuba: "/assets/scuba-diving.jpg",
 };
 
 const HREFS: Record<string, string> = {
@@ -25,6 +37,8 @@ const HREFS: Record<string, string> = {
   tramp: "/trampoline",
   pedaline: "/pedaline",
   tube: "/tube",
+  jetski: "/jetski",
+  scuba: "/scuba",
 };
 
 export function ActionZone() {
@@ -43,17 +57,14 @@ export function ActionZone() {
             <h2 className="font-display text-white text-[34px] lg:text-[52px] leading-none max-w-[600px]">
               {t.action.heading}
             </h2>
-          </div>
-          <div className="flex items-start gap-2 lg:w-[240px]">
-            <Info size={16} className="text-white/60 mt-0.5 shrink-0" />
-            <p className="text-white/70 text-sm leading-relaxed">
-              {t.action.note}
+            <p className="text-white/50 text-sm leading-relaxed">
+              {t.ui.cards_hint}
             </p>
           </div>
         </div>
 
-        {/* Cards grid — 2col mobile, 4col desktop */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+        {/* Cards grid — 2col mobile, 3col desktop */}
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
           {t.action.activities.map((activity) => (
             <ActivityCard
               key={activity.id}

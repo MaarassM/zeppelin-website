@@ -20,28 +20,61 @@
     "description": "Opusti se uz savršene koktele, glazbu i pogled na more. Ugodna atmosfera, ležaljke i hlad terasa čekaju te svakog dana.",
     "menu_btn": "Menu",
     "sunbed_label": "Najam ležaljki",
-    "sunbed_info": "Info na licu mjesta — info pult"
+    "sunbed_info": "Info na licu mjesta — info pult",
+    "bar_name": "Bar",
+    "bar_desc": "Kokteli & pića",
+    "relax_name": "Ležaljke & Relax",
+    "relax_desc": "Chill, hlad i ležaljke",
+    "bar_page": {
+      "tagline": "Hladna pića, topla atmosfera.",
+      "description": "Naš beach bar poslužuje ručno izrađene koktele, osvježavajuća pića i hladno pivo od jutra do kasno. Uživaj u pogledu na more s terase, nađi svoje mjesto za šankom i pusti glazbu da postavi ritam.",
+      "features": [
+        "Kokteli",
+        "Pivo & vino",
+        "Bezalkoholna pića",
+        "Kava",
+        "Terasa"
+      ],
+      "hours": "9:00 – 02:00"
+    },
+    "relax_page": {
+      "tagline": "Tvoje mjesto na suncu.",
+      "description": "Iznajmi ležaljku i zauzmi svoj kutak raja. Dostupne su zasjenjene terase i mjesta na suncu — smjesti se, naruči piće iz bara i prepusti se danu.",
+      "features": [
+        "Najam ležaljki",
+        "Zasjenjene terase",
+        "Mjesta na suncu",
+        "Bar dostava"
+      ],
+      "hours": "9:00 – 19:00"
+    }
   },
   "action": {
     "tag": "ACTION ZONE",
     "heading": "Na vodi, u zraku, na tlu.",
-    "note": "Plaćanje na info pultu vodenih sportova",
     "activities": [
       { "id": "wibit", "name": "Wibit Park", "pricing": "1h · 3h · Dan" },
-      { "id": "tramp", "name": "Trampolin", "pricing": "1h · 3h · Dan" },
+      { "id": "jetski", "name": "Jet Ski", "pricing": "Po vožnji" },
+      { "id": "tube", "name": "Tube rides", "pricing": "1h · 3h · Dan" },
       {
         "id": "pedaline",
         "name": "Pedaline & SUP",
         "pricing": "1h · 3h · Dan"
       },
-      { "id": "tube", "name": "Tube rides", "pricing": "1h · 3h · Dan" }
+      { "id": "tramp", "name": "Trampolin", "pricing": "1h · 3h · Dan" },
+      { "id": "scuba", "name": "Ronjenje", "pricing": "Po sesiji" }
     ]
   },
   "zones": {
     "wibit": {
       "tagline": "Skoči, penjaj se, klizaj.",
       "description": "Napuhani poligon prepreka na otvorenom moru — testiraj ravnotežu, natječi se s prijateljima i osvoji prepreke. Otvoreno za sve uzraste.",
-      "features": ["Penjačke stijene", "Tobogani", "Greble za ravnotežu", "Skakaonice"],
+      "features": [
+        "Penjačke stijene",
+        "Tobogani",
+        "Greble za ravnotežu",
+        "Skakaonice"
+      ],
       "pricing": "1h · 3h · Dnevna karta",
       "pay_note": "Plaćanje na info pultu vodenih sportova"
     },
@@ -62,8 +95,38 @@
     "tube": {
       "tagline": "Drži se čvrsto.",
       "description": "Adrenalinske vožnje morem — odaberi svoju tubu, uhvati drške i daj se vući valovima punom brzinom. Dostupno u više konfiguracija.",
-      "features": ["Single", "Twister", "Banana", "Family Couch", "Group Couch"],
+      "features": [
+        "Single",
+        "Twister",
+        "Banana",
+        "Family Couch",
+        "Group Couch"
+      ],
       "pricing": "Po vožnji",
+      "pay_note": "Plaćanje na info pultu vodenih sportova"
+    },
+    "jetski": {
+      "tagline": "Puna gasa na otvorenom moru.",
+      "description": "Iznajmi jet ski i prođi Jadranom na punu snagu. Guided safari ili slobodna vožnja — naši jet skijevi su uvijek spremni. Nije potrebno iskustvo, naš tim će te uputiti prije polaska.",
+      "features": [
+        "Solo najam",
+        "Guided safari",
+        "Za sve razine",
+        "Uvod u sigurnost uključen"
+      ],
+      "pricing": "Po vožnji",
+      "pay_note": "Plaćanje na info pultu vodenih sportova"
+    },
+    "scuba": {
+      "tagline": "Zaroni u drugi svijet.",
+      "description": "Istraži podmorje Jadrana uz certificiranog instruktora. Savršeno za početnike i iskusne ronioce — kristalno čista voda, bogati morski život i nevjerojatna vidljivost.",
+      "features": [
+        "Sesije za početnike",
+        "Certificirani instruktori",
+        "Oprema uključena",
+        "Za sve uzraste"
+      ],
+      "pricing": "Po sesiji",
       "pay_note": "Plaćanje na info pultu vodenih sportova"
     }
   },
@@ -112,7 +175,12 @@
     "gelato_page": {
       "tagline": "Rashladi se, zasladi se.",
       "description": "Ručno rađeni sladoled i smoothie bowlovi od svježih sastojaka. Savršena pauza između urona u more.",
-      "features": ["Sladoled", "Smoothie bowl", "Svježe voće", "Sezonski okusi"],
+      "features": [
+        "Sladoled",
+        "Smoothie bowl",
+        "Svježe voće",
+        "Sezonski okusi"
+      ],
       "hours": "9:00 – 22:00"
     }
   },
@@ -171,6 +239,9 @@
   "location": {
     "heading": "Pronađi nas.",
     "directions": "Nalazimo se na Saccorgiana plaži u Puli. Pratite oznake za \"Zeppelin Beach\" od centra grada."
+  },
+  "ui": {
+    "cards_hint": "Klikni na karticu za više detalja."
   },
   "footer": {
     "hours_title": "Radno vrijeme",

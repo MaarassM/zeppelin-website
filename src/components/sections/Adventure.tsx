@@ -1,23 +1,25 @@
-'use client'
+"use client";
 
-import { useT } from '@/lib/i18n'
-import { SectionTag } from '@/components/ui/SectionTag'
-import { AdventureCard } from '@/components/ui/AdventureCard'
+import { useT } from "@/lib/i18n";
+import { SectionTag } from "@/components/ui/SectionTag";
+import { AdventureCard } from "@/components/ui/AdventureCard";
 
 const IMAGES: Record<string, string> = {
-  jetski: '/assets/jet.jpg',
-  buggy: '/assets/buggy.jpg',
-  flyboard: '/assets/flyboard.jpg',
-  parasail: '/assets/parasailing.jpg',
-}
+  jetski: "/assets/jet.jpg",
+  buggy: "/assets/buggy.jpg",
+  flyboard: "/assets/flyboard.jpg",
+  parasail: "/assets/parasailing.jpg",
+};
 
 export function Adventure() {
-  const { t } = useT()
+  const { t } = useT();
 
   return (
-    <section id="adventure" className="bg-cream pt-12 pb-28 lg:pt-20 lg:pb-44 px-6 lg:px-[120px] relative overflow-hidden">
+    <section
+      id="adventure"
+      className="bg-cream pt-12 pb-28 lg:pt-20 lg:pb-44 px-6 lg:px-[120px] relative overflow-hidden"
+    >
       <div className="max-w-[1200px] mx-auto flex flex-col gap-8">
-
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-3">
           <div className="flex flex-col gap-2">
@@ -25,10 +27,10 @@ export function Adventure() {
             <h2 className="font-display text-dark text-[34px] lg:text-[52px] leading-none max-w-[620px]">
               {t.adventure.heading}
             </h2>
+            <p className="text-body/60 text-sm leading-relaxed">
+              {t.ui.cards_hint}
+            </p>
           </div>
-          <p className="text-muted text-sm leading-relaxed lg:w-[260px]">
-            {t.adventure.subtitle}
-          </p>
         </div>
 
         {/* Cards grid — 2col mobile, 4col desktop */}
@@ -39,15 +41,17 @@ export function Adventure() {
               name={item.name}
               url={item.url}
               ctaLabel={t.adventure.cta}
-              image={IMAGES[item.id] ?? ''}
+              image={IMAGES[item.id] ?? ""}
             />
           ))}
         </div>
-
       </div>
 
       {/* Red wave — bleeds into the Gastro section below */}
-      <div className="absolute bottom-0 left-0 right-0 z-20 leading-none" aria-hidden="true">
+      <div
+        className="absolute bottom-0 left-0 right-0 z-20 leading-none"
+        aria-hidden="true"
+      >
         <svg
           viewBox="0 0 1440 80"
           xmlns="http://www.w3.org/2000/svg"
@@ -61,5 +65,5 @@ export function Adventure() {
         </svg>
       </div>
     </section>
-  )
+  );
 }
