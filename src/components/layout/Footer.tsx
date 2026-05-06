@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { Camera, Phone, MessageCircle } from "lucide-react";
+import Link from "next/link";
+import { Phone, Mail } from "lucide-react";
 import { useT } from "@/lib/i18n";
 
 export function Footer() {
@@ -24,26 +25,54 @@ export function Footer() {
               <br />
               Saccorgiana Beach, Pula
             </p>
-            <a
-              href="https://instagram.com/zeppelin_bar_pula"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm"
-            >
-              <Camera size={16} />
-              {t.footer.instagram}
-            </a>
+            <div className="flex items-center gap-3">
+              <a
+                href="https://instagram.com/zeppelin_bar_pula"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="text-white/70 hover:text-white transition-colors"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                </svg>
+              </a>
+              <a
+                href="https://www.facebook.com/ZeppelinBeachBar"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="text-white/70 hover:text-white transition-colors"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg>
+              </a>
+            </div>
           </div>
 
           <div className="flex flex-col gap-3">
             <p className="text-white/50 text-xs tracking-widest font-semibold uppercase">
               {t.footer.hours_title}
             </p>
-            <p className="text-white/85 text-sm leading-relaxed">
-              {t.footer.hours_bar}
-              <br />
-              {t.footer.hours_sports}
+            <p className="text-white/50 text-[11px] tracking-widest uppercase font-semibold">
+              {t.footer.hours_bar_label}
             </p>
+            <div className="flex flex-col gap-1">
+              <p className="text-white/85 text-sm">{t.footer.hours_bar_summer}</p>
+              <p className="text-white/85 text-sm">{t.footer.hours_bar_spring}</p>
+              <p className="text-white/85 text-sm">{t.footer.hours_bar_autumn}</p>
+              <p className="text-white/85 text-sm">{t.footer.hours_bar_winter}</p>
+            </div>
+            <p className="text-white/50 text-[11px] tracking-widest uppercase font-semibold pt-1">
+              {t.footer.hours_sports_label}
+            </p>
+            <div className="flex flex-col gap-1">
+              <p className="text-white/85 text-sm">{t.footer.hours_sports_summer}</p>
+              <p className="text-white/85 text-sm">{t.footer.hours_sports_offseason}</p>
+            </div>
           </div>
 
           <div className="flex flex-col gap-3">
@@ -58,20 +87,25 @@ export function Footer() {
               {t.footer.phone}
             </a>
             <a
-              href="https://wa.me/385912545117"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="mailto:info@zeppelinbar.hr"
               className="flex items-center gap-2 text-white/85 hover:text-white text-sm transition-colors"
             >
-              <MessageCircle size={15} />
-              {t.footer.whatsapp}
+              <Mail size={15} />
+              {t.footer.email}
             </a>
           </div>
         </div>
 
-        <p className="text-white/35 text-xs text-center pt-6">
-          {t.footer.copyright}
-        </p>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-6">
+          <p className="text-white/35 text-xs">{t.footer.copyright}</p>
+          <span className="text-white/20 text-xs hidden sm:block">·</span>
+          <Link
+            href="/privacy"
+            className="text-white/35 text-xs hover:text-white/60 transition-colors"
+          >
+            {t.footer.privacy_link}
+          </Link>
+        </div>
       </div>
     </footer>
   );
