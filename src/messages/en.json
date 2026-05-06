@@ -28,13 +28,24 @@
     "bar_page": {
       "tagline": "Cold drinks, warm vibes.",
       "description": "Our beach bar serves handcrafted cocktails, refreshing drinks, and cold beer from morning till late. Enjoy the sea view from the terrace, find your spot at the bar, and let the music set the pace.",
-      "features": ["Cocktails", "Beer & wine", "Soft drinks", "Coffee", "Terrace"],
+      "features": [
+        "Cocktails",
+        "Beer & wine",
+        "Soft drinks",
+        "Coffee",
+        "Terrace"
+      ],
       "hours": "9:00 – 02:00"
     },
     "relax_page": {
       "tagline": "Your spot in the sun.",
       "description": "Rent a sunbed and claim your corner of paradise. Shaded terraces and open sun spots available — settle in, order a drink from the bar, and let the day unfold.",
-      "features": ["Sunbed rental", "Shaded terrace", "Sun spots", "Bar service"],
+      "features": [
+        "Sunbed rental",
+        "Shaded terrace",
+        "Sun spots",
+        "Bar service"
+      ],
       "hours": "9:00 – 19:00"
     }
   },
@@ -59,7 +70,12 @@
     "wibit": {
       "tagline": "Jump, climb, slide.",
       "description": "An inflatable obstacle course on open water — test your balance, race your friends, and battle the obstacles. Open for all ages.",
-      "features": ["Climbing walls", "Slides", "Balance beams", "Jump platforms"],
+      "features": [
+        "Climbing walls",
+        "Slides",
+        "Balance beams",
+        "Jump platforms"
+      ],
       "pricing": "1h · 3h · Day pass",
       "pay_note": "Pay at the water sports desk"
     },
@@ -73,28 +89,48 @@
     "pedaline": {
       "tagline": "Explore at your own pace.",
       "description": "Pedal boats for families and groups, stand-up paddleboards for those who like a challenge. Navigate the bay and enjoy the view.",
-      "features": ["Pedal boats", "Stand-up paddleboard (SUP)", "All levels welcome"],
+      "features": [
+        "Pedal boats",
+        "Stand-up paddleboard (SUP)",
+        "All levels welcome"
+      ],
       "pricing": "1h · 3h · Day pass",
       "pay_note": "Pay at the water sports desk"
     },
     "tube": {
       "tagline": "Hold on tight.",
       "description": "High-speed rides on the sea — pick your tube, grab the handles, and get dragged across the waves at full throttle. Multiple configurations available.",
-      "features": ["Single", "Twister", "Banana", "Family Couch", "Group Couch"],
+      "features": [
+        "Single",
+        "Twister",
+        "Banana",
+        "Family Couch",
+        "Group Couch"
+      ],
       "pricing": "Per ride",
       "pay_note": "Pay at the water sports desk"
     },
     "jetski": {
       "tagline": "Full throttle on open water.",
       "description": "Rent a jet ski and tear across the Adriatic. Whether you want a guided safari or solo exploration, our jet skis are ready to go. No experience needed — our team will brief you before you head out.",
-      "features": ["Solo rental", "Guided safari", "All levels welcome", "Safety briefing included"],
+      "features": [
+        "Solo rental",
+        "Guided safari",
+        "All levels welcome",
+        "Safety briefing included"
+      ],
       "pricing": "Per ride",
       "pay_note": "Pay at the water sports desk"
     },
     "scuba": {
       "tagline": "Dive into another world.",
       "description": "Explore the underwater Adriatic with a certified instructor by your side. Perfect for first-timers and experienced divers alike — crystal clear water, rich marine life, and unforgettable visibility.",
-      "features": ["Beginner sessions", "Certified instructors", "Equipment included", "All ages welcome"],
+      "features": [
+        "Beginner sessions",
+        "Certified instructors",
+        "Equipment included",
+        "All ages welcome"
+      ],
       "pricing": "Per session",
       "pay_note": "Pay at the water sports desk"
     }
@@ -144,7 +180,12 @@
     "gelato_page": {
       "tagline": "Cool down, sweet up.",
       "description": "Handcrafted gelato and smoothie bowls made with fresh ingredients. The perfect stop between dips in the sea.",
-      "features": ["Gelato", "Smoothie bowls", "Fresh fruit", "Seasonal flavours"],
+      "features": [
+        "Gelato",
+        "Smoothie bowls",
+        "Fresh fruit",
+        "Seasonal flavours"
+      ],
       "hours": "9:00 – 22:00"
     }
   },
@@ -202,20 +243,51 @@
   },
   "location": {
     "heading": "Find us.",
-    "directions": "We're on Saccorgiana Beach in Pula. Follow signs for \"Zeppelin Beach\" from the city centre."
+    "directions": "We're on Saccorgiana Beach in Pula. Follow signs for \"Zeppelin Beach\" from the city centre.",
+    "parking": "Free parking on-site"
+  },
+  "privacy": {
+    "page_title": "Privacy Policy",
+    "intro": "This page explains how Zeppelin Beach Complex collects, uses, and protects your personal data.",
+    "who_heading": "Who we are",
+    "who_body": "Zeppelin Beach Complex operates on Saccorgiana Beach, Pula, Croatia. Contact: info@zeppelinbar.hr",
+    "data_heading": "Data we collect",
+    "data_body": "We collect personal data only through the careers application form: full name, phone number, email address, and CV (PDF). No other personal data is collected through this website.",
+    "purpose_heading": "How we use your data",
+    "purpose_body": "Application data is used solely to review job applications. It is not used for marketing, not shared with third parties, and not sold.",
+    "retention_heading": "How long we keep it",
+    "retention_body": "CVs and application data are deleted at the end of the hiring season. If you would like your data removed sooner, contact us at info@zeppelinbar.hr.",
+    "analytics_heading": "Analytics",
+    "analytics_body": "This website uses Vercel Analytics, a cookieless analytics tool. It does not set cookies, does not collect personal identifiers, and does not perform cross-site tracking.",
+    "cookies_heading": "Cookies & local storage",
+    "cookies_body": "This website does not set personal cookies. We use browser localStorage only to remember your language preference and whether you have dismissed the cookie notice.",
+    "rights_heading": "Your rights (GDPR)",
+    "rights_body": "Under GDPR you have the right to access, correct, delete, or restrict processing of your personal data. To exercise any right, contact us at info@zeppelinbar.hr.",
+    "contact_heading": "Contact",
+    "contact_body": "For any privacy-related questions: info@zeppelinbar.hr"
   },
   "ui": {
-    "cards_hint": "Click on a card to learn more."
+    "cards_hint": "Click on a card to learn more.",
+    "cookie_notice": "We use cookieless analytics to improve your experience. No personal data is stored or sold.",
+    "cookie_learn_more": "Learn more",
+    "cookie_ok": "OK"
   },
   "footer": {
     "hours_title": "Opening hours",
-    "hours_bar": "Bar — 9:00–02:00",
-    "hours_sports": "Sports — 9:00–19:00",
+    "hours_bar_label": "Bar",
+    "hours_bar_summer": "Summer — all days — 9:00–00:00",
+    "hours_bar_spring": "Spring — all days — 9:00–22:00",
+    "hours_bar_autumn": "Autumn — Sat & Sun — 9:00–18:00",
+    "hours_bar_winter": "Winter — Sat & Sun — 9:00–18:00",
+    "hours_sports_label": "Water Sports",
+    "hours_sports_summer": "Summer — all days — 9:00–20:00",
+    "hours_sports_offseason": "Other seasons — closed",
     "contact_title": "Contact",
     "phone": "+385 91 25 45 117",
-    "whatsapp": "WhatsApp",
+    "email": "info@zeppelinbar.hr",
     "social_title": "Follow us",
     "instagram": "@zeppelin_bar_pula",
-    "copyright": "© 2025 Zeppelin Beach Complex"
+    "copyright": "© 2025 Zeppelin Beach Complex",
+    "privacy_link": "Privacy Policy"
   }
 }

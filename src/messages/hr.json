@@ -238,20 +238,51 @@
   },
   "location": {
     "heading": "Pronađi nas.",
-    "directions": "Nalazimo se na Saccorgiana plaži u Puli. Pratite oznake za \"Zeppelin Beach\" od centra grada."
+    "directions": "Nalazimo se na Saccorgiana plaži u Puli. Pratite oznake za \"Zeppelin Beach\" od centra grada.",
+    "parking": "Besplatan parking"
+  },
+  "privacy": {
+    "page_title": "Pravila privatnosti",
+    "intro": "Ova stranica objašnjava kako Zeppelin Beach Complex prikuplja, koristi i štiti vaše osobne podatke.",
+    "who_heading": "Tko smo",
+    "who_body": "Zeppelin Beach Complex posluje na Saccorgiana plaži, Pula, Hrvatska. Kontakt: info@zeppelinbar.hr",
+    "data_heading": "Koji podaci se prikupljaju",
+    "data_body": "Osobne podatke prikupljamo isključivo putem obrasca za prijavu na posao: ime i prezime, broj mobitela, email adresa i životopis (PDF). Nikakvi drugi osobni podaci se ne prikupljaju.",
+    "purpose_heading": "Svrha obrade podataka",
+    "purpose_body": "Podaci iz prijave koriste se isključivo za razmatranje kandidatura. Ne koriste se u marketinške svrhe, ne dijele se s trećim stranama i ne prodaju se.",
+    "retention_heading": "Koliko dugo čuvamo podatke",
+    "retention_body": "Životopisi i podaci iz prijava brišu se po završetku sezone zapošljavanja. Ako želite raniji brisanje podataka, kontaktirajte nas na info@zeppelinbar.hr.",
+    "analytics_heading": "Analitika",
+    "analytics_body": "Ova stranica koristi Vercel Analytics, alat za analitiku bez kolačića. Ne postavlja kolačiće, ne prikuplja osobne identifikatore i ne vrši praćenje između stranica.",
+    "cookies_heading": "Kolačići i lokalna pohrana",
+    "cookies_body": "Ova stranica ne postavlja osobne kolačiće. Koristimo localStorage preglednika isključivo za pamćenje jezičnih postavki i toga jeste li zatvorili obavijest o kolačićima.",
+    "rights_heading": "Vaša prava (GDPR)",
+    "rights_body": "Prema GDPR-u imate pravo na pristup, ispravak, brisanje ili ograničenje obrade vaših osobnih podataka. Za ostvarivanje bilo kojeg prava kontaktirajte nas na info@zeppelinbar.hr.",
+    "contact_heading": "Kontakt",
+    "contact_body": "Za sva pitanja vezana uz privatnost: info@zeppelinbar.hr"
   },
   "ui": {
-    "cards_hint": "Klikni na karticu za više detalja."
+    "cards_hint": "Klikni na karticu za više detalja.",
+    "cookie_notice": "Koristimo analitiku bez kolačića za poboljšanje iskustva. Osobni podaci se ne pohranjuju niti prodaju.",
+    "cookie_learn_more": "Saznaj više",
+    "cookie_ok": "OK"
   },
   "footer": {
     "hours_title": "Radno vrijeme",
-    "hours_bar": "Bar — 9:00–02:00",
-    "hours_sports": "Sportovi — 9:00–19:00",
+    "hours_bar_label": "Bar",
+    "hours_bar_summer": "Ljeto — svi dani — 9:00–00:00",
+    "hours_bar_spring": "Proljeće — svi dani — 9:00–22:00",
+    "hours_bar_autumn": "Jesen — sub i ned — 9:00–18:00",
+    "hours_bar_winter": "Zima — sub i ned — 9:00–18:00",
+    "hours_sports_label": "Vodeni sportovi",
+    "hours_sports_summer": "Ljeto — svi dani — 9:00–20:00",
+    "hours_sports_offseason": "Ostale sezone — zatvoreno",
     "contact_title": "Kontakt",
     "phone": "+385 91 25 45 117",
-    "whatsapp": "WhatsApp",
+    "email": "info@zeppelinbar.hr",
     "social_title": "Pratite nas",
     "instagram": "@zeppelin_bar_pula",
-    "copyright": "© 2025 Zeppelin Beach Complex"
+    "copyright": "© 2025 Zeppelin Beach Complex",
+    "privacy_link": "Pravila privatnosti"
   }
 }
