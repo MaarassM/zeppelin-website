@@ -3,6 +3,7 @@ import { Anton, Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { LocaleProvider } from "@/lib/i18n";
 import { Header } from "@/components/layout/Header";
+import { CookieNotice } from "@/components/ui/CookieNotice";
 import "@/app/globals.css";
 
 const anton = Anton({
@@ -193,7 +194,10 @@ const jsonLd = {
       },
     ],
   },
-  sameAs: ["https://www.instagram.com/zeppelin_bar_pula"],
+  sameAs: [
+    "https://www.instagram.com/zeppelin_bar_pula",
+    "https://www.facebook.com/ZeppelinBeachBar",
+  ],
 };
 
 export default function RootLayout({
@@ -211,6 +215,7 @@ export default function RootLayout({
         <LocaleProvider>
           <Header />
           {children}
+          <CookieNotice />
         </LocaleProvider>
         <Analytics />
       </body>
