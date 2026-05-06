@@ -17,6 +17,7 @@ export function BarRelax() {
       {/* Text content */}
       <div className="px-6 lg:px-[120px] pt-12 pb-28 lg:pt-20 lg:pb-44">
         <div className="max-w-[1200px] mx-auto flex flex-col xl:flex-row items-start gap-10 xl:gap-16">
+          {/* Left: title + CTA (button visible on xl+) */}
           <div className="flex flex-col gap-5 xl:w-[480px] shrink-0">
             <SectionTag>{t.bar.tag}</SectionTag>
             <h2 className="font-display text-dark text-[34px] lg:text-[52px] leading-none">
@@ -25,9 +26,15 @@ export function BarRelax() {
             <p className="text-body/60 text-sm leading-relaxed">
               {t.ui.cards_hint}
             </p>
+            <button
+              onClick={() => setMenuOpen(true)}
+              className="hidden xl:flex self-start items-center justify-center h-12 px-8 bg-red text-white font-display text-sm tracking-widest rounded-lg hover:bg-red-dark transition-colors cursor-pointer"
+            >
+              {t.bar.menu_btn.toUpperCase()} →
+            </button>
           </div>
 
-          {/* Right: 2 photo cards + button */}
+          {/* Right: 2 photo cards + button (button visible on mobile only) */}
           <div className="flex flex-col gap-4 w-full lg:flex-1">
             <div className="grid grid-cols-2 gap-4">
               <Link
@@ -69,7 +76,7 @@ export function BarRelax() {
             </div>
             <button
               onClick={() => setMenuOpen(true)}
-              className="self-start flex items-center justify-center h-12 px-8 bg-red text-white font-display text-sm tracking-widest rounded-lg hover:bg-red-dark transition-colors cursor-pointer"
+              className="xl:hidden self-start flex items-center justify-center h-12 px-8 bg-red text-white font-display text-sm tracking-widest rounded-lg hover:bg-red-dark transition-colors cursor-pointer"
             >
               {t.bar.menu_btn.toUpperCase()} →
             </button>

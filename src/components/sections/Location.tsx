@@ -1,5 +1,6 @@
 "use client";
 
+import { ParkingCircle } from "lucide-react";
 import { useT } from "@/lib/i18n";
 import { SectionTag } from "@/components/ui/SectionTag";
 
@@ -19,6 +20,10 @@ export function Location() {
         <p className="text-body text-sm max-w-[500px] leading-relaxed">
           {t.location.directions}
         </p>
+        <div className="flex items-center gap-2 text-red">
+          <ParkingCircle size={18} strokeWidth={2} />
+          <span className="font-display text-sm tracking-wide">{t.location.parking}</span>
+        </div>
         <div className="w-full h-64 lg:h-96 rounded-2xl overflow-hidden bg-border">
           <iframe
             title="Zeppelin Beach location"

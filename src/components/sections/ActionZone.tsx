@@ -1,14 +1,6 @@
 "use client";
 
-import {
-  Waves,
-  ChevronsUp,
-  Sailboat,
-  Wind,
-  Info,
-  Zap,
-  Fish,
-} from "lucide-react";
+import { Waves, ChevronsUp, Sailboat, Wind, Zap, Fish } from "lucide-react";
 import { LucideIcon } from "lucide-react";
 import { useT } from "@/lib/i18n";
 import { SectionTag } from "@/components/ui/SectionTag";

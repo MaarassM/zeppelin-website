@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Menu } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { useT } from "@/lib/i18n";
 import { MobileMenu } from "./MobileMenu";
 import { trackOutbound } from "@/lib/analytics";
@@ -17,11 +18,23 @@ const NAV_ITEMS = [
 
 export function Header() {
   const { t, locale, setLocale } = useT();
+  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    function onScroll() {
+      setScrolled(window.scrollY > 20);
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  if (pathname === "/careers") return null;
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-40 bg-red h-16 flex items-center">
+      <header className={`fixed top-0 left-0 right-0 z-40 h-16 flex items-center transition-colors duration-300 ${scrolled ? "bg-red" : "bg-transparent"}`}>
         <div className="w-full max-w-[1400px] mx-auto px-5 lg:px-[60px] flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
@@ -41,7 +54,7 @@ export function Header() {
               <a
                 key={key}
                 href={href}
-                className="text-white/85 text-sm font-semibold tracking-wide hover:text-white transition-colors"
+                className={`text-sm font-semibold tracking-wide transition-colors ${scrolled ? "text-white/85 hover:text-white" : "text-white hover:text-white/70"}`}
               >
                 {t.nav[key]}
               </a>
@@ -58,7 +71,7 @@ export function Header() {
                   className={`text-xs font-semibold px-2 py-1 rounded cursor-pointer transition-colors ${
                     locale === l
                       ? "text-white"
-                      : "text-white/55 hover:text-white/80"
+                      : scrolled ? "text-white/55 hover:text-white/80" : "text-white/70 hover:text-white"
                   }`}
                 >
                   {l.toUpperCase()}
@@ -83,8 +96,8 @@ export function Header() {
                 <button
                   key={l}
                   onClick={() => setLocale(l)}
-                  className={`text-xs font-semibold px-1.5 py-1 cursor-pointer ${
-                    locale === l ? "text-white" : "text-white/50"
+                  className={`text-xs font-semibold px-1.5 py-1 cursor-pointer transition-colors ${
+                    locale === l ? "text-white" : scrolled ? "text-white/50" : "text-white/70"
                   }`}
                 >
                   {l.toUpperCase()}

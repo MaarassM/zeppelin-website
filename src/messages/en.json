@@ -239,7 +239,8 @@
     "cv_label": "CV (PDF)",
     "notes_label": "Additional notes",
     "submit_btn": "Submit Application",
-    "success_msg": "Thank you! We'll be in touch soon."
+    "success_msg": "Thank you! We'll be in touch soon.",
+    "skipper_notice": "A valid skipper licence is required for this position."
   },
   "location": {
     "heading": "Find us.",

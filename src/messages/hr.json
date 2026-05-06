@@ -234,7 +234,8 @@
     "cv_label": "Životopis (PDF)",
     "notes_label": "Dodatne napomene",
     "submit_btn": "Pošalji Prijavu",
-    "success_msg": "Hvala! Kontaktirat ćemo te uskoro."
+    "success_msg": "Hvala! Kontaktirat ćemo te uskoro.",
+    "skipper_notice": "Za ovu poziciju potrebna je važeća skipperska dozvola."
   },
   "location": {
     "heading": "Pronađi nas.",

@@ -31,7 +31,7 @@ export default function FoodPage() {
       {/* Hero */}
       <div className="bg-red px-6 py-14 text-center relative">
         <a
-          href="/"
+          href="/#gastro"
           className="absolute left-6 top-1/2 -translate-y-1/2 font-display text-white/60 text-[11px] tracking-[0.25em] uppercase hover:text-white transition-colors"
         >
           ← Natrag
@@ -130,10 +130,10 @@ export default function FoodPage() {
 
       <div className="border-t border-border py-10 text-center">
         <a
-          href="/"
+          href="/#gastro"
           className="font-display text-[11px] tracking-[0.3em] uppercase text-muted hover:text-dark transition-colors"
         >
-          ← Nazad na stranicu
+          ← Natrag
         </a>
       </div>
     </div>

@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 export default function CareersPage() {
   return (
-    <div className="min-h-screen bg-cream pt-16">
+    <div className="min-h-screen bg-cream">
       <CareersPageClient />
     </div>
   );

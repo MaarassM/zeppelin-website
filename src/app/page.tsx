@@ -10,7 +10,7 @@ import { Location }   from '@/components/sections/Location'
 export default function HomePage() {
   return (
     <>
-      <main className="pt-16">
+      <main>
         <Hero />
         <BarRelax />
         <ActionZone />

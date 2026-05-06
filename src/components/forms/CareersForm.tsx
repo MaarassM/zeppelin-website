@@ -222,6 +222,12 @@ export function CareersForm({
         <p className="font-display text-dark text-xl">{position}</p>
       </div>
 
+      {position?.toLowerCase() === "skipper" && (
+        <div className="bg-amber-50 border border-amber-200 rounded-xl px-5 py-4">
+          <p className="text-sm text-amber-800">{t.careers.skipper_notice}</p>
+        </div>
+      )}
+
       <div className="flex flex-col gap-1.5">
         <label className={labelCls}>{t.careers.name_label}</label>
         <input {...register("name")} className={inputCls} />
