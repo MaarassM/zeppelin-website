@@ -31,6 +31,7 @@ const schema = z.object({
   phone: z.string().min(6, "Obavezno"),
   email: z.string().email("Neispravan email"),
   notes: z.string().max(500).optional(),
+  website: z.string().optional(), // honeypot
 });
 
 type FormData = z.infer<typeof schema>;
@@ -78,14 +79,22 @@ export function CareersForm({
     formData.append("position", position);
     if (data.notes) formData.append("notes", data.notes);
     if (cvRef[0]?.[0]) formData.append("cv", cvRef[0][0]);
+    formData.append("website", data.website ?? "");
 
-    const res = await fetch("/api/careers", { method: "POST", body: formData });
-
-    setSubmitting(false);
-    if (res.ok) {
-      setSubmitted(true);
-    } else {
+    try {
+      const res = await fetch("/api/careers", {
+        method: "POST",
+        body: formData,
+      });
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        setServerError(true);
+      }
+    } catch {
       setServerError(true);
+    } finally {
+      setSubmitting(false);
     }
   }
 
@@ -174,7 +183,10 @@ export function CareersForm({
               <span className="font-display text-dark text-base tracking-wide group-hover:text-red transition-colors">
                 {role}
               </span>
-              <ArrowRight size={16} className="text-muted group-hover:text-red transition-colors" />
+              <ArrowRight
+                size={16}
+                className="text-muted group-hover:text-red transition-colors"
+              />
             </button>
           ))}
         </div>
@@ -185,6 +197,15 @@ export function CareersForm({
   // Step 3: Application form
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5">
+      {/* honeypot — hidden from humans, filled by bots */}
+      <input
+        {...register("website")}
+        type="text"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        style={{ display: "none", position: "absolute", left: "-9999px" }}
+      />
       <button
         type="button"
         onClick={() => onPositionSelect(null)}

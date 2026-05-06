@@ -29,6 +29,10 @@ export const metadata: Metadata = {
     "vodeni sportovi pula",
     "jet ski pula",
   ],
+  alternates: {
+    // TODO: confirm production URL before launch
+    canonical: "https://zeppelinbar.com",
+  },
   openGraph: {
     title: "Zeppelin Beach Complex",
     description: "Tvoja baza za chill i polazište za svaku avanturu.",
@@ -36,6 +40,8 @@ export const metadata: Metadata = {
     siteName: "Zeppelin Beach Complex",
     locale: "hr_HR",
     type: "website",
+    // TODO: replace with final production OG image URL before launch
+    images: [{ url: "https://zeppelinbar.com/assets/hero.jpg", width: 1280, height: 853 }],
   },
 };
 
