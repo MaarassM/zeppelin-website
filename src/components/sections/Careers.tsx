@@ -30,20 +30,16 @@ export function Careers() {
 
         {/* Right: photo */}
         <div className="w-full md:flex-1">
-          <Link
-            href="/careers"
-            className="relative flex flex-col justify-end gap-1 p-4 rounded-xl overflow-hidden min-h-[240px] md:min-h-[280px] xl:min-h-[320px] block"
-          >
+          <div className="relative rounded-xl overflow-hidden min-h-[240px] md:min-h-[280px] xl:min-h-[320px]">
             <Image
               src="/assets/employee.jpg"
               alt="Join the Zeppelin team"
               fill
-              className="object-cover transition-transform duration-500 hover:scale-105"
+              className="object-cover"
               sizes="(max-width: 1280px) 100vw, 600px"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-            <div className="absolute inset-0 bg-white/0 hover:bg-white/10 transition-colors duration-200" />
-          </Link>
+          </div>
         </div>
       </div>
       {/* Cream wave — bleeds into the Location section below */}
