@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Clock } from "lucide-react";
 import { useT } from "@/lib/i18n";
+import { ActivityGallery } from "@/components/ui/ActivityGallery";
 
 const CONFIG = {
   bar: {
@@ -21,9 +22,10 @@ const CONFIG = {
 interface BarPageClientProps {
   item: "bar" | "relax";
   name: string;
+  gallery?: string[];
 }
 
-export function BarPageClient({ item, name }: BarPageClientProps) {
+export function BarPageClient({ item, name, gallery = [] }: BarPageClientProps) {
   const { t } = useT();
   const { image, pageKey, tag } = CONFIG[item];
   const page = t.bar[pageKey];
@@ -108,6 +110,8 @@ export function BarPageClient({ item, name }: BarPageClientProps) {
             </div>
           </div>
         </div>
+
+        <ActivityGallery images={gallery} />
       </div>
     </div>
   );

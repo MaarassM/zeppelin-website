@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ZonePageClient } from "@/components/ui/ZonePageClient";
+import { galleryImages } from "@/data/gallery";
 
 export const metadata: Metadata = {
   title: "Trampolin na Vodi Pula | Zeppelin Beach",
@@ -25,5 +26,5 @@ export const metadata: Metadata = {
 };
 
 export default function TrampolinePage() {
-  return <ZonePageClient zoneId="tramp" name="Trampoline" />;
+  return <ZonePageClient zoneId="tramp" name="Trampoline" gallery={galleryImages.tramp ?? []} />;
 }

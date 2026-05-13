@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ZonePageClient } from "@/components/ui/ZonePageClient";
+import { galleryImages } from "@/data/gallery";
 
 export const metadata: Metadata = {
   title: "Ronjenje Pula | Scuba Diving | Zeppelin Beach",
@@ -26,5 +27,5 @@ export const metadata: Metadata = {
 };
 
 export default function ScubaPage() {
-  return <ZonePageClient zoneId="scuba" name="Scuba Diving" />;
+  return <ZonePageClient zoneId="scuba" name="Scuba Diving" gallery={galleryImages.scuba ?? []} />;
 }

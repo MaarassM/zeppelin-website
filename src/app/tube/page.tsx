@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ZonePageClient } from "@/components/ui/ZonePageClient";
+import { galleryImages } from "@/data/gallery";
 
 export const metadata: Metadata = {
   title: "Tube Rides Pula | Zeppelin Beach",
@@ -26,5 +27,5 @@ export const metadata: Metadata = {
 };
 
 export default function TubePage() {
-  return <ZonePageClient zoneId="tube" name="Tube Rides" />;
+  return <ZonePageClient zoneId="tube" name="Tube Rides" gallery={galleryImages.tube ?? []} />;
 }

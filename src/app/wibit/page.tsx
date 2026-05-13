@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ZonePageClient } from "@/components/ui/ZonePageClient";
+import { galleryImages } from "@/data/gallery";
 
 export const metadata: Metadata = {
   title: "Wibit Park Pula | Zeppelin Beach",
@@ -25,5 +26,5 @@ export const metadata: Metadata = {
 };
 
 export default function WibitPage() {
-  return <ZonePageClient zoneId="wibit" name="Wibit Park" />;
+  return <ZonePageClient zoneId="wibit" name="Wibit Park" gallery={galleryImages.wibit ?? []} />;
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { BarPageClient } from "@/components/ui/BarPageClient";
+import { galleryImages } from "@/data/gallery";
 
 export const metadata: Metadata = {
   title: "Bar | Zeppelin Beach Pula",
@@ -26,5 +27,5 @@ export const metadata: Metadata = {
 };
 
 export default function BarPage() {
-  return <BarPageClient item="bar" name="Bar" />;
+  return <BarPageClient item="bar" name="Bar" gallery={galleryImages.bar ?? []} />;
 }

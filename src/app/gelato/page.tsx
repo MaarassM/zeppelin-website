@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { GastroPageClient } from "@/components/ui/GastroPageClient";
+import { galleryImages } from "@/data/gallery";
 
 export const metadata: Metadata = {
   title: "Gelato Bar Pula | Sladoled | Zeppelin Beach",
@@ -25,5 +26,5 @@ export const metadata: Metadata = {
 };
 
 export default function GelatoPage() {
-  return <GastroPageClient item="gelato" name="Gelato Bar" />;
+  return <GastroPageClient item="gelato" name="Gelato Bar" gallery={galleryImages.gelato ?? []} />;
 }

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, MapPin } from "lucide-react";
 import { useT } from "@/lib/i18n";
+import { ActivityGallery } from "@/components/ui/ActivityGallery";
 
 const IMAGES: Record<string, string> = {
   wibit: "/assets/wibit.jpg",
@@ -17,9 +18,10 @@ const IMAGES: Record<string, string> = {
 interface ZonePageClientProps {
   zoneId: "wibit" | "tramp" | "pedaline" | "tube" | "jetski" | "scuba";
   name: string;
+  gallery?: string[];
 }
 
-export function ZonePageClient({ zoneId, name }: ZonePageClientProps) {
+export function ZonePageClient({ zoneId, name, gallery = [] }: ZonePageClientProps) {
   const { t } = useT();
   const zone = t.zones[zoneId];
   const image = IMAGES[zoneId];
@@ -107,6 +109,8 @@ export function ZonePageClient({ zoneId, name }: ZonePageClientProps) {
             </div>
           </div>
         </div>
+
+        <ActivityGallery images={gallery} />
       </div>
     </div>
   );

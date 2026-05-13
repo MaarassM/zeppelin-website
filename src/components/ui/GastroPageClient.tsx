@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Clock } from "lucide-react";
 import { useT } from "@/lib/i18n";
+import { ActivityGallery } from "@/components/ui/ActivityGallery";
 
 const CONFIG = {
   fastfood: {
@@ -21,9 +22,10 @@ const CONFIG = {
 interface GastroPageClientProps {
   item: "fastfood" | "gelato";
   name: string;
+  gallery?: string[];
 }
 
-export function GastroPageClient({ item, name }: GastroPageClientProps) {
+export function GastroPageClient({ item, name, gallery = [] }: GastroPageClientProps) {
   const { t } = useT();
   const { image, pageKey, tag } = CONFIG[item];
   const page = t.gastro[pageKey];
@@ -116,6 +118,8 @@ export function GastroPageClient({ item, name }: GastroPageClientProps) {
             </div>
           </div>
         </div>
+
+        <ActivityGallery images={gallery} />
       </div>
     </div>
   );

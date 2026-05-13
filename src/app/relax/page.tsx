@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { BarPageClient } from "@/components/ui/BarPageClient";
+import { galleryImages } from "@/data/gallery";
 
 export const metadata: Metadata = {
   title: "Sunbeds & Relax | Zeppelin Beach Pula",
@@ -26,5 +27,5 @@ export const metadata: Metadata = {
 };
 
 export default function RelaxPage() {
-  return <BarPageClient item="relax" name="Sunbeds & Relax" />;
+  return <BarPageClient item="relax" name="Sunbeds & Relax" gallery={galleryImages.relax ?? []} />;
 }

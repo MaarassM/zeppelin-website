@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ZonePageClient } from "@/components/ui/ZonePageClient";
+import { galleryImages } from "@/data/gallery";
 
 export const metadata: Metadata = {
   title: "Pedaline & SUP Pula | Zeppelin Beach",
@@ -25,5 +26,5 @@ export const metadata: Metadata = {
 };
 
 export default function PedalinePage() {
-  return <ZonePageClient zoneId="pedaline" name="Pedal Boat & SUP" />;
+  return <ZonePageClient zoneId="pedaline" name="Pedal Boat & SUP" gallery={galleryImages.pedaline ?? []} />;
 }
