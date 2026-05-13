@@ -57,11 +57,8 @@
       { "id": "wibit", "name": "Wibit Park", "pricing": "1h · 3h · Day" },
       { "id": "jetski", "name": "Jet Ski", "pricing": "Per ride" },
       { "id": "tube", "name": "Tube rides", "pricing": "1h · 3h · Day" },
-      {
-        "id": "pedaline",
-        "name": "Pedal Boat & SUP",
-        "pricing": "1h · 3h · Day"
-      },
+      { "id": "pedaline", "name": "Pedal Boat", "pricing": "1h · 3h · Day" },
+      { "id": "sup", "name": "SUP & Kayak", "pricing": "1h · 3h · Day" },
       { "id": "tramp", "name": "Trampoline", "pricing": "1h · 3h · Day" },
       { "id": "scuba", "name": "Scuba Diving", "pricing": "Per session" }
     ]
@@ -88,11 +85,19 @@
     },
     "pedaline": {
       "tagline": "Explore at your own pace.",
-      "description": "Pedal boats for families and groups, stand-up paddleboards for those who like a challenge. Navigate the bay and enjoy the view.",
+      "description": "Pedal boats for families and groups — a relaxed way to navigate the bay and soak in the view. No experience needed.",
+      "features": ["Pedal boats", "Family-friendly", "All levels welcome"],
+      "pricing": "1h · 3h · Day pass",
+      "pay_note": "Pay at the water sports desk"
+    },
+    "sup": {
+      "tagline": "Stand up, paddle out.",
+      "description": "Stand-up paddleboarding and kayaking in the clear Adriatic waters. A great full-body workout or a slow cruise along the coast — your call.",
       "features": [
-        "Pedal boats",
         "Stand-up paddleboard (SUP)",
-        "All levels welcome"
+        "Kayak",
+        "All levels welcome",
+        "Equipment included"
       ],
       "pricing": "1h · 3h · Day pass",
       "pay_note": "Pay at the water sports desk"

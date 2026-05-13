@@ -56,11 +56,8 @@
       { "id": "wibit", "name": "Wibit Park", "pricing": "1h · 3h · Dan" },
       { "id": "jetski", "name": "Jet Ski", "pricing": "Po vožnji" },
       { "id": "tube", "name": "Tube rides", "pricing": "1h · 3h · Dan" },
-      {
-        "id": "pedaline",
-        "name": "Pedaline & SUP",
-        "pricing": "1h · 3h · Dan"
-      },
+      { "id": "pedaline", "name": "Pedaline", "pricing": "1h · 3h · Dan" },
+      { "id": "sup", "name": "SUP & Kajak", "pricing": "1h · 3h · Dan" },
       { "id": "tramp", "name": "Trampolin", "pricing": "1h · 3h · Dan" },
       { "id": "scuba", "name": "Ronjenje", "pricing": "Po sesiji" }
     ]
@@ -87,8 +84,20 @@
     },
     "pedaline": {
       "tagline": "Istraži vlastitim tempom.",
-      "description": "Pedaline za obitelj i grupe, SUP daske za one koji vole izazov. Prošetaj uvalom i uživaj u pogledu.",
-      "features": ["Pedaline", "Stand-up paddleboard (SUP)", "Za sve razine"],
+      "description": "Pedaline za obitelji i grupe — opušteni način za prošetati uvaluom i uživati u pogledu. Nije potrebno iskustvo.",
+      "features": ["Pedaline", "Za obitelji", "Za sve razine"],
+      "pricing": "1h · 3h · Dnevna karta",
+      "pay_note": "Plaćanje na info pultu vodenih sportova"
+    },
+    "sup": {
+      "tagline": "Ustani, zavesaj.",
+      "description": "Stand-up paddleboarding i kajakanje na bistrom Jadranu. Odličan trening za cijelo tijelo ili lagana vožnja uz obalu — kako god ti odgovara.",
+      "features": [
+        "Stand-up paddleboard (SUP)",
+        "Kajak",
+        "Za sve razine",
+        "Oprema uključena"
+      ],
       "pricing": "1h · 3h · Dnevna karta",
       "pay_note": "Plaćanje na info pultu vodenih sportova"
     },

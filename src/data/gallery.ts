@@ -1,20 +1,19 @@
 export const galleryImages: Record<string, string[]> = {
   jetski: [
     "/assets/Jet/IMG_1236.JPG",
-    "/assets/Jet/IMG_1237.JPG",
-    "/assets/Jet/IMG_1238.JPG",
-    "/assets/Jet/IMG_1239.JPG",
     "/assets/Jet/IMG_1240.JPG",
-    "/assets/Jet/IMG_1241.JPG",
     "/assets/Jet/IMG_1242.JPG",
-    "/assets/Jet/IMG_1243.JPG",
-    "/assets/Jet/IMG_1244.JPG",
-    "/assets/Jet/IMG_1245.JPG",
-    "/assets/Jet/IMG_1246.JPG",
     "/assets/Jet/IMG_1247.JPG",
     "/assets/Jet/IMG_1248.JPG",
     "/assets/Jet/IMG_1249.JPG",
-    "/assets/Jet/IMG_1250.JPG",
+    "/assets/Jet/IMG_1258.JPG",
+    "/assets/Jet/IMG_1259.JPG",
+    "/assets/Jet/IMG_1264.JPG",
+    "/assets/Jet/IMG_1267.JPG",
+    "/assets/Jet/IMG_1268.JPG",
+    "/assets/Jet/IMG_1535.JPG",
+    "/assets/Jet/IMG_1536.JPG",
+    "/assets/Jet/IMG_1537.JPG",
   ],
   wibit: [
     "/assets/Wibit/IMG_1269.JPG",
@@ -31,9 +30,7 @@ export const galleryImages: Record<string, string[]> = {
     "/assets/Wibit/IMG_1280.JPG",
     "/assets/Wibit/IMG_1281.JPG",
   ],
-  tramp: [
-    "/assets/Trampolin/IMG_1181.JPG",
-  ],
+  tramp: ["/assets/Trampolin/IMG_1181.JPG"],
   tube: [
     "/assets/Tube/IMG_1221.JPG",
     "/assets/Tube/IMG_1222.JPG",
@@ -57,6 +54,8 @@ export const galleryImages: Record<string, string[]> = {
     "/assets/Pedalina/IMG_1530.JPG",
     "/assets/Pedalina/IMG_1531.JPG",
     "/assets/Pedalina/IMG_1532.JPG",
+  ],
+  sup: [
     "/assets/Sup kayak/IMG_1208.JPG",
     "/assets/Sup kayak/IMG_1210.JPG",
     "/assets/Sup kayak/IMG_1211.JPG",
@@ -85,17 +84,13 @@ export const galleryImages: Record<string, string[]> = {
     "/assets/Kafic/IMG_1566.JPG",
   ],
   relax: [
-    "/assets/Lezaljke/IMG_1588.JPG",
-    "/assets/Lezaljke/IMG_1589.JPG",
     "/assets/Lezaljke/IMG_1590.JPG",
     "/assets/Lezaljke/IMG_1591.JPG",
+    "/assets/Lezaljke/IMG_1566.JPG",
     "/assets/Lezaljke/IMG_1592.JPG",
+
     "/assets/Lezaljke/IMG_1593.JPG",
-    "/assets/Lezaljke/IMG_1594.JPG",
     "/assets/Lezaljke/IMG_1595.JPG",
-    "/assets/Lezaljke/IMG_1596.JPG",
-    "/assets/Lezaljke/IMG_1597.JPG",
-    "/assets/Lezaljke/IMG_1598.JPG",
   ],
   fastfood: [
     "/assets/Fast/IMG_1154.JPG",

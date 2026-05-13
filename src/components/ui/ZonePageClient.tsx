@@ -10,13 +10,14 @@ const IMAGES: Record<string, string> = {
   wibit: "/assets/wibit.jpg",
   tramp: "/assets/trampoline.jpg",
   pedaline: "/assets/pedaline.jpg",
+  sup: "/assets/Sup kayak/IMG_1208.JPG",
   tube: "/assets/tube.jpg",
   jetski: "/assets/jet-ski.jpg",
   scuba: "/assets/scuba-diving.jpg",
 };
 
 interface ZonePageClientProps {
-  zoneId: "wibit" | "tramp" | "pedaline" | "tube" | "jetski" | "scuba";
+  zoneId: "wibit" | "tramp" | "pedaline" | "sup" | "tube" | "jetski" | "scuba";
   name: string;
   gallery?: string[];
 }

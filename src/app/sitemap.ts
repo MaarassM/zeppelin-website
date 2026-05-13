@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/tube`, priority: 0.8, changeFrequency: "monthly" },
     { url: `${BASE}/scuba`, priority: 0.8, changeFrequency: "monthly" },
     { url: `${BASE}/pedaline`, priority: 0.8, changeFrequency: "monthly" },
+    { url: `${BASE}/sup`, priority: 0.8, changeFrequency: "monthly" },
     { url: `${BASE}/trampoline`, priority: 0.8, changeFrequency: "monthly" },
     { url: `${BASE}/fastfood`, priority: 0.7, changeFrequency: "monthly" },
     { url: `${BASE}/gelato`, priority: 0.7, changeFrequency: "monthly" },
