@@ -1,6 +1,15 @@
 "use client";
 
-import { Waves, ChevronsUp, Sailboat, Wind, Zap, Fish } from "lucide-react";
+import {
+  Waves,
+  ChevronsUp,
+  Sailboat,
+  Wind,
+  Zap,
+  Fish,
+  Droplet,
+  Kayak,
+} from "lucide-react";
 import { LucideIcon } from "lucide-react";
 import { useT } from "@/lib/i18n";
 import { SectionTag } from "@/components/ui/SectionTag";
@@ -10,20 +19,22 @@ const ICONS: Record<string, LucideIcon> = {
   wibit: Waves,
   tramp: ChevronsUp,
   pedaline: Sailboat,
-  sup: Sailboat,
+  sup: Kayak,
   tube: Wind,
   jetski: Zap,
   scuba: Fish,
+  flyboard: Droplet,
 };
 
 const IMAGES: Record<string, string> = {
   wibit: "/assets/wibit.jpg",
-  tramp: "/assets/trampoline.jpg",
-  pedaline: "/assets/pedaline.jpg",
-  sup: "/assets/Sup kayak/IMG_1208.JPG",
+  tramp: "/assets/Trampolin/IMG_1181.JPG",
+  pedaline: "/assets/Pedalina/IMG_1532.JPG",
+  sup: "/assets/pedaline.jpg",
   tube: "/assets/tube.jpg",
   jetski: "/assets/jet-ski.jpg",
   scuba: "/assets/scuba-diving.jpg",
+  flyboard: "/assets/Flyboard/IMG_1528.JPG",
 };
 
 const HREFS: Record<string, string> = {
@@ -34,6 +45,7 @@ const HREFS: Record<string, string> = {
   tube: "/tube",
   jetski: "/jetski",
   scuba: "/scuba",
+  flyboard: "/flyboard",
 };
 
 export function ActionZone() {

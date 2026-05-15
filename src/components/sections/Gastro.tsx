@@ -99,6 +99,7 @@ export function Gastro() {
         src="/assets/menus/food-menu.pdf"
         isOpen={menuOpen}
         onClose={() => setMenuOpen(false)}
+        title="Food Menu"
       />
 
       {/* Dark wave — bleeds into the Careers section below */}

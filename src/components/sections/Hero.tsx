@@ -1,12 +1,15 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
+import { ArrowUpRight, Clock, X } from "lucide-react";
 import { useT } from "@/lib/i18n";
 import { Button } from "@/components/ui/Button";
 import { trackOutbound } from "@/lib/analytics";
 
 export function Hero() {
   const { t } = useT();
+  const [hoursOpen, setHoursOpen] = useState(false);
 
   return (
     <section className="relative w-full h-[95dvh] flex flex-col items-center justify-center overflow-hidden pb-16 lg:pb-24">
@@ -31,7 +34,7 @@ export function Hero() {
           width={360}
           height={130}
           sizes="(max-width: 640px) 240px, (max-width: 1024px) 280px, 360px"
-          className="h-72 sm:h-60 lg:h-72 w-auto"
+          className="h-48 sm:h-60 lg:h-72 w-auto"
           priority
         />
         <Button
@@ -39,24 +42,100 @@ export function Hero() {
           href="https://www.google.com/maps/search/Zeppelin+Beach+lounge+bar+Pula"
           target="_blank"
           rel="noopener noreferrer"
-          variant="outline"
+          variant="solid-red"
           onClick={() => trackOutbound("hero-maps")}
           className="font-display tracking-widest text-sm lg:text-base"
         >
-          {t.hero.find_us.toUpperCase()} ↗
+          {t.hero.find_us.toUpperCase()}{" "}
+          <ArrowUpRight size={16} className="ml-1" />
         </Button>
         <Button
           as="a"
           href="https://www.zeppelin-adventure.com"
           target="_blank"
           rel="noopener noreferrer"
-          variant="primary"
+          variant="cream"
           onClick={() => trackOutbound("hero-cta")}
           className="font-display tracking-widest text-sm lg:text-base"
         >
-          {t.nav.rezerviraj.toUpperCase()} ↗
+          {t.nav.rezerviraj.toUpperCase()}{" "}
+          <ArrowUpRight size={16} className="ml-1" />
         </Button>
+        <button
+          onClick={() => setHoursOpen(true)}
+          className="flex items-center gap-2 px-6 py-2.5 rounded-lg border border-white/40 text-white hover:border-white hover:bg-white/10 text-xs font-display tracking-widest uppercase transition-all"
+        >
+          <Clock size={13} />
+          {t.hero.hours_btn}
+        </button>
       </div>
+
+      {/* Working Hours Modal */}
+      {hoursOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-6"
+          onClick={() => setHoursOpen(false)}
+        >
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+          <div
+            className="relative bg-cream rounded-2xl p-8 w-full max-w-sm shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setHoursOpen(false)}
+              className="absolute top-4 right-4 text-dark/40 hover:text-dark transition-colors"
+              aria-label="Close"
+            >
+              <X size={18} />
+            </button>
+
+            <div className="flex items-center gap-2 mb-6">
+              <Clock size={16} className="text-red" />
+              <p className="font-display text-dark text-lg tracking-widest uppercase">
+                {t.footer.hours_title}
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-5">
+              <div className="flex flex-col gap-2">
+                <p className="text-dark/40 text-[10px] tracking-widest uppercase font-semibold">
+                  {t.footer.hours_bar_label}
+                </p>
+                <div className="flex flex-col gap-1">
+                  <p className="text-dark/80 text-sm">
+                    {t.footer.hours_bar_summer}
+                  </p>
+                  <p className="text-dark/80 text-sm">
+                    {t.footer.hours_bar_spring}
+                  </p>
+                  <p className="text-dark/80 text-sm">
+                    {t.footer.hours_bar_autumn}
+                  </p>
+                  <p className="text-dark/80 text-sm">
+                    {t.footer.hours_bar_winter}
+                  </p>
+                </div>
+              </div>
+
+              <div className="border-t border-dark/10" />
+
+              <div className="flex flex-col gap-2">
+                <p className="text-dark/40 text-[10px] tracking-widest uppercase font-semibold">
+                  {t.footer.hours_sports_label}
+                </p>
+                <div className="flex flex-col gap-1">
+                  <p className="text-dark/80 text-sm">
+                    {t.footer.hours_sports_summer}
+                  </p>
+                  <p className="text-dark/80 text-sm">
+                    {t.footer.hours_sports_offseason}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Scroll cue — animated vertical line, suppressed by prefers-reduced-motion */}
       <div

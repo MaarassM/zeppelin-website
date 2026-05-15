@@ -7,9 +7,10 @@ interface PdfModalProps {
   src: string;
   isOpen: boolean;
   onClose: () => void;
+  title?: string;
 }
 
-export function PdfModal({ src, isOpen, onClose }: PdfModalProps) {
+export function PdfModal({ src, isOpen, onClose, title = "Menu" }: PdfModalProps) {
   useEffect(() => {
     if (!isOpen) return;
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
@@ -35,7 +36,7 @@ export function PdfModal({ src, isOpen, onClose }: PdfModalProps) {
         {/* Header bar */}
         <div className="flex items-center justify-between px-6 py-4 bg-red shrink-0">
           <span className="font-display text-white tracking-widest text-sm uppercase">
-            Bar Menu
+            {title}
           </span>
           <button
             onClick={onClose}
@@ -50,7 +51,7 @@ export function PdfModal({ src, isOpen, onClose }: PdfModalProps) {
         <iframe
           src={src}
           className="flex-1 w-full border-none"
-          title="Bar Menu PDF"
+          title={`${title} PDF`}
         />
       </div>
     </div>

@@ -26,5 +26,5 @@ export const metadata: Metadata = {
 };
 
 export default function SupPage() {
-  return <ZonePageClient zoneId="sup" name="SUP & Kayak" gallery={galleryImages.sup ?? []} />;
+  return <ZonePageClient zoneId="sup" name="SUP & Kayak" gallery={galleryImages.sup ?? []} hidePricing />;
 }

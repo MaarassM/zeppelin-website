@@ -27,5 +27,5 @@ export const metadata: Metadata = {
 };
 
 export default function TubePage() {
-  return <ZonePageClient zoneId="tube" name="Tube Rides" gallery={galleryImages.tube ?? []} />;
+  return <ZonePageClient zoneId="tube" name="Tube Rides" gallery={galleryImages.tube ?? []} hidePricing />;
 }

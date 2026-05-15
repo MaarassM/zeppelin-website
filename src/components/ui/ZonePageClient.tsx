@@ -8,21 +8,40 @@ import { ActivityGallery } from "@/components/ui/ActivityGallery";
 
 const IMAGES: Record<string, string> = {
   wibit: "/assets/wibit.jpg",
-  tramp: "/assets/trampoline.jpg",
-  pedaline: "/assets/pedaline.jpg",
+  tramp: "/assets/Trampolin/IMG_1181.JPG",
+  pedaline: "/assets/Pedalina/IMG_1530.JPG",
   sup: "/assets/Sup kayak/IMG_1208.JPG",
   tube: "/assets/tube.jpg",
   jetski: "/assets/jet-ski.jpg",
   scuba: "/assets/scuba-diving.jpg",
+  flyboard: "/assets/flyboard.jpg",
 };
 
 interface ZonePageClientProps {
-  zoneId: "wibit" | "tramp" | "pedaline" | "sup" | "tube" | "jetski" | "scuba";
+  zoneId:
+    | "wibit"
+    | "tramp"
+    | "pedaline"
+    | "sup"
+    | "tube"
+    | "jetski"
+    | "scuba"
+    | "flyboard";
   name: string;
   gallery?: string[];
+  passLink?: string;
+  passLabel?: string;
+  hidePricing?: boolean;
 }
 
-export function ZonePageClient({ zoneId, name, gallery = [] }: ZonePageClientProps) {
+export function ZonePageClient({
+  zoneId,
+  name,
+  gallery = [],
+  passLink,
+  passLabel,
+  hidePricing,
+}: ZonePageClientProps) {
   const { t } = useT();
   const zone = t.zones[zoneId];
   const image = IMAGES[zoneId];
@@ -72,42 +91,41 @@ export function ZonePageClient({ zoneId, name, gallery = [] }: ZonePageClientPro
             <p className="text-dark/80 text-base lg:text-lg leading-relaxed max-w-[600px]">
               {zone.description}
             </p>
-
-            {zone.features.length > 0 && (
-              <div className="flex flex-col gap-3">
-                <p className="text-dark/40 text-xs uppercase tracking-widest">
-                  What&apos;s included
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {zone.features.map((feature: string) => (
-                    <span
-                      key={feature}
-                      className="px-3 py-1.5 rounded-full border border-dark/20 text-dark/70 text-sm"
-                    >
-                      {feature}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )}
           </div>
 
           {/* Right: pricing info */}
-          <div className="flex flex-col gap-4">
-            <div className="rounded-xl border border-dark/10 bg-dark/5 p-6 flex flex-col gap-4">
+          <div className="flex flex-col items-center gap-4 text-center">
+            {!passLink && !hidePricing && (
               <div>
                 <p className="text-dark/40 text-xs uppercase tracking-widest mb-1">
                   Pricing
                 </p>
-                <p className="font-display text-dark text-2xl">{zone.pricing}</p>
-              </div>
-              <div className="border-t border-dark/10 pt-4 flex items-start gap-2">
-                <MapPin size={14} className="text-dark/40 mt-0.5 shrink-0" />
-                <p className="text-dark/50 text-sm leading-relaxed">
-                  {zone.pay_note}
+                <p className="font-display text-dark text-2xl">
+                  {zone.pricing}
                 </p>
               </div>
+            )}
+            <div className="flex items-start justify-center gap-2">
+              <MapPin size={14} className="text-dark/40 mt-0.5 shrink-0" />
+              <p className="text-dark/50 text-sm leading-relaxed">
+                {zone.pay_note}
+              </p>
             </div>
+            {passLink && (zone as { pass_cta?: string }).pass_cta && (
+              <div className="flex flex-col items-center gap-3">
+                <p className="text-dark/50 text-sm">
+                  {(zone as { pass_cta?: string }).pass_cta}
+                </p>
+                <Link
+                  href={passLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 inline-flex items-center justify-center px-10 h-11 bg-dark text-cream font-display text-sm tracking-widest rounded-lg hover:bg-dark/80 transition-colors"
+                >
+                  {passLabel ?? "BOOK NOW"} →
+                </Link>
+              </div>
+            )}
           </div>
         </div>
 

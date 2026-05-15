@@ -12,7 +12,8 @@
     "title": "ZEPPELIN\nBEACH BAR",
     "subtitle": "Tvoja baza za chill i polazište za svaku avanturu.",
     "cta_primary": "Istraži Ponudu",
-    "cta_secondary": "Book Tours Online"
+    "cta_secondary": "Book Tours Online",
+    "hours_btn": "Radno Vrijeme"
   },
   "bar": {
     "tag": "BAR & RELAX",
@@ -27,7 +28,7 @@
     "relax_desc": "Chill, hlad i ležaljke",
     "bar_page": {
       "tagline": "Hladna pića, topla atmosfera.",
-      "description": "Naš beach bar poslužuje ručno izrađene koktele, osvježavajuća pića i hladno pivo od jutra do kasno. Uživaj u pogledu na more s terase, nađi svoje mjesto za šankom i pusti glazbu da postavi ritam.",
+      "description": "Naš beach bar poslužuje ručno izrađene koktele, osvježavajuća pića i hladno pivo od jutra do kasno. Dok se mali skaču i uživaju u AquaParku, ti se opusti uz omiljeno hladno piće, uživaj u pogledu na more s terase i pusti glazbu da postavi ritam.",
       "features": [
         "Kokteli",
         "Pivo & vino",
@@ -39,7 +40,7 @@
     },
     "relax_page": {
       "tagline": "Tvoje mjesto na suncu.",
-      "description": "Iznajmi ležaljku i zauzmi svoj kutak raja. Dostupne su zasjenjene terase i mjesta na suncu — smjesti se, naruči piće iz bara i prepusti se danu.",
+      "description": "Iznajmi ležaljku i zauzmi svoj kutak raja. Dostupne su zasjenjene terase i mjesta na suncu — dok se mali skaču i uživaju u AquaParku, smjesti se, naruči hladno piće iz bara i prepusti se danu.",
       "features": [
         "Najam ležaljki",
         "Zasjenjene terase",
@@ -59,12 +60,13 @@
       { "id": "pedaline", "name": "Pedaline", "pricing": "1h · 3h · Dan" },
       { "id": "sup", "name": "SUP & Kajak", "pricing": "1h · 3h · Dan" },
       { "id": "tramp", "name": "Trampolin", "pricing": "1h · 3h · Dan" },
-      { "id": "scuba", "name": "Ronjenje", "pricing": "Po sesiji" }
+      { "id": "scuba", "name": "Ronjenje", "pricing": "Po sesiji" },
+      { "id": "flyboard", "name": "Flyboard", "pricing": "Po sesiji" }
     ]
   },
   "zones": {
     "wibit": {
-      "tagline": "Skoči, penjaj se, klizaj.",
+      "tagline": "Skoči, penji se, kliži...",
       "description": "Napuhani poligon prepreka na otvorenom moru — testiraj ravnotežu, natječi se s prijateljima i osvoji prepreke. Otvoreno za sve uzraste.",
       "features": [
         "Penjačke stijene",
@@ -73,25 +75,26 @@
         "Skakaonice"
       ],
       "pricing": "1h · 3h · Dnevna karta",
-      "pay_note": "Plaćanje na info pultu vodenih sportova"
+      "pay_note": "Plaćanje na info pultu vodenih sportova",
+      "pass_cta": "ili kupi 7-dnevnu kartu na:"
     },
     "tramp": {
-      "tagline": "Odskoči u more.",
-      "description": "Trampolin usidren uz obalu — skači visoko, napravi salto i sruši se u more. Čista zabava za sve generacije.",
+      "tagline": "Neka djeca skaču dok ti piješ kavu.",
+      "description": "Skoči do neba, napravi salto i izvedi trikove koji će ostaviti sve bez daha. Čist adrenalinski let, odmah uz plažu.",
       "features": ["Usidreno uz obalu", "Za sve uzraste", "Skakanje i saltosi"],
       "pricing": "1h · 3h · Dnevna karta",
       "pay_note": "Plaćanje na info pultu vodenih sportova"
     },
     "pedaline": {
-      "tagline": "Istraži vlastitim tempom.",
+      "tagline": "Pedaliraj u nedogled.",
       "description": "Pedaline za obitelji i grupe — opušteni način za prošetati uvaluom i uživati u pogledu. Nije potrebno iskustvo.",
       "features": ["Pedaline", "Za obitelji", "Za sve razine"],
       "pricing": "1h · 3h · Dnevna karta",
       "pay_note": "Plaćanje na info pultu vodenih sportova"
     },
     "sup": {
-      "tagline": "Ustani, zavesaj.",
-      "description": "Stand-up paddleboarding i kajakanje na bistrom Jadranu. Odličan trening za cijelo tijelo ili lagana vožnja uz obalu — kako god ti odgovara.",
+      "tagline": "Ustani, zaveslaj.",
+      "description": "Zagrli more i kreni na vodenu avanturu uz naše opcije — Stand-Up Paddleboarding (SUP) ili kajakanje. Istraži uvalu vlastitim tempom, aktiviraj cijelo tijelo ili se samo provezi uz obalu i upij sve što te okružuje.",
       "features": [
         "Stand-up paddleboard (SUP)",
         "Kajak",
@@ -115,8 +118,8 @@
       "pay_note": "Plaćanje na info pultu vodenih sportova"
     },
     "jetski": {
-      "tagline": "Puna gasa na otvorenom moru.",
-      "description": "Iznajmi jet ski i prođi Jadranom na punu snagu. Guided safari ili slobodna vožnja — naši jet skijevi su uvijek spremni. Nije potrebno iskustvo, naš tim će te uputiti prije polaska.",
+      "tagline": "Pun gas na otvorenom moru.",
+      "description": "Osjeti adrenalin dok juriš valovima na punu snagu. Bio ti ovo prvi put ili si već iskusan vozač, naš tim će te opremiti i uputiti prije polaska. Pozovi ekipu, prelijeći otvoreno more i vrati se s pričama koje se pamte — sigurnost osigurana, adrenalina ne nedostaje.",
       "features": [
         "Solo najam",
         "Guided safari",
@@ -124,7 +127,8 @@
         "Uvod u sigurnost uključen"
       ],
       "pricing": "Po vožnji",
-      "pay_note": "Plaćanje na info pultu vodenih sportova"
+      "pay_note": "Plaćanje na info pultu vodenih sportova",
+      "pass_cta": "ili rezerviraj online na:"
     },
     "scuba": {
       "tagline": "Zaroni u drugi svijet.",
@@ -137,6 +141,19 @@
       ],
       "pricing": "Po sesiji",
       "pay_note": "Plaćanje na info pultu vodenih sportova"
+    },
+    "flyboard": {
+      "tagline": "Poleti iznad mora.",
+      "description": "Stavi flyboard i uzleti nekoliko metara iznad Jadrana, pokretan samo vodom. Naši instruktori će te podići u zrak za par minuta — nije potrebno iskustvo, samo malo hrabrosti.",
+      "features": [
+        "Instruktor uključen",
+        "Oprema osigurana",
+        "Za početnike",
+        "Sigurnosni brifing"
+      ],
+      "pricing": "Po sesiji",
+      "pay_note": "Plaćanje na info pultu vodenih sportova",
+      "pass_cta": "ili rezerviraj flyboard školu na:"
     }
   },
   "adventure": {
@@ -148,22 +165,22 @@
       {
         "id": "jetski",
         "name": "Jet-Ski Safari",
-        "url": "https://www.zeppelin-adventure.com"
+        "url": "https://www.zeppelin-adventure.com/product/jet-ski-safari/"
       },
       {
         "id": "buggy",
         "name": "Buggy / Quad",
-        "url": "https://www.zeppelin-adventure.com"
+        "url": "https://www.zeppelin-adventure.com/product/buggy-safari/"
       },
       {
         "id": "flyboard",
         "name": "Flyboard",
-        "url": "https://www.zeppelin-adventure.com"
+        "url": "https://www.zeppelin-adventure.com/product/flyboard-school/"
       },
       {
         "id": "parasail",
         "name": "Parasailing",
-        "url": "https://www.zeppelin-adventure.com"
+        "url": "https://www.zeppelin-adventure.com/product/parasail/"
       }
     ]
   },
@@ -174,7 +191,7 @@
     "fastfood_name": "Fast Food",
     "fastfood_desc": "Burgeri, sendviči, grill",
     "gelato_name": "Gelaterija",
-    "gelato_desc": "Sladoled, smoothie bowl",
+    "gelato_desc": "Sladoled, sokovi, voćna salata, granita",
     "fastfood_page": {
       "tagline": "Svježe, brzo, ukusno.",
       "description": "Burgeri, sendviči i roštilj pripremljeni na licu mjesta. Brza usluga — više vremena za plažu, manje za čekanje.",
@@ -182,13 +199,13 @@
       "hours": "9:00 – 22:00"
     },
     "gelato_page": {
-      "tagline": "Rashladi se, zasladi se.",
-      "description": "Ručno rađeni sladoled i smoothie bowlovi od svježih sastojaka. Savršena pauza između urona u more.",
+      "tagline": "Nešto hladno, nešto slatko.",
+      "description": "Kremasti sladoled, svježi prirodni sokovi, voćne salate i ledena granita — sve što treba za savršen dan na plaži.",
       "features": [
         "Sladoled",
-        "Smoothie bowl",
-        "Svježe voće",
-        "Sezonski okusi"
+        "Prirodni sokovi",
+        "Voćna salata",
+        "Granita"
       ],
       "hours": "9:00 – 22:00"
     }

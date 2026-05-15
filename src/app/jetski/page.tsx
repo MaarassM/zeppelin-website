@@ -27,5 +27,13 @@ export const metadata: Metadata = {
 };
 
 export default function JetskiPage() {
-  return <ZonePageClient zoneId="jetski" name="Jet Ski" gallery={galleryImages.jetski ?? []} />;
+  return (
+    <ZonePageClient
+      zoneId="jetski"
+      name="Jet Ski"
+      gallery={galleryImages.jetski ?? []}
+      passLink="https://www.zeppelin-adventure.com/product/rent-a-jet-ski/"
+      passLabel="RENT A JET SKI"
+    />
+  );
 }

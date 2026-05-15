@@ -27,5 +27,5 @@ export const metadata: Metadata = {
 };
 
 export default function ScubaPage() {
-  return <ZonePageClient zoneId="scuba" name="Scuba Diving" gallery={galleryImages.scuba ?? []} />;
+  return <ZonePageClient zoneId="scuba" name="Scuba Diving" gallery={galleryImages.scuba ?? []} hidePricing />;
 }

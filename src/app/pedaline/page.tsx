@@ -26,5 +26,5 @@ export const metadata: Metadata = {
 };
 
 export default function PedalinePage() {
-  return <ZonePageClient zoneId="pedaline" name="Pedal Boat" gallery={galleryImages.pedaline ?? []} />;
+  return <ZonePageClient zoneId="pedaline" name="Pedal Boat" gallery={galleryImages.pedaline ?? []} hidePricing />;
 }

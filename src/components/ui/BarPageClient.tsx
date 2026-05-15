@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, Clock } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { useT } from "@/lib/i18n";
 import { ActivityGallery } from "@/components/ui/ActivityGallery";
 
@@ -69,47 +69,9 @@ export function BarPageClient({ item, name, gallery = [] }: BarPageClientProps) 
 
       {/* Content */}
       <div className="px-6 lg:px-[120px] py-12 lg:py-20 max-w-[1200px] mx-auto">
-        <div className="grid lg:grid-cols-[1fr_280px] gap-12 lg:gap-20">
-          {/* Left: description + features */}
-          <div className="flex flex-col gap-8">
-            <p className="text-dark/80 text-base lg:text-lg leading-relaxed max-w-[600px]">
-              {page.description}
-            </p>
-
-            {page.features.length > 0 && (
-              <div className="flex flex-col gap-3">
-                <p className="text-dark/40 text-xs uppercase tracking-widest">
-                  What&apos;s on offer
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {page.features.map((feature: string) => (
-                    <span
-                      key={feature}
-                      className="px-3 py-1.5 rounded-full border border-dark/20 text-dark/70 text-sm"
-                    >
-                      {feature}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Right: hours */}
-          <div className="flex flex-col gap-4">
-            <div className="rounded-xl border border-dark/10 bg-dark/5 p-6 flex flex-col gap-4">
-              <div className="flex items-start gap-2">
-                <Clock size={14} className="text-dark/40 mt-0.5 shrink-0" />
-                <div>
-                  <p className="text-dark/40 text-xs uppercase tracking-widest mb-1">
-                    Hours
-                  </p>
-                  <p className="font-display text-dark text-xl">{page.hours}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <p className="text-dark/80 text-base lg:text-lg leading-relaxed max-w-[600px]">
+          {page.description}
+        </p>
 
         <ActivityGallery images={gallery} />
       </div>

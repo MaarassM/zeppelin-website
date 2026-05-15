@@ -12,7 +12,8 @@
     "title": "ZEPPELIN\nBEACH COMPLEX",
     "subtitle": "Your base for chill — and the start of every adventure.",
     "cta_primary": "Explore Offer",
-    "cta_secondary": "Book Tours Online"
+    "cta_secondary": "Book Tours Online",
+    "hours_btn": "Working Hours"
   },
   "bar": {
     "tag": "BAR & RELAX",
@@ -27,7 +28,7 @@
     "relax_desc": "Chill, shade & sunbeds",
     "bar_page": {
       "tagline": "Cold drinks, warm vibes.",
-      "description": "Our beach bar serves handcrafted cocktails, refreshing drinks, and cold beer from morning till late. Enjoy the sea view from the terrace, find your spot at the bar, and let the music set the pace.",
+      "description": "Our beach bar serves handcrafted cocktails, refreshing drinks, and cold beer from morning till late. While the kids are jumping and splashing in the AquaPark, chill out with your favourite cold drink, soak up the sea view from the terrace, and let the music set the pace.",
       "features": [
         "Cocktails",
         "Beer & wine",
@@ -39,7 +40,7 @@
     },
     "relax_page": {
       "tagline": "Your spot in the sun.",
-      "description": "Rent a sunbed and claim your corner of paradise. Shaded terraces and open sun spots available — settle in, order a drink from the bar, and let the day unfold.",
+      "description": "Rent a sunbed and claim your corner of paradise. Shaded terraces and open sun spots available — while the kids are jumping and splashing in the AquaPark, settle in, order a cold drink from the bar, and let the day unfold at your pace.",
       "features": [
         "Sunbed rental",
         "Shaded terrace",
@@ -60,7 +61,8 @@
       { "id": "pedaline", "name": "Pedal Boat", "pricing": "1h · 3h · Day" },
       { "id": "sup", "name": "SUP & Kayak", "pricing": "1h · 3h · Day" },
       { "id": "tramp", "name": "Trampoline", "pricing": "1h · 3h · Day" },
-      { "id": "scuba", "name": "Scuba Diving", "pricing": "Per session" }
+      { "id": "scuba", "name": "Scuba Diving", "pricing": "Per session" },
+      { "id": "flyboard", "name": "Flyboard", "pricing": "Per session" }
     ]
   },
   "zones": {
@@ -74,17 +76,18 @@
         "Jump platforms"
       ],
       "pricing": "1h · 3h · Day pass",
-      "pay_note": "Pay at the water sports desk"
+      "pay_note": "Pay at the water sports desk",
+      "pass_cta": "or buy a 7 day pass on:"
     },
     "tramp": {
-      "tagline": "Bounce into the sea.",
-      "description": "A water trampoline anchored just off the shore — jump high, flip, and land in the sea. Pure fun for all ages.",
+      "tagline": "Let the kids jump while you sip your coffee.",
+      "description": "Jump to new heights, flip with flair, and pull off gravity-defying tricks that will leave everyone watching in awe. Pure airtime, right at the beach.",
       "features": ["Anchored offshore", "All ages welcome", "Jump & flip"],
       "pricing": "1h · 3h · Day pass",
       "pay_note": "Pay at the water sports desk"
     },
     "pedaline": {
-      "tagline": "Explore at your own pace.",
+      "tagline": "Pedal into infinity.",
       "description": "Pedal boats for families and groups — a relaxed way to navigate the bay and soak in the view. No experience needed.",
       "features": ["Pedal boats", "Family-friendly", "All levels welcome"],
       "pricing": "1h · 3h · Day pass",
@@ -92,7 +95,7 @@
     },
     "sup": {
       "tagline": "Stand up, paddle out.",
-      "description": "Stand-up paddleboarding and kayaking in the clear Adriatic waters. A great full-body workout or a slow cruise along the coast — your call.",
+      "description": "Embrace the water and set off on an aquatic adventure with our watercraft options — Stand-Up Paddleboarding (SUP) or kayaking. Explore the bay at your own pace, get a full-body workout, or simply cruise along the coastline and take it all in.",
       "features": [
         "Stand-up paddleboard (SUP)",
         "Kayak",
@@ -117,7 +120,7 @@
     },
     "jetski": {
       "tagline": "Full throttle on open water.",
-      "description": "Rent a jet ski and tear across the Adriatic. Whether you want a guided safari or solo exploration, our jet skis are ready to go. No experience needed — our team will brief you before you head out.",
+      "description": "Feel the rush as you speed across the waves on your own terms. Whether it's your first time or you're a seasoned rider, our team will brief you, gear you up, and send you out with confidence. Grab your friends, race across the open sea, and come back with stories worth telling — safety handled, adrenaline guaranteed.",
       "features": [
         "Solo rental",
         "Guided safari",
@@ -125,7 +128,8 @@
         "Safety briefing included"
       ],
       "pricing": "Per ride",
-      "pay_note": "Pay at the water sports desk"
+      "pay_note": "Pay at the water sports desk",
+      "pass_cta": "or book online on:"
     },
     "scuba": {
       "tagline": "Dive into another world.",
@@ -138,6 +142,19 @@
       ],
       "pricing": "Per session",
       "pay_note": "Pay at the water sports desk"
+    },
+    "flyboard": {
+      "tagline": "Fly above the sea.",
+      "description": "Strap on a flyboard and launch yourself metres above the Adriatic, powered by nothing but water. Our instructors will get you airborne in minutes — no experience needed, just the nerve to try.",
+      "features": [
+        "Instructor included",
+        "Equipment provided",
+        "Beginners welcome",
+        "Safety briefing"
+      ],
+      "pricing": "Per session",
+      "pay_note": "Pay at the water sports desk",
+      "pass_cta": "or book a flyboard school on:"
     }
   },
   "adventure": {
@@ -175,7 +192,7 @@
     "fastfood_name": "Fast Food",
     "fastfood_desc": "Burgers, sandwiches, grill",
     "gelato_name": "Gelato Bar",
-    "gelato_desc": "Ice cream, smoothie bowls",
+    "gelato_desc": "Ice cream, juices, fruit salad, granita",
     "fastfood_page": {
       "tagline": "Fresh, fast, satisfying.",
       "description": "Burgers, sandwiches, and grilled favourites made fresh on-site. Quick service so you spend less time in line and more time on the beach.",
@@ -183,13 +200,13 @@
       "hours": "9:00 – 22:00"
     },
     "gelato_page": {
-      "tagline": "Cool down, sweet up.",
-      "description": "Handcrafted gelato and smoothie bowls made with fresh ingredients. The perfect stop between dips in the sea.",
+      "tagline": "Something cool, something sweet.",
+      "description": "Creamy ice cream, fresh natural juices, fruit salad, and icy granita — everything you need for a perfect beach day.",
       "features": [
-        "Gelato",
-        "Smoothie bowls",
-        "Fresh fruit",
-        "Seasonal flavours"
+        "Ice cream",
+        "Natural juices",
+        "Fruit salad",
+        "Granita"
       ],
       "hours": "9:00 – 22:00"
     }

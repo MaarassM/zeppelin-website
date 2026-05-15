@@ -26,5 +26,13 @@ export const metadata: Metadata = {
 };
 
 export default function WibitPage() {
-  return <ZonePageClient zoneId="wibit" name="Wibit Park" gallery={galleryImages.wibit ?? []} />;
+  return (
+    <ZonePageClient
+      zoneId="wibit"
+      name="Wibit Park"
+      gallery={galleryImages.wibit ?? []}
+      passLink="https://www.zeppelin-adventure.com/product/7-day-wibbit-pass/"
+      passLabel="7 DAY WIBIT PASS"
+    />
+  );
 }
