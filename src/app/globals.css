@@ -31,6 +31,10 @@
   body {
     @apply font-body bg-cream text-dark antialiased;
   }
+  /* Collapse 1px compositing seam iOS Safari creates between adjacent sections */
+  main > section + section {
+    margin-top: -1px;
+  }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
