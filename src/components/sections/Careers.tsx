@@ -51,7 +51,7 @@ export function Careers() {
           viewBox="0 0 1440 80"
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="none"
-          className="w-full h-16 lg:h-24"
+          className="block w-full h-16 lg:h-24"
         >
           <path
             d="M0,20 C160,60 340,8 560,50 C740,84 900,18 1120,48 C1280,68 1380,26 1440,38 L1440,80 L0,80 Z"

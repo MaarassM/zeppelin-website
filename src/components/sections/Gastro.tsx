@@ -111,7 +111,7 @@ export function Gastro() {
           viewBox="0 0 1440 80"
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="none"
-          className="w-full h-16 lg:h-24"
+          className="block w-full h-16 lg:h-24"
         >
           <path
             d="M0,68 C140,30 300,76 520,42 C700,12 880,70 1100,38 C1260,14 1380,58 1440,62 L1440,80 L0,80 Z"

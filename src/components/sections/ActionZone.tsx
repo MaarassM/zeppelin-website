@@ -92,7 +92,7 @@ export function ActionZone() {
           viewBox="0 0 1440 80"
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="none"
-          className="w-full h-16 lg:h-24"
+          className="block w-full h-16 lg:h-24"
         >
           <path
             d="M0,56 C120,18 280,70 480,38 C660,8 820,66 1020,36 C1180,12 1320,64 1440,30 L1440,80 L0,80 Z"

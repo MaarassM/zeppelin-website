@@ -157,7 +157,7 @@ export function Hero() {
           viewBox="0 0 1440 80"
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="none"
-          className="w-full h-16 lg:h-24"
+          className="block w-full h-16 lg:h-24"
         >
           <path
             d="M0,62 C216,24 360,76 576,48 C756,24 900,72 1116,40 C1260,18 1368,60 1440,44 L1440,80 L0,80 Z"

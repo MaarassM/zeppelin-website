@@ -99,7 +99,7 @@ export function BarRelax() {
           viewBox="0 0 1440 80"
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="none"
-          className="w-full h-16 lg:h-24"
+          className="block w-full h-16 lg:h-24"
         >
           <path
             d="M0,30 C180,72 320,10 540,52 C720,88 880,16 1080,54 C1240,82 1360,22 1440,46 L1440,80 L0,80 Z"

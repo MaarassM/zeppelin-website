@@ -56,7 +56,7 @@ export function Adventure() {
           viewBox="0 0 1440 80"
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="none"
-          className="w-full h-16 lg:h-24"
+          className="block w-full h-16 lg:h-24"
         >
           <path
             d="M0,44 C200,80 360,14 600,58 C800,94 960,20 1160,50 C1300,70 1400,32 1440,20 L1440,80 L0,80 Z"
