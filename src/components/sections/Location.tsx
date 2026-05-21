@@ -10,7 +10,7 @@ export function Location() {
   return (
     <section
       id="lokacija"
-      className="bg-cream pt-8 lg:pt-20 px-6 lg:px-[120px]"
+      className="bg-cream relative pt-8 lg:pt-20 px-6 lg:px-[120px]"
     >
       <div className="max-w-[1200px] mx-auto flex flex-col gap-6 mb-12">
         <SectionTag>{t.location.heading.toUpperCase()}</SectionTag>
