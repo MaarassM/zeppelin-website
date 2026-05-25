@@ -79,7 +79,7 @@ export async function POST(request: Request) {
   const safeNotes = notes ? escapeHtml(notes) : null;
 
   const { error } = await resend.emails.send({
-    from: "Zeppelin Careers <onboarding@resend.dev>",
+    from: `Zeppelin Careers <${process.env.RESEND_FROM}>`,
     to: process.env.CAREERS_EMAIL!,
     subject: `Nova prijava — ${safePosition} | ${safeName}`,
     html: `

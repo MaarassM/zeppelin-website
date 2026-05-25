@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { CareersForm } from "./CareersForm";
 import { useT } from "@/lib/i18n";
 
@@ -16,18 +17,18 @@ export function CareersPageClient() {
   const headerTitle = position
     ? position.toLocaleUpperCase()
     : categoryLabel
-    ? categoryLabel.toLocaleUpperCase()
-    : t.careers.tag;
+      ? categoryLabel.toLocaleUpperCase()
+      : t.careers.tag;
 
   return (
     <>
       <div className="bg-red px-6 py-14 text-center relative">
-        <a
+        <Link
           href="/#karijere"
           className="absolute left-6 top-1/2 -translate-y-1/2 font-display text-white/60 text-[11px] tracking-[0.25em] uppercase hover:text-white transition-colors"
         >
           ← {t.careers.back_btn}
-        </a>
+        </Link>
         <p className="font-display text-white/50 text-[11px] tracking-[0.35em] uppercase mb-3">
           Zeppelin Beach
         </p>
