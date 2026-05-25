@@ -7,14 +7,14 @@ export const metadata: Metadata = {
   description:
     "Beach bar na Saccorgiana plaži u Puli — kokteli, pivo, kava i terasa s pogledom na more. Radi od 9:00 do 02:00.",
   keywords: ["bar pula", "beach bar pula", "kokteli pula", "terasa pula", "zeppelin bar"],
-  alternates: { canonical: "https://zeppelinbar.com/bar" },
+  alternates: { canonical: "https://www.zeppelinbar.hr/bar" },
   openGraph: {
     title: "Bar | Zeppelin Beach Pula",
     description:
       "Kokteli, pivo, kava i terasa s pogledom na more. Zeppelin Beach Bar, Saccorgiana, Pula.",
-    url: "https://zeppelinbar.com/bar",
+    url: "https://www.zeppelinbar.hr/bar",
     siteName: "Zeppelin Beach Complex",
-    images: [{ url: "https://zeppelinbar.com/assets/bar.jpg", width: 1280, height: 853, alt: "Zeppelin Beach Bar, Pula" }],
+    images: [{ url: "https://www.zeppelinbar.hr/assets/bar.jpg", width: 1280, height: 853, alt: "Zeppelin Beach Bar, Pula" }],
     locale: "hr_HR",
     type: "website",
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Bar | Zeppelin Beach Pula",
     description: "Kokteli, pivo i terasa s pogledom na more — Zeppelin Beach Bar, Pula.",
-    images: ["https://zeppelinbar.com/assets/bar.jpg"],
+    images: ["https://www.zeppelinbar.hr/assets/bar.jpg"],
   },
 };
 

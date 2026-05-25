@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 
-const BASE = "https://zeppelinbar.com";
+const BASE = "https://www.zeppelinbar.hr";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -16,8 +16,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/trampoline`, priority: 0.8, changeFrequency: "monthly" },
     { url: `${BASE}/fastfood`, priority: 0.7, changeFrequency: "monthly" },
     { url: `${BASE}/gelato`, priority: 0.7, changeFrequency: "monthly" },
-    { url: `${BASE}/food`, priority: 0.7, changeFrequency: "monthly" },
-    { url: `${BASE}/menu`, priority: 0.6, changeFrequency: "monthly" },
     { url: `${BASE}/careers`, priority: 0.5, changeFrequency: "monthly" },
   ];
 }

@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     "Iznajmi SUP dasku ili kajak i istraži Jadran — Saccorgiana plaža, Pula. Za sve razine. Zeppelin Beach.",
   keywords: ["sup pula", "kajak pula", "paddleboard pula", "iznajmljivanje sup pula", "vodeni sportovi pula"],
-  alternates: { canonical: "https://zeppelinbar.com/sup" },
+  alternates: { canonical: "https://www.zeppelinbar.hr/sup" },
   openGraph: {
     title: "SUP & Kajak Pula | Zeppelin Beach",
     description: "Iznajmi SUP dasku ili kajak i istraži Jadran — Saccorgiana plaža, Pula. Za sve razine.",
-    url: "https://zeppelinbar.com/sup",
+    url: "https://www.zeppelinbar.hr/sup",
     siteName: "Zeppelin Beach Complex",
-    images: [{ url: "https://zeppelinbar.com/assets/Sup kayak/IMG_1208.JPG", width: 1280, height: 853, alt: "SUP & Kajak Pula — Zeppelin Beach" }],
+    images: [{ url: "https://www.zeppelinbar.hr/assets/Sup kayak/IMG_1208.JPG", width: 1280, height: 853, alt: "SUP & Kajak Pula — Zeppelin Beach" }],
     locale: "hr_HR",
     type: "website",
   },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "SUP & Kajak Pula | Zeppelin Beach",
     description: "Iznajmi SUP dasku ili kajak na Saccorgiana plaži — Zeppelin Beach, Pula.",
-    images: ["https://zeppelinbar.com/assets/Sup kayak/IMG_1208.JPG"],
+    images: ["https://www.zeppelinbar.hr/assets/Sup kayak/IMG_1208.JPG"],
   },
 };
 

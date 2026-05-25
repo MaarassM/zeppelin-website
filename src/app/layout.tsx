@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     "bar plaža pula",
   ],
   alternates: {
-    canonical: "https://zeppelinbar.com",
+    canonical: "https://www.zeppelinbar.hr",
   },
   robots: {
     index: true,
@@ -57,13 +57,13 @@ export const metadata: Metadata = {
     title: "Zeppelin Beach Complex | Saccorgiana Beach, Pula",
     description:
       "Beach bar, vodeni sportovi, avanture i gastro na Saccorgiana plaži u Puli. Tvoja baza za chill i polazište za svaku avanturu.",
-    url: "https://zeppelinbar.com",
+    url: "https://www.zeppelinbar.hr",
     siteName: "Zeppelin Beach Complex",
     locale: "hr_HR",
     type: "website",
     images: [
       {
-        url: "https://zeppelinbar.com/assets/hero.jpg",
+        url: "https://www.zeppelinbar.hr/assets/hero.jpg",
         width: 1280,
         height: 853,
         alt: "Zeppelin Beach Complex — Saccorgiana Beach, Pula",
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     title: "Zeppelin Beach Complex | Saccorgiana Beach, Pula",
     description:
       "Beach bar, vodeni sportovi, avanture i gastro na Saccorgiana plaži u Puli.",
-    images: ["https://zeppelinbar.com/assets/hero.jpg"],
+    images: ["https://www.zeppelinbar.hr/assets/hero.jpg"],
   },
 };
 
@@ -85,10 +85,10 @@ const jsonLd = {
   name: "Zeppelin Beach Complex",
   description:
     "Beach bar, water sports, adventures and gastro on Saccorgiana Beach in Pula, Croatia. Jet ski, scuba diving, Wibit Park, cocktails, fast food and gelato.",
-  url: "https://zeppelinbar.com",
+  url: "https://www.zeppelinbar.hr",
   telephone: "+38591254511 7",
-  image: "https://zeppelinbar.com/assets/hero.jpg",
-  logo: "https://zeppelinbar.com/assets/logo.png",
+  image: "https://www.zeppelinbar.hr/assets/hero.jpg",
+  logo: "https://www.zeppelinbar.hr/assets/logo.png",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Saccorgiana Beach",
@@ -137,7 +137,7 @@ const jsonLd = {
         itemOffered: {
           "@type": "Service",
           name: "Jet Ski",
-          url: "https://zeppelinbar.com/jetski",
+          url: "https://www.zeppelinbar.hr/jetski",
         },
       },
       {
@@ -145,7 +145,7 @@ const jsonLd = {
         itemOffered: {
           "@type": "Service",
           name: "Scuba Diving",
-          url: "https://zeppelinbar.com/scuba",
+          url: "https://www.zeppelinbar.hr/scuba",
         },
       },
       {
@@ -153,7 +153,7 @@ const jsonLd = {
         itemOffered: {
           "@type": "Service",
           name: "Wibit Park",
-          url: "https://zeppelinbar.com/wibit",
+          url: "https://www.zeppelinbar.hr/wibit",
         },
       },
       {
@@ -161,7 +161,7 @@ const jsonLd = {
         itemOffered: {
           "@type": "Service",
           name: "Tube Rides",
-          url: "https://zeppelinbar.com/tube",
+          url: "https://www.zeppelinbar.hr/tube",
         },
       },
       {
@@ -169,7 +169,7 @@ const jsonLd = {
         itemOffered: {
           "@type": "Service",
           name: "Pedal Boat & SUP",
-          url: "https://zeppelinbar.com/pedaline",
+          url: "https://www.zeppelinbar.hr/pedaline",
         },
       },
       {
@@ -177,20 +177,20 @@ const jsonLd = {
         itemOffered: {
           "@type": "Service",
           name: "Trampoline",
-          url: "https://zeppelinbar.com/trampoline",
+          url: "https://www.zeppelinbar.hr/trampoline",
         },
       },
       {
         "@type": "Offer",
-        itemOffered: { "@type": "FoodService", name: "Beach Bar", url: "https://zeppelinbar.com/bar" },
+        itemOffered: { "@type": "FoodService", name: "Beach Bar", url: "https://www.zeppelinbar.hr/bar" },
       },
       {
         "@type": "Offer",
-        itemOffered: { "@type": "FoodService", name: "Fast Food", url: "https://zeppelinbar.com/fastfood" },
+        itemOffered: { "@type": "FoodService", name: "Fast Food", url: "https://www.zeppelinbar.hr/fastfood" },
       },
       {
         "@type": "Offer",
-        itemOffered: { "@type": "FoodService", name: "Gelato Bar", url: "https://zeppelinbar.com/gelato" },
+        itemOffered: { "@type": "FoodService", name: "Gelato Bar", url: "https://www.zeppelinbar.hr/gelato" },
       },
     ],
   },

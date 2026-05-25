@@ -7,14 +7,14 @@ export const metadata: Metadata = {
   description:
     "Iznajmi ležaljku i opusti se na Saccorgiana plaži u Puli. Zasjenjene terase i sunčana mjesta — Zeppelin Beach. Radi od 9:00 do 19:00.",
   keywords: ["ležaljke pula", "sunbeds pula", "plaža pula", "relax plaža pula", "zeppelin beach"],
-  alternates: { canonical: "https://zeppelinbar.com/relax" },
+  alternates: { canonical: "https://www.zeppelinbar.hr/relax" },
   openGraph: {
     title: "Sunbeds & Relax | Zeppelin Beach Pula",
     description:
       "Iznajmi ležaljku i opusti se na Saccorgiana plaži u Puli. Zasjenjene terase i sunčana mjesta.",
-    url: "https://zeppelinbar.com/relax",
+    url: "https://www.zeppelinbar.hr/relax",
     siteName: "Zeppelin Beach Complex",
-    images: [{ url: "https://zeppelinbar.com/assets/relax.jpg", width: 1280, height: 853, alt: "Sunbeds & Relax — Zeppelin Beach Pula" }],
+    images: [{ url: "https://www.zeppelinbar.hr/assets/relax.jpg", width: 1280, height: 853, alt: "Sunbeds & Relax — Zeppelin Beach Pula" }],
     locale: "hr_HR",
     type: "website",
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Sunbeds & Relax | Zeppelin Beach Pula",
     description: "Iznajmi ležaljku na Saccorgiana plaži — Zeppelin Beach, Pula.",
-    images: ["https://zeppelinbar.com/assets/relax.jpg"],
+    images: ["https://www.zeppelinbar.hr/assets/relax.jpg"],
   },
 };
 

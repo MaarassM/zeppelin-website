@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     "Ručno rađeni sladoled i smoothie bowlovi od svježih sastojaka — Saccorgiana plaža, Pula. Zeppelin Beach Gelato Bar.",
   keywords: ["sladoled pula", "gelato pula", "gelato bar pula", "smoothie bowl pula", "slatko na plaži pula"],
-  alternates: { canonical: "https://zeppelinbar.com/gelato" },
+  alternates: { canonical: "https://www.zeppelinbar.hr/gelato" },
   openGraph: {
     title: "Gelato Bar Pula | Sladoled | Zeppelin Beach",
     description: "Ručno rađeni sladoled i smoothie bowlovi od svježih sastojaka — Saccorgiana plaža, Pula.",
-    url: "https://zeppelinbar.com/gelato",
+    url: "https://www.zeppelinbar.hr/gelato",
     siteName: "Zeppelin Beach Complex",
-    images: [{ url: "https://zeppelinbar.com/assets/gelato.jpg", width: 1280, height: 853, alt: "Gelato Bar Pula — Zeppelin Beach" }],
+    images: [{ url: "https://www.zeppelinbar.hr/assets/gelato.jpg", width: 1280, height: 853, alt: "Gelato Bar Pula — Zeppelin Beach" }],
     locale: "hr_HR",
     type: "website",
   },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Gelato Bar Pula | Sladoled | Zeppelin Beach",
     description: "Ručno rađeni sladoled i smoothie bowlovi — Zeppelin Beach, Saccorgiana, Pula.",
-    images: ["https://zeppelinbar.com/assets/gelato.jpg"],
+    images: ["https://www.zeppelinbar.hr/assets/gelato.jpg"],
   },
 };
 

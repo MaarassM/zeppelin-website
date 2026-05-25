@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     "Iznajmi pedalinu i istraži uvalu — Saccorgiana plaža, Pula. Za obitelji i grupe. Zeppelin Beach.",
   keywords: ["pedaline pula", "iznajmljivanje pedaline pula", "pedalina pula", "vodeni sportovi pula"],
-  alternates: { canonical: "https://zeppelinbar.com/pedaline" },
+  alternates: { canonical: "https://www.zeppelinbar.hr/pedaline" },
   openGraph: {
     title: "Pedaline Pula | Zeppelin Beach",
     description: "Iznajmi pedalinu i istraži uvalu — Saccorgiana plaža, Pula. Za obitelji i grupe.",
-    url: "https://zeppelinbar.com/pedaline",
+    url: "https://www.zeppelinbar.hr/pedaline",
     siteName: "Zeppelin Beach Complex",
-    images: [{ url: "https://zeppelinbar.com/assets/pedaline.jpg", width: 1280, height: 853, alt: "Pedaline Pula — Zeppelin Beach" }],
+    images: [{ url: "https://www.zeppelinbar.hr/assets/pedaline.jpg", width: 1280, height: 853, alt: "Pedaline Pula — Zeppelin Beach" }],
     locale: "hr_HR",
     type: "website",
   },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Pedaline Pula | Zeppelin Beach",
     description: "Iznajmi pedalinu na Saccorgiana plaži — Zeppelin Beach, Pula.",
-    images: ["https://zeppelinbar.com/assets/pedaline.jpg"],
+    images: ["https://www.zeppelinbar.hr/assets/pedaline.jpg"],
   },
 };
 

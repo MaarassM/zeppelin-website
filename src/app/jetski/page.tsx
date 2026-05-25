@@ -7,14 +7,14 @@ export const metadata: Metadata = {
   description:
     "Iznajmi jet ski ili se pridruži guided safariju na Jadranu — Zeppelin Beach, Saccorgiana, Pula. Nije potrebno iskustvo.",
   keywords: ["jet ski pula", "jetski pula", "jet ski iznajmljivanje pula", "jet ski safari pula", "vodeni sportovi pula"],
-  alternates: { canonical: "https://zeppelinbar.com/jetski" },
+  alternates: { canonical: "https://www.zeppelinbar.hr/jetski" },
   openGraph: {
     title: "Jet Ski Pula | Zeppelin Beach",
     description:
       "Iznajmi jet ski ili guided safari na Jadranu — Zeppelin Beach, Saccorgiana, Pula. Nije potrebno iskustvo.",
-    url: "https://zeppelinbar.com/jetski",
+    url: "https://www.zeppelinbar.hr/jetski",
     siteName: "Zeppelin Beach Complex",
-    images: [{ url: "https://zeppelinbar.com/assets/jet-ski.jpg", width: 1280, height: 853, alt: "Jet Ski Pula — Zeppelin Beach" }],
+    images: [{ url: "https://www.zeppelinbar.hr/assets/jet-ski.jpg", width: 1280, height: 853, alt: "Jet Ski Pula — Zeppelin Beach" }],
     locale: "hr_HR",
     type: "website",
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Jet Ski Pula | Zeppelin Beach",
     description: "Iznajmi jet ski ili guided safari na Jadranu — Zeppelin Beach, Pula.",
-    images: ["https://zeppelinbar.com/assets/jet-ski.jpg"],
+    images: ["https://www.zeppelinbar.hr/assets/jet-ski.jpg"],
   },
 };
 

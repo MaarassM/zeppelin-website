@@ -5,12 +5,12 @@ export const metadata: Metadata = {
   title: "Privacy Policy | Zeppelin Beach Complex",
   description:
     "How Zeppelin Beach Complex collects, uses, and protects your personal data.",
-  alternates: { canonical: "https://zeppelinbar.com/privacy" },
+  alternates: { canonical: "https://www.zeppelinbar.hr/privacy" },
   openGraph: {
     title: "Privacy Policy | Zeppelin Beach Complex",
     description:
       "How Zeppelin Beach Complex collects, uses, and protects your personal data.",
-    url: "https://zeppelinbar.com/privacy",
+    url: "https://www.zeppelinbar.hr/privacy",
     siteName: "Zeppelin Beach Complex",
     locale: "hr_HR",
     type: "website",

@@ -7,14 +7,14 @@ export const metadata: Metadata = {
   description:
     "Flyboard iskustvo na Jadranu — uzleti iznad mora uz vodeni pogon. Zeppelin Beach, Saccorgiana, Pula. Nije potrebno iskustvo.",
   keywords: ["flyboard pula", "flyboard iskustvo pula", "vodeni sportovi pula", "adrenalin pula"],
-  alternates: { canonical: "https://zeppelinbar.com/flyboard" },
+  alternates: { canonical: "https://www.zeppelinbar.hr/flyboard" },
   openGraph: {
     title: "Flyboard Pula | Zeppelin Beach",
     description:
       "Uzleti iznad Jadrana uz flyboard — Zeppelin Beach, Saccorgiana, Pula. Nije potrebno iskustvo.",
-    url: "https://zeppelinbar.com/flyboard",
+    url: "https://www.zeppelinbar.hr/flyboard",
     siteName: "Zeppelin Beach Complex",
-    images: [{ url: "https://zeppelinbar.com/assets/flyboard.jpg", width: 1280, height: 853, alt: "Flyboard Pula — Zeppelin Beach" }],
+    images: [{ url: "https://www.zeppelinbar.hr/assets/flyboard.jpg", width: 1280, height: 853, alt: "Flyboard Pula — Zeppelin Beach" }],
     locale: "hr_HR",
     type: "website",
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Flyboard Pula | Zeppelin Beach",
     description: "Uzleti iznad Jadrana uz flyboard — Zeppelin Beach, Pula.",
-    images: ["https://zeppelinbar.com/assets/flyboard.jpg"],
+    images: ["https://www.zeppelinbar.hr/assets/flyboard.jpg"],
   },
 };
 

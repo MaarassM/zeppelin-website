@@ -12,16 +12,16 @@ export const metadata: Metadata = {
     "aktivnosti za djecu pula",
     "vodeni sportovi pula",
   ],
-  alternates: { canonical: "https://zeppelinbar.com/trampoline" },
+  alternates: { canonical: "https://www.zeppelinbar.hr/trampoline" },
   openGraph: {
     title: "Trampolin na Vodi Pula | Zeppelin Beach",
     description:
       "Vodeni trampolin uz obalu — skoči visoko i padni u more. Za sve uzraste. Saccorgiana, Pula.",
-    url: "https://zeppelinbar.com/trampoline",
+    url: "https://www.zeppelinbar.hr/trampoline",
     siteName: "Zeppelin Beach Complex",
     images: [
       {
-        url: "https://zeppelinbar.com/assets/trampoline.jpg",
+        url: "https://www.zeppelinbar.hr/assets/trampoline.jpg",
         width: 1280,
         height: 853,
         alt: "Trampolin na Vodi Pula — Zeppelin Beach",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: "Trampolin na Vodi Pula | Zeppelin Beach",
     description:
       "Vodeni trampolin uz obalu — skoči i padni u more. Zeppelin Beach, Pula.",
-    images: ["https://zeppelinbar.com/assets/trampoline.jpg"],
+    images: ["https://www.zeppelinbar.hr/assets/trampoline.jpg"],
   },
 };
 

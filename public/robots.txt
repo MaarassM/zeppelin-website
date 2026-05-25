@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://zeppelinbar.com/sitemap.xml
+Sitemap: https://www.zeppelinbar.hr/sitemap.xml
