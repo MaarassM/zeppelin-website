@@ -3,8 +3,17 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react'
 import hr from '@/messages/hr.json'
 import en from '@/messages/en.json'
+import it from '@/messages/it.json'
+import de from '@/messages/de.json'
 
-type Locale = 'hr' | 'en'
+export const LOCALES = [
+  { code: 'hr', label: 'Hrvatski' },
+  { code: 'en', label: 'English' },
+  { code: 'it', label: 'Italiano' },
+  { code: 'de', label: 'Deutsch' },
+] as const
+
+export type Locale = (typeof LOCALES)[number]['code']
 type Messages = typeof hr
 
 interface LocaleContextValue {
@@ -15,15 +24,23 @@ interface LocaleContextValue {
 
 const LocaleContext = createContext<LocaleContextValue | null>(null)
 
-const messages: Record<Locale, Messages> = { hr, en }
+const messages: Record<Locale, Messages> = { hr, en, it, de }
+
+function isLocale(value: string | null): value is Locale {
+  return LOCALES.some(l => l.code === value)
+}
 
 export function LocaleProvider({ children }: { children: ReactNode }): React.JSX.Element {
   const [locale, setLocaleState] = useState<Locale>('hr')
 
   useEffect(() => {
-    const stored = localStorage.getItem('locale') as Locale | null
-    if (stored === 'hr' || stored === 'en') setLocaleState(stored)
+    const stored = localStorage.getItem('locale')
+    if (isLocale(stored)) setLocaleState(stored)
   }, [])
+
+  useEffect(() => {
+    document.documentElement.lang = locale
+  }, [locale])
 
   function setLocale(l: Locale) {
     setLocaleState(l)

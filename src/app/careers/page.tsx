@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description: "Prijavi se za sezonu i radi na Saccorgiana plaži u Puli — bar, kuhinja, vodeni sportovi i više.",
     url: "https://www.zeppelinbar.hr/careers",
     siteName: "Zeppelin Beach Complex",
-    images: [{ url: "https://www.zeppelinbar.hr/assets/hero.jpg", width: 1280, height: 853, alt: "Karijere — Zeppelin Beach Pula" }],
+    images: [{ url: "https://www.zeppelinbar.hr/assets/og.jpg", width: 1200, height: 630, alt: "Karijere — Zeppelin Beach Pula" }],
     locale: "hr_HR",
     type: "website",
   },
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Karijere | Posao na Plaži Pula | Zeppelin Beach",
     description: "Sezonski posao na Saccorgiana plaži u Puli — Zeppelin Beach zapošljava.",
-    images: ["https://www.zeppelinbar.hr/assets/hero.jpg"],
+    images: ["https://www.zeppelinbar.hr/assets/og.jpg"],
   },
 };
 

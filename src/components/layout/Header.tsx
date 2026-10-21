@@ -1,115 +1,84 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Menu } from "lucide-react";
+import { ArrowUpRight, Menu } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useT } from "@/lib/i18n";
 import { MobileMenu } from "./MobileMenu";
+import { LanguageMenu } from "./LanguageMenu";
 import { trackOutbound } from "@/lib/analytics";
 
-const NAV_ITEMS = [
+export const NAV_ITEMS = [
   { key: "gastro" as const, href: "/#gastro" },
   { key: "beach" as const, href: "/#action" },
   { key: "lokacija" as const, href: "/#lokacija" },
-  { key: "karijere" as const, href: "/careers" },
+  { key: "karijere" as const, href: "/#karijere" },
 ];
 
 export function Header() {
-  const { t, locale, setLocale } = useT();
+  const { t } = useT();
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    function onScroll() {
-      setScrolled(window.scrollY > 20);
-    }
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   if (pathname === "/careers") return null;
 
   return (
     <>
-      <header className={`fixed top-0 left-0 right-0 z-40 h-16 flex items-center transition-colors duration-300 ${scrolled ? "bg-red" : "bg-transparent"}`}>
-        <div className="w-full max-w-[1400px] mx-auto px-5 lg:px-[60px] flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center">
+      <header className="fixed inset-x-0 top-0 z-40 bg-red shadow-[0_1px_0_rgba(0,0,0,0.08),0_8px_24px_-16px_rgba(90,10,25,0.6)]">
+        <div className="mx-auto flex h-16 w-full max-w-[1400px] items-center justify-between gap-6 px-4 sm:px-6 lg:h-[72px] lg:px-10">
+          <Link href="/" aria-label="Zeppelin Beach & Lounge Bar" className="flex shrink-0 items-center">
             <Image
-              src="/assets/logo.png"
-              alt="Zeppelin Beach"
-              width={140}
-              height={48}
-              className="h-10 w-auto invert"
+              src="/assets/logo-wordmark.png"
+              alt="Zeppelin Beach & Lounge Bar"
+              width={900}
+              height={344}
+              sizes="120px"
+              className="h-10 w-auto lg:h-11"
               priority
             />
           </Link>
 
-          {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden items-center gap-1 lg:flex">
             {NAV_ITEMS.map(({ key, href }) => (
               <a
                 key={key}
                 href={href}
-                className={`text-sm font-semibold tracking-wide transition-colors ${scrolled ? "text-white/85 hover:text-white" : "text-white hover:text-white/70"}`}
+                className="group relative rounded-full px-4 py-2 text-[15px] font-medium text-white/85 transition-colors hover:text-white"
               >
                 {t.nav[key]}
+                <span className="absolute inset-x-4 bottom-1 h-0.5 origin-left scale-x-0 rounded-full bg-white transition-transform duration-300 ease-out-expo group-hover:scale-x-100" />
               </a>
             ))}
           </nav>
 
-          {/* Desktop right */}
-          <div className="hidden lg:flex items-center gap-5">
-            <div className="flex gap-1">
-              {(["hr", "en"] as const).map((l) => (
-                <button
-                  key={l}
-                  onClick={() => setLocale(l)}
-                  className={`text-xs font-semibold px-2 py-1 rounded cursor-pointer transition-colors ${
-                    locale === l
-                      ? "text-white"
-                      : scrolled ? "text-white/55 hover:text-white/80" : "text-white/70 hover:text-white"
-                  }`}
-                >
-                  {l.toUpperCase()}
-                </button>
-              ))}
-            </div>
+          <div className="hidden items-center gap-3 lg:flex">
+            <LanguageMenu />
             <a
               href="https://www.zeppelin-adventure.com"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => trackOutbound("header-cta")}
-              className="border-2 border-white text-white font-display text-xs tracking-widest px-5 py-2 rounded-lg hover:bg-white/10 transition-colors cursor-pointer"
+              className="group inline-flex h-10 items-center gap-1.5 whitespace-nowrap rounded-full bg-white pl-5 pr-4 font-display text-[13px] tracking-widest text-red transition-all hover:bg-cream active:scale-[0.98]"
             >
               {t.nav.rezerviraj.toUpperCase()}
+              <ArrowUpRight
+                size={16}
+                strokeWidth={2.25}
+                className="transition-transform duration-300 ease-out-expo group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+              />
             </a>
           </div>
 
-          {/* Mobile hamburger */}
-          <div className="flex lg:hidden items-center gap-4">
-            <div className="flex gap-1">
-              {(["hr", "en"] as const).map((l) => (
-                <button
-                  key={l}
-                  onClick={() => setLocale(l)}
-                  className={`text-xs font-semibold px-1.5 py-1 cursor-pointer transition-colors ${
-                    locale === l ? "text-white" : scrolled ? "text-white/50" : "text-white/70"
-                  }`}
-                >
-                  {l.toUpperCase()}
-                </button>
-              ))}
-            </div>
+          <div className="flex items-center gap-2 lg:hidden">
+            <LanguageMenu />
             <button
               onClick={() => setMenuOpen(true)}
               aria-label="Open menu"
-              className="cursor-pointer"
+              className="grid size-11 place-items-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 cursor-pointer"
             >
-              <Menu className="text-white" size={24} />
+              <Menu size={22} />
             </button>
           </div>
         </div>

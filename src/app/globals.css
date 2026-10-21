@@ -5,13 +5,14 @@
   --color-red-deep: #8B1124;
   --color-red-dark: #B8182E;
   --color-cream: #F0EAD2;
+  --color-cream-soft: #F6F1E1;
   --color-dark: #1A1A1A;
   --color-body: #555555;
   --color-muted: #888888;
   --color-border: #C0B898;
 
   --font-display: var(--font-anton), sans-serif;
-  --font-body: var(--font-inter), sans-serif;
+  --font-body: var(--font-outfit), sans-serif;
 
   --letter-spacing-widest2: 0.25em;
 
@@ -21,12 +22,18 @@
   --breakpoint-xl: 1280px;
   --breakpoint-2xl: 1440px;
 
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
   --animate-scroll-cue: scroll-cue 1.6s ease-in-out infinite;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 4rem;
+  }
+  @media (min-width: 1024px) {
+    html { scroll-padding-top: 4.5rem; }
   }
   body {
     @apply font-body bg-cream text-dark antialiased;
@@ -39,6 +46,39 @@
     html { scroll-behavior: auto; }
     *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
   }
+}
+
+@layer components {
+  @media (prefers-reduced-motion: no-preference) {
+    .rise {
+      animation: rise 0.9s var(--ease-out-expo) both;
+    }
+    .wave-drift {
+      animation: wave-drift 28s linear infinite;
+    }
+    @supports (animation-timeline: view()) {
+      .reveal {
+        animation: reveal linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 45%;
+      }
+    }
+  }
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes wave-drift {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: none; }
 }
 
 @keyframes scroll-cue {

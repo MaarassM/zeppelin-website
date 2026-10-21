@@ -24,16 +24,16 @@ export function CookieNotice() {
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 bg-red px-6 py-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-      <p className="text-white/85 text-xs leading-relaxed">
+    <div className="rise fixed inset-x-3 bottom-3 z-50 flex flex-col gap-3 rounded-[20px] bg-dark/95 p-4 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.5)] backdrop-blur-md sm:inset-x-auto sm:right-5 sm:bottom-5 sm:max-w-md sm:flex-row sm:items-center sm:gap-5 sm:p-5">
+      <p className="text-[13px] leading-relaxed text-white/80">
         {t.ui.cookie_notice}{" "}
-        <Link href="/privacy" className="text-white underline underline-offset-2 hover:text-white/70 transition-colors">
+        <Link href="/privacy" className="text-white underline underline-offset-2 transition-colors hover:text-cream">
           {t.ui.cookie_learn_more}
         </Link>
       </p>
       <button
         onClick={dismiss}
-        className="shrink-0 border border-white/40 text-white text-xs px-4 py-1.5 rounded hover:bg-white/10 transition-colors"
+        className="h-10 shrink-0 rounded-full bg-white px-6 text-sm font-semibold text-dark transition-colors hover:bg-cream active:scale-[0.98] cursor-pointer"
       >
         {t.ui.cookie_ok}
       </button>

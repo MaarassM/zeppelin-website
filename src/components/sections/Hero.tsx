@@ -1,170 +1,145 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
-import { ArrowUpRight, Clock, X } from "lucide-react";
+import { Clock, MapPin, Sun, Waves, X } from "lucide-react";
 import { useT } from "@/lib/i18n";
 import { Button } from "@/components/ui/Button";
 import { trackOutbound } from "@/lib/analytics";
+import { Wave } from "@/components/ui/Wave";
 
 export function Hero() {
   const { t } = useT();
   const [hoursOpen, setHoursOpen] = useState(false);
 
+  useEffect(() => {
+    if (!hoursOpen) return;
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") setHoursOpen(false);
+    }
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [hoursOpen]);
+
   return (
-    <section className="relative w-full h-[95dvh] flex flex-col items-center justify-center overflow-hidden pb-16 lg:pb-24">
-      {/* Full-bleed beach photo */}
+    <section className="relative isolate flex min-h-[100svh] w-full flex-col items-center justify-center overflow-hidden px-4 pb-24 pt-24 lg:pb-32 lg:pt-28">
       <Image
-        src="/assets/hero.jpg"
+        src="/assets/hero-wibit.jpg"
         alt=""
         fill
         priority
         sizes="100vw"
-        className="object-cover object-[70%_center] md:object-center"
+        className="-z-20 object-cover object-[35%_center] md:object-center"
       />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/15 via-black/0 to-black/55" />
 
-      {/* Gradient overlay — light touch so photo stays visible */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/[0.42] via-black/[0.32] to-black/55" />
-
-      {/* Centered content — logo + single CTA */}
-      <div className="relative z-10 flex flex-col items-center gap-7">
+      <div className="flex w-full flex-col items-center gap-8 lg:gap-10">
         <Image
-          src="/assets/logo-extended.png"
-          alt="Zeppelin Beach Complex"
-          width={360}
-          height={130}
-          sizes="(max-width: 640px) 240px, (max-width: 1024px) 280px, 360px"
-          className="h-48 sm:h-60 lg:h-72 w-auto"
+          src="/assets/logo-hero.png"
+          alt="Zeppelin Beach & Lounge Bar"
+          width={1600}
+          height={991}
+          sizes="(max-width: 640px) 70vw, 440px"
+          className="rise h-auto w-[min(70vw,280px)] drop-shadow-[0_12px_32px_rgba(0,0,0,0.35)] sm:w-[360px] lg:w-[440px]"
           priority
         />
-        <Button
-          as="a"
-          href="https://www.google.com/maps/search/Zeppelin+Beach+lounge+bar+Pula"
-          target="_blank"
-          rel="noopener noreferrer"
-          variant="solid-red"
-          onClick={() => trackOutbound("hero-maps")}
-          className="font-display tracking-widest text-sm lg:text-base"
+
+        <div
+          className="rise flex w-full max-w-[320px] flex-col items-stretch gap-3 sm:w-auto sm:max-w-none sm:flex-row sm:items-center"
+          style={{ animationDelay: "150ms" }}
         >
-          {t.hero.find_us.toUpperCase()}{" "}
-          <ArrowUpRight size={16} className="ml-1" />
-        </Button>
-        <Button
-          as="a"
-          href="https://www.zeppelin-adventure.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          variant="cream"
-          onClick={() => trackOutbound("hero-cta")}
-          className="font-display tracking-widest text-sm lg:text-base"
-        >
-          {t.nav.rezerviraj.toUpperCase()}{" "}
-          <ArrowUpRight size={16} className="ml-1" />
-        </Button>
-        <button
-          onClick={() => setHoursOpen(true)}
-          className="flex items-center gap-2 px-6 py-2.5 rounded-lg border border-white/40 text-white hover:border-white hover:bg-white/10 text-xs font-display tracking-widest uppercase transition-all"
-        >
-          <Clock size={13} />
-          {t.hero.hours_btn}
-        </button>
+          <Button
+            as="a"
+            href="https://www.google.com/maps/search/Zeppelin+Beach+lounge+bar+Pula"
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="solid-red"
+            size="lg"
+            onClick={() => trackOutbound("hero-maps")}
+          >
+            <MapPin size={17} strokeWidth={2} />
+            {t.hero.find_us.toUpperCase()}
+          </Button>
+          <Button
+            as="a"
+            href="https://www.zeppelin-adventure.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="cream"
+            size="lg"
+            onClick={() => trackOutbound("hero-cta")}
+          >
+            {t.nav.rezerviraj.toUpperCase()}
+          </Button>
+          <Button variant="glass" size="lg" onClick={() => setHoursOpen(true)}>
+            <Clock size={17} strokeWidth={2} />
+            {t.hero.hours_btn.toUpperCase()}
+          </Button>
+        </div>
       </div>
 
-      {/* Working Hours Modal */}
-      {hoursOpen && (
+      {hoursOpen && createPortal(
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-6"
+          role="dialog"
+          aria-modal="true"
+          aria-label={t.footer.hours_title}
+          className="fixed inset-0 z-50 flex items-end justify-center p-3 sm:items-center sm:p-6"
           onClick={() => setHoursOpen(false)}
         >
-          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+          <div className="absolute inset-0 bg-dark/60 backdrop-blur-sm" />
           <div
-            className="relative bg-cream rounded-2xl p-8 w-full max-w-sm shadow-2xl"
+            className="rise relative w-full max-w-md rounded-[24px] bg-cream-soft p-6 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.5)] sm:p-8"
             onClick={(e) => e.stopPropagation()}
           >
-            <button
-              onClick={() => setHoursOpen(false)}
-              className="absolute top-4 right-4 text-dark/40 hover:text-dark transition-colors"
-              aria-label="Close"
-            >
-              <X size={18} />
-            </button>
-
-            <div className="flex items-center gap-2 mb-6">
-              <Clock size={16} className="text-red" />
-              <p className="font-display text-dark text-lg tracking-widest uppercase">
+            <div className="mb-6 flex items-center justify-between">
+              <p className="font-display text-[28px] leading-none text-dark">
                 {t.footer.hours_title}
               </p>
+              <button
+                onClick={() => setHoursOpen(false)}
+                className="grid size-10 place-items-center rounded-full bg-dark/5 text-dark/60 transition-colors hover:bg-dark/10 hover:text-dark cursor-pointer"
+                aria-label="Close"
+              >
+                <X size={18} />
+              </button>
             </div>
 
-            <div className="flex flex-col gap-5">
-              <div className="flex flex-col gap-2">
-                <p className="text-dark/40 text-[10px] tracking-widest uppercase font-semibold">
-                  {t.footer.hours_bar_label}
-                </p>
-                <div className="flex flex-col gap-1">
-                  <p className="text-dark/80 text-sm">
-                    {t.footer.hours_bar_summer}
+            <div className="flex flex-col gap-3">
+              <div className="rounded-[16px] bg-white/70 p-4">
+                <div className="mb-2.5 flex items-center gap-2 text-red">
+                  <Sun size={16} strokeWidth={2} />
+                  <p className="text-xs font-semibold uppercase tracking-widest">
+                    {t.footer.hours_bar_label}
                   </p>
-                  <p className="text-dark/80 text-sm">
-                    {t.footer.hours_bar_spring}
-                  </p>
-                  <p className="text-dark/80 text-sm">
-                    {t.footer.hours_bar_autumn}
-                  </p>
-                  <p className="text-dark/80 text-sm">
-                    {t.footer.hours_bar_winter}
-                  </p>
+                </div>
+                <div className="flex flex-col gap-1 text-[15px] text-dark/80">
+                  <p>{t.footer.hours_bar_summer}</p>
+                  <p>{t.footer.hours_bar_spring}</p>
+                  <p>{t.footer.hours_bar_autumn}</p>
+                  <p>{t.footer.hours_bar_winter}</p>
                 </div>
               </div>
 
-              <div className="border-t border-dark/10" />
-
-              <div className="flex flex-col gap-2">
-                <p className="text-dark/40 text-[10px] tracking-widest uppercase font-semibold">
-                  {t.footer.hours_sports_label}
-                </p>
-                <div className="flex flex-col gap-1">
-                  <p className="text-dark/80 text-sm">
-                    {t.footer.hours_sports_summer}
+              <div className="rounded-[16px] bg-white/70 p-4">
+                <div className="mb-2.5 flex items-center gap-2 text-red">
+                  <Waves size={16} strokeWidth={2} />
+                  <p className="text-xs font-semibold uppercase tracking-widest">
+                    {t.footer.hours_sports_label}
                   </p>
-                  <p className="text-dark/80 text-sm">
-                    {t.footer.hours_sports_offseason}
-                  </p>
+                </div>
+                <div className="flex flex-col gap-1 text-[15px] text-dark/80">
+                  <p>{t.footer.hours_sports_summer}</p>
+                  <p>{t.footer.hours_sports_offseason}</p>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
 
-      {/* Scroll cue — animated vertical line, suppressed by prefers-reduced-motion */}
-      <div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-40"
-        aria-hidden="true"
-      >
-        <div
-          className="w-px h-6 bg-white animate-scroll-cue"
-          style={{ transformOrigin: "top" }}
-        />
-      </div>
-
-      {/* Cream wave — bleeds into the BarRelax section below */}
-      <div
-        className="absolute bottom-0 left-0 right-0 z-20 leading-none"
-        aria-hidden="true"
-      >
-        <svg
-          viewBox="0 0 1440 80"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-          className="block w-full h-16 lg:h-24"
-        >
-          <path
-            d="M0,62 C216,24 360,76 576,48 C756,24 900,72 1116,40 C1260,18 1368,60 1440,44 L1440,80 L0,80 Z"
-            fill="#F0EAD2"
-          />
-        </svg>
-      </div>
+      <Wave fill="var(--color-cream)" back="var(--color-cream)" backOpacity={0.5} variant={0} />
     </section>
   );
 }

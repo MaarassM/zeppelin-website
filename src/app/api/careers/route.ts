@@ -1,9 +1,10 @@
 import { Resend } from "resend";
 import { headers } from "next/headers";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Vercel rejects request bodies over 4.5 MB, so keep the CV comfortably below that
+const MAX_CV_BYTES = 4 * 1024 * 1024;
 
-// In-memory rate limit: 5 requests per IP per hour
+// In-memory rate limit: 5 requests per IP per hour (per server instance)
 const rateMap = new Map<string, { count: number; resetAt: number }>();
 
 function isRateLimited(ip: string): boolean {
@@ -27,9 +28,24 @@ function escapeHtml(str: string): string {
     .replace(/'/g, "&#x27;");
 }
 
+function field(formData: FormData, key: string): string {
+  const value = formData.get(key);
+  return typeof value === "string" ? value.trim() : "";
+}
+
+function isPdf(bytes: Buffer): boolean {
+  return bytes.subarray(0, 5).toString("latin1") === "%PDF-";
+}
+
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export async function POST(request: Request) {
+  const { RESEND_API_KEY, RESEND_FROM, CAREERS_EMAIL } = process.env;
+  if (!RESEND_API_KEY || !RESEND_FROM || !CAREERS_EMAIL) {
+    console.error("Careers form: RESEND_API_KEY, RESEND_FROM or CAREERS_EMAIL is not set");
+    return Response.json({ error: "Service unavailable" }, { status: 503 });
+  }
+
   const headersList = await headers();
   const ip =
     headersList.get("x-forwarded-for")?.split(",")[0].trim() ??
@@ -40,20 +56,24 @@ export async function POST(request: Request) {
     return Response.json({ error: "Too many requests" }, { status: 429 });
   }
 
-  const formData = await request.formData();
+  let formData: FormData;
+  try {
+    formData = await request.formData();
+  } catch {
+    return Response.json({ error: "Invalid request" }, { status: 400 });
+  }
 
   // Honeypot — bots fill this, humans don't
-  const website = formData.get("website") as string | null;
-  if (website) {
+  if (field(formData, "website")) {
     return Response.json({ ok: true }); // silent discard
   }
 
-  const name = (formData.get("name") as string | null)?.trim() ?? "";
-  const phone = (formData.get("phone") as string | null)?.trim() ?? "";
-  const email = (formData.get("email") as string | null)?.trim() ?? "";
-  const position = (formData.get("position") as string | null)?.trim() ?? "";
-  const notes = (formData.get("notes") as string | null)?.trim() ?? null;
-  const cv = formData.get("cv") as File | null;
+  const name = field(formData, "name");
+  const phone = field(formData, "phone");
+  const email = field(formData, "email");
+  const position = field(formData, "position");
+  const notes = field(formData, "notes") || null;
+  const cv = formData.get("cv");
 
   if (!name || name.length > 100)
     return Response.json({ error: "Invalid name" }, { status: 400 });
@@ -67,9 +87,14 @@ export async function POST(request: Request) {
     return Response.json({ error: "Notes too long" }, { status: 400 });
 
   const attachments: { filename: string; content: Buffer }[] = [];
-  if (cv && cv.size > 0) {
+  if (cv instanceof File && cv.size > 0) {
+    if (cv.size > MAX_CV_BYTES)
+      return Response.json({ error: "CV too large" }, { status: 413 });
     const buffer = Buffer.from(await cv.arrayBuffer());
-    attachments.push({ filename: cv.name, content: buffer });
+    if (!isPdf(buffer))
+      return Response.json({ error: "CV must be a PDF" }, { status: 400 });
+    const safeFilename = `CV - ${name.replace(/[^\p{L}\p{N} ._-]/gu, "").slice(0, 60) || "kandidat"}.pdf`;
+    attachments.push({ filename: safeFilename, content: buffer });
   }
 
   const safeName = escapeHtml(name);
@@ -77,11 +102,14 @@ export async function POST(request: Request) {
   const safeEmail = escapeHtml(email);
   const safePosition = escapeHtml(position);
   const safeNotes = notes ? escapeHtml(notes) : null;
+  const subjectText = `Nova prijava - ${position} | ${name}`.replace(/[\r\n]+/g, " ");
 
+  const resend = new Resend(RESEND_API_KEY);
   const { error } = await resend.emails.send({
-    from: `Zeppelin Careers <${process.env.RESEND_FROM}>`,
-    to: process.env.CAREERS_EMAIL!,
-    subject: `Nova prijava — ${safePosition} | ${safeName}`,
+    from: `Zeppelin Careers <${RESEND_FROM}>`,
+    to: CAREERS_EMAIL,
+    replyTo: email,
+    subject: subjectText,
     html: `
       <p><strong>Pozicija:</strong> ${safePosition}</p>
       <p><strong>Ime:</strong> ${safeName}</p>
@@ -93,7 +121,8 @@ export async function POST(request: Request) {
   });
 
   if (error) {
-    return Response.json({ error: error.message }, { status: 500 });
+    console.error("Careers form: Resend error", error);
+    return Response.json({ error: "Could not send application" }, { status: 502 });
   }
 
   return Response.json({ ok: true });

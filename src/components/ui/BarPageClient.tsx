@@ -69,9 +69,22 @@ export function BarPageClient({ item, name, gallery = [] }: BarPageClientProps) 
 
       {/* Content */}
       <div className="px-6 lg:px-[120px] py-12 lg:py-20 max-w-[1200px] mx-auto">
-        <p className="text-dark/80 text-base lg:text-lg leading-relaxed max-w-[600px]">
-          {page.description}
-        </p>
+        <div className="grid lg:grid-cols-[1fr_280px] gap-12 lg:gap-20">
+          <p className="text-dark/80 text-base lg:text-lg leading-relaxed max-w-[600px]">
+            {page.description}
+          </p>
+
+          {item === "bar" && (
+            <div>
+              <Link
+                href="/cjenik/bar"
+                className="inline-flex items-center justify-center w-full px-6 h-11 bg-dark text-cream font-display text-sm tracking-widest rounded-lg hover:bg-dark/80 transition-colors"
+              >
+                {t.bar.menu_btn.toUpperCase()} →
+              </Link>
+            </div>
+          )}
+        </div>
 
         <ActivityGallery images={gallery} />
       </div>

@@ -1,27 +1,21 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { useT } from "@/lib/i18n";
 import { ActivityGallery } from "@/components/ui/ActivityGallery";
-import { PdfModal } from "@/components/ui/PdfModal";
 
 const CONFIG = {
   fastfood: {
     image: "/assets/food/DSC09600.jpg",
     pageKey: "fastfood_page" as const,
     tag: "BITES & SWEETS",
-    menuPdf: "/assets/menus/fastfood-menu.pdf",
-    menuTitle: "Fast Food Menu",
   },
   gelato: {
     image: "/assets/gelato.jpg",
     pageKey: "gelato_page" as const,
     tag: "BITES & SWEETS",
-    menuPdf: "/assets/menus/gelato-menu.pdf",
-    menuTitle: "Gelato Menu",
   },
 } as const;
 
@@ -33,9 +27,8 @@ interface GastroPageClientProps {
 
 export function GastroPageClient({ item, name, gallery = [] }: GastroPageClientProps) {
   const { t } = useT();
-  const { image, pageKey, tag, menuPdf, menuTitle } = CONFIG[item];
+  const { image, pageKey, tag } = CONFIG[item];
   const page = t.gastro[pageKey];
-  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-cream">
@@ -82,24 +75,17 @@ export function GastroPageClient({ item, name, gallery = [] }: GastroPageClientP
           </p>
 
           <div>
-            <button
-              onClick={() => setMenuOpen(true)}
-              className="inline-flex items-center justify-center w-full px-6 h-11 bg-dark text-cream font-display text-sm tracking-widest rounded-lg hover:bg-dark/80 transition-colors cursor-pointer"
+            <Link
+              href={`/cjenik/${item}`}
+              className="inline-flex items-center justify-center w-full px-6 h-11 bg-dark text-cream font-display text-sm tracking-widest rounded-lg hover:bg-dark/80 transition-colors"
             >
               {t.gastro.menu_btn.toUpperCase()} →
-            </button>
+            </Link>
           </div>
         </div>
 
         <ActivityGallery images={gallery} />
       </div>
-
-      <PdfModal
-        src={menuPdf}
-        isOpen={menuOpen}
-        onClose={() => setMenuOpen(false)}
-        title={menuTitle}
-      />
     </div>
   );
 }

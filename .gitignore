@@ -43,3 +43,6 @@ next-env.d.ts
 # raw asset folders — drop selected files into public/assets/ instead
 /primary-photos/
 /Zeppelin Logo (1)/
+
+# playwright mcp
+.playwright-mcp/

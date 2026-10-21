@@ -311,6 +311,32 @@
     "social_title": "Follow us",
     "instagram": "@zeppelin_bar_pula",
     "copyright": "© 2025 Zeppelin Beach Complex",
+    "price_list_link": "Price list",
     "privacy_link": "Privacy Policy"
+  },
+  "cjenik": {
+    "tag": "PRICE LIST",
+    "title": "Price list",
+    "intro": "Current price lists for all our outlets on Saccorgiana beach. All prices are in euro, service and VAT included.",
+    "back": "Back",
+    "names": {
+      "bar": "Bar",
+      "fastfood": "Fast Food",
+      "gelato": "Gelato Bar"
+    },
+    "col_item": "Item",
+    "col_size": "Size",
+    "col_price": "Price",
+    "col_anchor": "Anchor price",
+    "anchor_short": "Anchor",
+    "anchor_note": "The anchor price is the price valid on 10 Sep 2026, as required by Croatian law (NN 101/2026).",
+    "vat_note": "All prices are in euro. Service and VAT are included in the price.",
+    "published": "Published",
+    "version": "Version",
+    "open": "Open price list",
+    "machine_title": "Machine-readable price lists",
+    "machine_desc": "Price lists in CSV and XML format, as required by Croatian law (NN 101/2026). These links always point to the current version.",
+    "archive_title": "Archive",
+    "archive_desc": "Every published version stays available for at least 30 days."
   }
 }

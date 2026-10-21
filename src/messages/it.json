@@ -1,0 +1,341 @@
+{
+  "nav": {
+    "gastro": "Gastro",
+    "beach": "Beach & Fun",
+    "lokacija": "Dove siamo",
+    "karijere": "Lavora con noi",
+    "rezerviraj": "Prenota l'Avventura"
+  },
+  "hero": {
+    "find_us": "Trovaci",
+    "location": "Saccorgiana Beach, Pula",
+    "title": "ZEPPELIN\nBEACH BAR",
+    "subtitle": "La tua base per il relax e il punto di partenza per ogni avventura.",
+    "cta_primary": "Scopri l'Offerta",
+    "cta_secondary": "Book Tours Online",
+    "hours_btn": "Orari di Apertura"
+  },
+  "bar": {
+    "tag": "BAR & RELAX",
+    "heading": "Relax ad alto livello.",
+    "description": "Rilassati con cocktail perfetti, buona musica e vista sul mare. Atmosfera piacevole, lettini e terrazze ombreggiate ti aspettano ogni giorno.",
+    "menu_btn": "Menu",
+    "sunbed_label": "Noleggio lettini",
+    "sunbed_info": "Info sul posto - al banco informazioni",
+    "bar_name": "Bar",
+    "bar_desc": "Cocktail & bevande",
+    "relax_name": "Lettini & Relax",
+    "relax_desc": "Relax, ombra e lettini",
+    "bar_page": {
+      "tagline": "Bevande fredde, atmosfera calda.",
+      "description": "Il nostro beach bar serve cocktail artigianali, bevande rinfrescanti e birra fredda dal mattino a tarda notte. Mentre i più piccoli saltano e si divertono all'AquaPark, tu rilassati con la tua bevanda fredda preferita, goditi la vista sul mare dalla terrazza e lascia che la musica scandisca il ritmo.",
+      "features": [
+        "Cocktail",
+        "Birra & vino",
+        "Analcolici",
+        "Caffè",
+        "Terrazza"
+      ],
+      "hours": "9:00 – 02:00"
+    },
+    "relax_page": {
+      "tagline": "Il tuo posto al sole.",
+      "description": "Noleggia un lettino e prenditi il tuo angolo di paradiso. Sono disponibili terrazze ombreggiate e posti al sole: mentre i più piccoli saltano e si divertono all'AquaPark, mettiti comodo, ordina una bevanda fredda dal bar e goditi la giornata.",
+      "features": [
+        "Noleggio lettini",
+        "Terrazze ombreggiate",
+        "Posti al sole",
+        "Servizio dal bar"
+      ],
+      "hours": "9:00 – 19:00"
+    }
+  },
+  "action": {
+    "tag": "ACTION ZONE",
+    "heading": "In acqua, in aria, a terra.",
+    "activities": [
+      { "id": "wibit", "name": "Wibit Park", "pricing": "1h · 3h · Giornata" },
+      { "id": "jetski", "name": "Jet Ski", "pricing": "A giro" },
+      { "id": "tube", "name": "Tube rides", "pricing": "1h · 3h · Giornata" },
+      { "id": "pedaline", "name": "Pedalò", "pricing": "1h · 3h · Giornata" },
+      { "id": "sup", "name": "SUP & Kayak", "pricing": "1h · 3h · Giornata" },
+      { "id": "tramp", "name": "Trampolino", "pricing": "1h · 3h · Giornata" },
+      { "id": "scuba", "name": "Immersioni", "pricing": "A sessione" },
+      { "id": "flyboard", "name": "Flyboard", "pricing": "A sessione" }
+    ]
+  },
+  "zones": {
+    "wibit": {
+      "tagline": "Salta, arrampicati, scivola...",
+      "description": "Un percorso a ostacoli gonfiabile in mare aperto: metti alla prova il tuo equilibrio, sfida gli amici e supera tutti gli ostacoli. Aperto a tutte le età.",
+      "features": [
+        "Pareti da arrampicata",
+        "Scivoli",
+        "Travi d'equilibrio",
+        "Trampolini"
+      ],
+      "pricing": "1h · 3h · Biglietto giornaliero",
+      "pay_note": "Pagamento al banco informazioni degli sport acquatici",
+      "pass_cta": "oppure acquista il pass di 7 giorni su:"
+    },
+    "tramp": {
+      "tagline": "Lascia saltare i bambini mentre ti godi il caffè.",
+      "description": "Salta fino al cielo, fai una capriola e inventa acrobazie che lasceranno tutti senza fiato. Puro volo di adrenalina, proprio accanto alla spiaggia.",
+      "features": ["Ancorato vicino alla riva", "Per tutte le età", "Salti e capriole"],
+      "pricing": "1h · 3h · Biglietto giornaliero",
+      "pay_note": "Pagamento al banco informazioni degli sport acquatici"
+    },
+    "pedaline": {
+      "tagline": "Pedala a più non posso.",
+      "description": "Pedalò per famiglie e gruppi: un modo rilassante per girare la baia e godersi la vista. Non serve alcuna esperienza.",
+      "features": ["Pedalò", "Per famiglie", "Per tutti i livelli"],
+      "pricing": "1h · 3h · Biglietto giornaliero",
+      "pay_note": "Pagamento al banco informazioni degli sport acquatici"
+    },
+    "sup": {
+      "tagline": "Alzati e pagaia.",
+      "description": "Abbraccia il mare e parti per un'avventura sull'acqua con le nostre opzioni: Stand-Up Paddleboarding (SUP) o kayak. Esplora la baia con i tuoi tempi, allena tutto il corpo o goditi semplicemente una gita lungo la costa, assaporando tutto ciò che ti circonda.",
+      "features": [
+        "Stand-up paddleboard (SUP)",
+        "Kayak",
+        "Per tutti i livelli",
+        "Attrezzatura inclusa"
+      ],
+      "pricing": "1h · 3h · Biglietto giornaliero",
+      "pay_note": "Pagamento al banco informazioni degli sport acquatici"
+    },
+    "tube": {
+      "tagline": "Tieniti forte.",
+      "description": "Giri adrenalinici in mare: scegli il tuo tube, afferra le maniglie e fatti trascinare sulle onde a tutta velocità. Disponibile in diverse configurazioni.",
+      "features": [
+        "Single",
+        "Twister",
+        "Banana",
+        "Family Couch",
+        "Group Couch"
+      ],
+      "pricing": "A giro",
+      "pay_note": "Pagamento al banco informazioni degli sport acquatici"
+    },
+    "jetski": {
+      "tagline": "Gas a tutta in mare aperto.",
+      "description": "Senti l'adrenalina mentre voli sulle onde a tutta potenza. Che sia la tua prima volta o che tu sia già un pilota esperto, il nostro team ti darà l'attrezzatura e le istruzioni prima della partenza. Chiama gli amici, attraversa il mare aperto e torna con storie da ricordare: sicurezza garantita, adrenalina non manca.",
+      "features": [
+        "Noleggio singolo",
+        "Guided safari",
+        "Per tutti i livelli",
+        "Introduzione alla sicurezza inclusa"
+      ],
+      "pricing": "A giro",
+      "pay_note": "Pagamento al banco informazioni degli sport acquatici",
+      "pass_cta": "oppure prenota online su:"
+    },
+    "scuba": {
+      "tagline": "Immergiti in un altro mondo.",
+      "description": "Esplora i fondali dell'Adriatico con un istruttore certificato. Perfetto per principianti e subacquei esperti: acqua cristallina, ricca vita marina e visibilità incredibile.",
+      "features": [
+        "Sessioni per principianti",
+        "Istruttori certificati",
+        "Attrezzatura inclusa",
+        "Per tutte le età"
+      ],
+      "pricing": "A sessione",
+      "pay_note": "Pagamento al banco informazioni degli sport acquatici"
+    },
+    "flyboard": {
+      "tagline": "Vola sopra il mare.",
+      "description": "Indossa il flyboard e sollevati per diversi metri sopra l'Adriatico, spinto solo dall'acqua. I nostri istruttori ti porteranno in aria in pochi minuti: non serve esperienza, solo un po' di coraggio.",
+      "features": [
+        "Istruttore incluso",
+        "Attrezzatura fornita",
+        "Per principianti",
+        "Briefing di sicurezza"
+      ],
+      "pricing": "A sessione",
+      "pay_note": "Pagamento al banco informazioni degli sport acquatici",
+      "pass_cta": "oppure prenota la scuola di flyboard su:"
+    }
+  },
+  "adventure": {
+    "tag": "ZEPPELIN ADVENTURE",
+    "heading": "Prenota la tua avventura.",
+    "subtitle": "Esperienze indimenticabili: prenotazione online, partenza dalla nostra spiaggia.",
+    "cta": "Prenota →",
+    "items": [
+      {
+        "id": "jetski",
+        "name": "Jet-Ski Safari",
+        "url": "https://www.zeppelin-adventure.com/product/jet-ski-safari/"
+      },
+      {
+        "id": "buggy",
+        "name": "Buggy / Quad",
+        "url": "https://www.zeppelin-adventure.com/product/buggy-safari/"
+      },
+      {
+        "id": "flyboard",
+        "name": "Flyboard",
+        "url": "https://www.zeppelin-adventure.com/product/flyboard-school/"
+      },
+      {
+        "id": "parasail",
+        "name": "Parasailing",
+        "url": "https://www.zeppelin-adventure.com/product/parasail/"
+      }
+    ]
+  },
+  "gastro": {
+    "tag": "BITES & SWEETS",
+    "heading": "Fast food &\nGelateria.",
+    "menu_btn": "Guarda il Menu",
+    "fastfood_name": "Fast Food",
+    "fastfood_desc": "Hamburger, panini, grill",
+    "gelato_name": "Gelateria",
+    "gelato_desc": "Gelato, succhi, macedonia, granita",
+    "fastfood_page": {
+      "tagline": "Fresco, veloce, gustoso.",
+      "description": "Hamburger, panini e grigliate preparati sul posto. Servizio rapido: più tempo per la spiaggia, meno per l'attesa.",
+      "features": ["Hamburger", "Panini", "Grigliata", "Patatine fritte"],
+      "hours": "9:00 – 22:00"
+    },
+    "gelato_page": {
+      "tagline": "Qualcosa di fresco, qualcosa di dolce.",
+      "description": "Gelato cremoso, succhi naturali freschi, macedonie e granita ghiacciata: tutto ciò che serve per una giornata perfetta in spiaggia.",
+      "features": [
+        "Gelato",
+        "Succhi naturali",
+        "Macedonia",
+        "Granita"
+      ],
+      "hours": "9:00 – 22:00"
+    }
+  },
+  "careers": {
+    "tag": "LAVORA CON NOI",
+    "heading": "Entra a far parte del team Zeppelin.",
+    "subtitle": "Candidati per la stagione e lavora sulla spiaggia più bella di Pula.",
+    "position_select_heading": "Per quale posizione ti candidi?",
+    "back_btn": "Indietro",
+    "name_label": "Nome e cognome",
+    "phone_label": "Cellulare",
+    "email_label": "Email",
+    "position_label": "Posizione",
+    "position_categories": [
+      {
+        "key": "bar",
+        "label": "Bar",
+        "sub_roles": ["Barista", "Servizio ai tavoli", "Cameriere"]
+      },
+      {
+        "key": "kuhinja",
+        "label": "Cucina",
+        "sub_roles": ["Maestro del grill", "Aiutante"]
+      },
+      {
+        "key": "vodeni_sportovi",
+        "label": "Sport acquatici",
+        "sub_roles": ["Addetto alla spiaggia", "Addetto agli sport acquatici", "Skipper"]
+      },
+      {
+        "key": "sladoled",
+        "label": "Addetto alla gelateria",
+        "sub_roles": []
+      },
+      {
+        "key": "ostale",
+        "label": "Altre mansioni",
+        "sub_roles": ["Marketing", "Responsabile operativo (manager)"]
+      },
+      {
+        "key": "adventures",
+        "label": "Zeppelin Adventures",
+        "sub_roles": [
+          "Guida tour - Buggy",
+          "Guida tour - Quad",
+          "Guida tour - Jetski"
+        ],
+        "notice": "Buggy e Quad richiedono una patente di guida valida. Per il Jetski serve una patente nautica valida."
+      }
+    ],
+    "cv_label": "Curriculum (PDF)",
+    "notes_label": "Note aggiuntive",
+    "submit_btn": "Invia Candidatura",
+    "success_msg": "Grazie! Ti contatteremo presto.",
+    "skipper_notice": "Per questa posizione è richiesta una patente nautica valida."
+  },
+  "location": {
+    "heading": "Trovaci.",
+    "directions": "Siamo sulla spiaggia di Saccorgiana a Pola. Segui le indicazioni per \"Zeppelin Beach\" dal centro città.",
+    "parking": "Parcheggio gratuito"
+  },
+  "privacy": {
+    "page_title": "Informativa sulla privacy",
+    "intro": "Questa pagina spiega come Zeppelin Beach Complex raccoglie, utilizza e protegge i tuoi dati personali.",
+    "who_heading": "Chi siamo",
+    "who_body": "Zeppelin Beach Complex opera sulla spiaggia di Saccorgiana, Pola, Croazia. Contatto: info@zeppelinbar.hr",
+    "data_heading": "Quali dati raccogliamo",
+    "data_body": "Raccogliamo dati personali esclusivamente tramite il modulo di candidatura di lavoro: nome e cognome, numero di cellulare, indirizzo email e curriculum (PDF). Non vengono raccolti altri dati personali.",
+    "purpose_heading": "Finalità del trattamento dei dati",
+    "purpose_body": "I dati della candidatura vengono utilizzati esclusivamente per valutare le candidature. Non vengono usati a fini di marketing, non vengono condivisi con terzi e non vengono venduti.",
+    "retention_heading": "Per quanto tempo conserviamo i dati",
+    "retention_body": "I curriculum e i dati delle candidature vengono eliminati al termine della stagione di assunzione. Se desideri una cancellazione anticipata dei tuoi dati, contattaci a info@zeppelinbar.hr.",
+    "analytics_heading": "Analisi",
+    "analytics_body": "Questo sito utilizza Vercel Analytics, uno strumento di analisi senza cookie. Non imposta cookie, non raccoglie identificatori personali e non effettua tracciamento tra siti diversi.",
+    "cookies_heading": "Cookie e archiviazione locale",
+    "cookies_body": "Questo sito non imposta cookie personali. Utilizziamo il localStorage del browser esclusivamente per ricordare le impostazioni della lingua e se hai chiuso l'avviso sui cookie.",
+    "rights_heading": "I tuoi diritti (GDPR)",
+    "rights_body": "Ai sensi del GDPR hai il diritto di accedere, rettificare, cancellare o limitare il trattamento dei tuoi dati personali. Per esercitare uno qualsiasi di questi diritti contattaci a info@zeppelinbar.hr.",
+    "contact_heading": "Contatti",
+    "contact_body": "Per qualsiasi domanda relativa alla privacy: info@zeppelinbar.hr"
+  },
+  "ui": {
+    "cards_hint": "Clicca su una scheda per maggiori dettagli.",
+    "cookie_notice": "Utilizziamo un'analisi senza cookie per migliorare la tua esperienza. I dati personali non vengono conservati né venduti.",
+    "cookie_learn_more": "Scopri di più",
+    "cookie_ok": "OK"
+  },
+  "footer": {
+    "hours_title": "Orari di apertura",
+    "hours_bar_label": "Bar",
+    "hours_bar_summer": "Estate - tutti i giorni - 9:00–00:00",
+    "hours_bar_spring": "Primavera - tutti i giorni - 9:00–22:00",
+    "hours_bar_autumn": "Autunno - sab e dom - 9:00–18:00",
+    "hours_bar_winter": "Inverno - sab e dom - 9:00–18:00",
+    "hours_sports_label": "Sport acquatici",
+    "hours_sports_summer": "Estate - tutti i giorni - 9:00–20:00",
+    "hours_sports_offseason": "Altre stagioni - chiuso",
+    "contact_title": "Contatti",
+    "phone": "+385 91 25 45 117",
+    "email": "info@zeppelinbar.hr",
+    "social_title": "Seguici",
+    "instagram": "@zeppelin_bar_pula",
+    "copyright": "© 2025 Zeppelin Beach Complex",
+    "price_list_link": "Listino prezzi",
+    "privacy_link": "Informativa sulla privacy"
+  },
+  "cjenik": {
+    "tag": "LISTINO",
+    "title": "Listino prezzi",
+    "intro": "Listini prezzi in vigore per tutti i nostri punti vendita sulla spiaggia Saccorgiana. Prezzi in euro, servizio e IVA inclusi.",
+    "back": "Indietro",
+    "names": {
+      "bar": "Bar",
+      "fastfood": "Fast Food",
+      "gelato": "Gelateria"
+    },
+    "col_item": "Prodotto",
+    "col_size": "Quantità",
+    "col_price": "Prezzo",
+    "col_anchor": "Prezzo di riferimento",
+    "anchor_short": "Riferimento",
+    "anchor_note": "Il prezzo di riferimento è il prezzo in vigore il 10/09/2026, come previsto dalla legge croata (NN 101/2026).",
+    "vat_note": "Prezzi espressi in euro. Servizio e IVA compresi nel prezzo.",
+    "published": "Pubblicato",
+    "version": "Versione",
+    "open": "Apri il listino",
+    "machine_title": "Listini leggibili da macchina",
+    "machine_desc": "Listini in formato CSV e XML, come previsto dalla legge croata (NN 101/2026). I link portano sempre alla versione in vigore.",
+    "archive_title": "Archivio",
+    "archive_desc": "Ogni versione pubblicata resta disponibile per almeno 30 giorni."
+  }
+}

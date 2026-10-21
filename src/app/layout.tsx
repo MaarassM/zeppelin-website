@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Anton, Inter } from "next/font/google";
+import { Anton, Outfit } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { LocaleProvider } from "@/lib/i18n";
 import { Header } from "@/components/layout/Header";
@@ -13,9 +13,9 @@ const anton = Anton({
   display: "swap",
 });
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
+const outfit = Outfit({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-outfit",
   display: "swap",
 });
 
@@ -63,9 +63,9 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://www.zeppelinbar.hr/assets/hero.jpg",
-        width: 1280,
-        height: 853,
+        url: "https://www.zeppelinbar.hr/assets/og.jpg",
+        width: 1200,
+        height: 630,
         alt: "Zeppelin Beach Complex — Saccorgiana Beach, Pula",
       },
     ],
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     title: "Zeppelin Beach Complex | Saccorgiana Beach, Pula",
     description:
       "Beach bar, vodeni sportovi, avanture i gastro na Saccorgiana plaži u Puli.",
-    images: ["https://www.zeppelinbar.hr/assets/hero.jpg"],
+    images: ["https://www.zeppelinbar.hr/assets/og.jpg"],
   },
 };
 
@@ -86,9 +86,9 @@ const jsonLd = {
   description:
     "Beach bar, water sports, adventures and gastro on Saccorgiana Beach in Pula, Croatia. Jet ski, scuba diving, Wibit Park, cocktails, fast food and gelato.",
   url: "https://www.zeppelinbar.hr",
-  telephone: "+38591254511 7",
-  image: "https://www.zeppelinbar.hr/assets/hero.jpg",
-  logo: "https://www.zeppelinbar.hr/assets/logo.png",
+  telephone: "+385912545117",
+  image: "https://www.zeppelinbar.hr/assets/og.jpg",
+  logo: "https://www.zeppelinbar.hr/assets/logo-hero.png",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Saccorgiana Beach",
@@ -206,7 +206,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="hr" className={`${anton.variable} ${inter.variable}`}>
+    <html lang="hr" className={`${anton.variable} ${outfit.variable}`}>
       <body>
         <script
           type="application/ld+json"

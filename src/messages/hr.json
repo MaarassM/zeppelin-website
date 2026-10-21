@@ -310,6 +310,32 @@
     "social_title": "Pratite nas",
     "instagram": "@zeppelin_bar_pula",
     "copyright": "© 2025 Zeppelin Beach Complex",
+    "price_list_link": "Cjenik",
     "privacy_link": "Pravila privatnosti"
+  },
+  "cjenik": {
+    "tag": "CJENIK",
+    "title": "Cjenik",
+    "intro": "Važeći cjenici svih naših prodajnih mjesta na Saccorgiana plaži. Sve cijene su u eurima, a usluga i PDV su uključeni u cijenu.",
+    "back": "Natrag",
+    "names": {
+      "bar": "Bar",
+      "fastfood": "Fast Food",
+      "gelato": "Gelaterija"
+    },
+    "col_item": "Naziv",
+    "col_size": "Količina",
+    "col_price": "Cijena",
+    "col_anchor": "Sidrena cijena",
+    "anchor_short": "Sidrena",
+    "anchor_note": "Sidrena cijena je cijena koja je vrijedila 10. 9. 2026. (Odluka o isticanju dodatne cijene, NN 101/2026).",
+    "vat_note": "Sve cijene su u eurima. Usluga i PDV su uključeni u cijenu.",
+    "published": "Objavljeno",
+    "version": "Broj pohrane",
+    "open": "Otvori cjenik",
+    "machine_title": "Strojno čitljivi cjenici",
+    "machine_desc": "Cjenici u CSV i XML formatu prema Odluci o objavi cjenika proizvoda i usluga (NN 101/2026). Poveznice uvijek vode na važeću verziju.",
+    "archive_title": "Arhiva",
+    "archive_desc": "Sve objavljene verzije cjenika dostupne su najmanje 30 dana od objave."
   }
 }

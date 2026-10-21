@@ -15,27 +15,26 @@ export function AdventureCard({
   image,
 }: AdventureCardProps) {
   return (
-    <div className="relative flex flex-col justify-end gap-3 p-5 rounded-xl overflow-hidden min-h-[200px] lg:min-h-[240px]">
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={() => trackOutbound(name)}
+      className="group relative isolate flex aspect-[3/4] flex-col justify-end gap-4 overflow-hidden rounded-[20px] bg-dark/20 p-5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red"
+    >
       <Image
         src={image}
         alt={name}
         fill
-        className="object-cover"
-        sizes="(max-width: 1024px) 50vw, 25vw"
+        className="-z-10 object-cover transition-transform duration-700 ease-out-expo group-hover:scale-[1.06]"
+        sizes="(max-width: 768px) 78vw, (max-width: 1024px) 42vw, 25vw"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-      <div className="relative flex flex-col gap-3">
-        <p className="font-display text-white text-sm leading-tight">{name}</p>
-        <a
-          href={url}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() => trackOutbound(name)}
-          className="flex items-center justify-center h-9 bg-red text-white text-xs font-display tracking-widest rounded-lg hover:bg-red-dark transition-colors cursor-pointer"
-        >
-          {ctaLabel}
-        </a>
-      </div>
-    </div>
+      <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black/85 via-black/25 to-black/0" />
+
+      <p className="font-display text-2xl leading-none text-white lg:text-[28px]">{name}</p>
+      <span className="flex h-11 items-center justify-center rounded-full bg-red font-display text-xs tracking-widest text-white transition-colors duration-300 group-hover:bg-white group-hover:text-red">
+        {ctaLabel}
+      </span>
+    </a>
   );
 }

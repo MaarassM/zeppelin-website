@@ -14,8 +14,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/pedaline`, priority: 0.8, changeFrequency: "monthly" },
     { url: `${BASE}/sup`, priority: 0.8, changeFrequency: "monthly" },
     { url: `${BASE}/trampoline`, priority: 0.8, changeFrequency: "monthly" },
+    { url: `${BASE}/flyboard`, priority: 0.8, changeFrequency: "monthly" },
     { url: `${BASE}/fastfood`, priority: 0.7, changeFrequency: "monthly" },
     { url: `${BASE}/gelato`, priority: 0.7, changeFrequency: "monthly" },
+    { url: `${BASE}/cjenik`, priority: 0.7, changeFrequency: "weekly" },
+    { url: `${BASE}/cjenik/bar`, priority: 0.7, changeFrequency: "weekly" },
+    { url: `${BASE}/cjenik/fastfood`, priority: 0.7, changeFrequency: "weekly" },
+    { url: `${BASE}/cjenik/gelato`, priority: 0.7, changeFrequency: "weekly" },
     { url: `${BASE}/careers`, priority: 0.5, changeFrequency: "monthly" },
   ];
 }

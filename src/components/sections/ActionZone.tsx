@@ -12,8 +12,8 @@ import {
 } from "lucide-react";
 import { LucideIcon } from "lucide-react";
 import { useT } from "@/lib/i18n";
-import { SectionTag } from "@/components/ui/SectionTag";
 import { ActivityCard } from "@/components/ui/ActivityCard";
+import { Wave } from "@/components/ui/Wave";
 
 const ICONS: Record<string, LucideIcon> = {
   wibit: Waves,
@@ -54,52 +54,35 @@ export function ActionZone() {
   return (
     <section
       id="action"
-      className="bg-red pt-16 pb-32 lg:pt-20 lg:pb-44 px-6 lg:px-[120px] relative overflow-hidden"
+      className="relative overflow-hidden bg-red pt-16 pb-24 lg:pt-24 lg:pb-36"
     >
-      <div className="max-w-[1200px] mx-auto flex flex-col gap-8">
-        {/* Header row */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-3">
-          <div className="flex flex-col gap-2">
-            <SectionTag light>{t.action.tag}</SectionTag>
-            <h2 className="font-display text-white text-[34px] lg:text-[52px] leading-none max-w-[600px]">
-              {t.action.heading}
-            </h2>
-            <p className="text-white/50 text-sm leading-relaxed">
-              {t.ui.cards_hint}
-            </p>
-          </div>
+      <div className="mx-auto flex max-w-[1240px] flex-col gap-10 px-5 sm:px-8 lg:gap-14 lg:px-10">
+        <div className="reveal flex flex-col gap-4">
+          <h2 className="max-w-[14ch] font-display text-[40px] leading-[0.95] text-white sm:text-5xl lg:text-[72px]">
+            {t.action.heading}
+          </h2>
+          <p className="text-base text-white/70 lg:text-lg">
+            {t.ui.cards_hint}
+          </p>
         </div>
 
-        {/* Cards grid — 2col mobile, 3col desktop */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
+        <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4 lg:gap-5">
           {t.action.activities.map((activity) => (
             <ActivityCard
               key={activity.id}
               icon={ICONS[activity.id] ?? Waves}
               image={IMAGES[activity.id] ?? ""}
               name={activity.name}
+              meta={activity.pricing}
               href={HREFS[activity.id]}
+              className="reveal text-white"
+              sizes="(max-width: 768px) 50vw, 300px"
             />
           ))}
         </div>
       </div>
-      {/* Cream wave — bleeds into the Adventure section below */}
-      <div
-        className="absolute bottom-0 left-0 right-0 z-20 leading-none"
-        aria-hidden="true"
-      >
-        <svg
-          viewBox="0 0 1440 80"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-          className="block w-full h-16 lg:h-24"
-        >
-          <path
-            d="M0,56 C120,18 280,70 480,38 C660,8 820,66 1020,36 C1180,12 1320,64 1440,30 L1440,80 L0,80 Z"
-            fill="#F0EAD2"
-          />
-        </svg>
-      </div>
+
+      <Wave fill="var(--color-cream)" variant={2} flip />
     </section>
   );
 }
