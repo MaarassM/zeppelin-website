@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Wibit Park Pula | Zeppelin Beach",
     description: "Napuhani poligon prepreka na vodi — skoči, penjaj se, klizaj. Saccorgiana plaža, Pula.",
     url: "https://www.zeppelinbar.hr/wibit",
-    siteName: "Zeppelin Beach Complex",
+    siteName: "Zeppelin Beach Bar",
     images: [{ url: "https://www.zeppelinbar.hr/assets/wibit.jpg", width: 1280, height: 853, alt: "Wibit Park Pula — Zeppelin Beach" }],
     locale: "hr_HR",
     type: "website",

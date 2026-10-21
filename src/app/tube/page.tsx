@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description:
       "Adrenalinske tube vožnje morem — banana, twister, family i group couch. Saccorgiana plaža, Pula.",
     url: "https://www.zeppelinbar.hr/tube",
-    siteName: "Zeppelin Beach Complex",
+    siteName: "Zeppelin Beach Bar",
     images: [{ url: "https://www.zeppelinbar.hr/assets/tube.jpg", width: 1280, height: 853, alt: "Tube Rides Pula — Zeppelin Beach" }],
     locale: "hr_HR",
     type: "website",

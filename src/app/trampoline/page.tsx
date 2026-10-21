@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description:
       "Vodeni trampolin uz obalu — skoči visoko i padni u more. Za sve uzraste. Saccorgiana, Pula.",
     url: "https://www.zeppelinbar.hr/trampoline",
-    siteName: "Zeppelin Beach Complex",
+    siteName: "Zeppelin Beach Bar",
     images: [
       {
         url: "https://www.zeppelinbar.hr/assets/trampoline.jpg",

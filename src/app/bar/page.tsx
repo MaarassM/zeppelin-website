@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description:
       "Kokteli, pivo, kava i terasa s pogledom na more. Zeppelin Beach Bar, Saccorgiana, Pula.",
     url: "https://www.zeppelinbar.hr/bar",
-    siteName: "Zeppelin Beach Complex",
+    siteName: "Zeppelin Beach Bar",
     images: [{ url: "https://www.zeppelinbar.hr/assets/bar.jpg", width: 1280, height: 853, alt: "Zeppelin Beach Bar, Pula" }],
     locale: "hr_HR",
     type: "website",

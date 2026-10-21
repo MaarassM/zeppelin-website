@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description:
       "Iznajmi ležaljku i opusti se na Saccorgiana plaži u Puli. Zasjenjene terase i sunčana mjesta.",
     url: "https://www.zeppelinbar.hr/relax",
-    siteName: "Zeppelin Beach Complex",
+    siteName: "Zeppelin Beach Bar",
     images: [{ url: "https://www.zeppelinbar.hr/assets/relax.jpg", width: 1280, height: 853, alt: "Sunbeds & Relax — Zeppelin Beach Pula" }],
     locale: "hr_HR",
     type: "website",

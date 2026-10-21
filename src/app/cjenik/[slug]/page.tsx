@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: PageProps<"/cjenik/[slug]">):
     title,
     description: `Cjenik — ${list.title}, Zeppelin Beach, Saccorgiana plaža, Pula. Cijene u eurima s istaknutom sidrenom cijenom.`,
     alternates: { canonical: url },
-    openGraph: { title, url, siteName: "Zeppelin Beach Complex", locale: "hr_HR", type: "website" },
+    openGraph: { title, url, siteName: "Zeppelin Beach Bar", locale: "hr_HR", type: "website" },
   };
 }
 

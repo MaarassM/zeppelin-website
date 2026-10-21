@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "SUP & Kajak Pula | Zeppelin Beach",
     description: "Iznajmi SUP dasku ili kajak i istraži Jadran — Saccorgiana plaža, Pula. Za sve razine.",
     url: "https://www.zeppelinbar.hr/sup",
-    siteName: "Zeppelin Beach Complex",
+    siteName: "Zeppelin Beach Bar",
     images: [{ url: "https://www.zeppelinbar.hr/assets/Sup kayak/IMG_1208.JPG", width: 1280, height: 853, alt: "SUP & Kajak Pula — Zeppelin Beach" }],
     locale: "hr_HR",
     type: "website",

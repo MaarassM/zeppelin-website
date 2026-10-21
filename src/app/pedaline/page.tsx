@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Pedaline Pula | Zeppelin Beach",
     description: "Iznajmi pedalinu i istraži uvalu — Saccorgiana plaža, Pula. Za obitelji i grupe.",
     url: "https://www.zeppelinbar.hr/pedaline",
-    siteName: "Zeppelin Beach Complex",
+    siteName: "Zeppelin Beach Bar",
     images: [{ url: "https://www.zeppelinbar.hr/assets/pedaline.jpg", width: 1280, height: 853, alt: "Pedaline Pula — Zeppelin Beach" }],
     locale: "hr_HR",
     type: "website",

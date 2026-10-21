@@ -9,7 +9,7 @@
   "hero": {
     "find_us": "Find us",
     "location": "Saccorgiana Beach, Pula",
-    "title": "ZEPPELIN\nBEACH COMPLEX",
+    "title": "ZEPPELIN\nBEACH BAR",
     "subtitle": "Your base for chill — and the start of every adventure.",
     "cta_primary": "Explore Offer",
     "cta_secondary": "Book Tours Online",
@@ -271,9 +271,9 @@
   },
   "privacy": {
     "page_title": "Privacy Policy",
-    "intro": "This page explains how Zeppelin Beach Complex collects, uses, and protects your personal data.",
+    "intro": "This page explains how Zeppelin Beach Bar collects, uses, and protects your personal data.",
     "who_heading": "Who we are",
-    "who_body": "Zeppelin Beach Complex operates on Saccorgiana Beach, Pula, Croatia. Contact: info@zeppelinbar.hr",
+    "who_body": "Zeppelin Beach Bar operates on Saccorgiana Beach, Pula, Croatia. Contact: info@zeppelinbar.hr",
     "data_heading": "Data we collect",
     "data_body": "We collect personal data only through the careers application form: full name, phone number, email address, and CV (PDF). No other personal data is collected through this website.",
     "purpose_heading": "How we use your data",
@@ -298,20 +298,23 @@
   "footer": {
     "hours_title": "Opening hours",
     "hours_bar_label": "Bar",
-    "hours_bar_summer": "Summer — all days — 9:00–00:00",
-    "hours_bar_spring": "Spring — all days — 9:00–22:00",
-    "hours_bar_autumn": "Autumn — Sat & Sun — 9:00–18:00",
-    "hours_bar_winter": "Winter — Sat & Sun — 9:00–18:00",
+    "hours_fastfood_label": "Fast food",
     "hours_sports_label": "Water Sports",
-    "hours_sports_summer": "Summer — all days — 9:00–20:00",
-    "hours_sports_offseason": "Other seasons — closed",
     "contact_title": "Contact",
     "phone": "+385 91 25 45 117",
     "email": "info@zeppelinbar.hr",
     "social_title": "Follow us",
     "instagram": "@zeppelin_bar_pula",
-    "copyright": "© 2025 Zeppelin Beach Complex",
+    "copyright": "© 2025 Zeppelin Beach Bar",
     "price_list_link": "Price list",
+    "legal_title": "Legal information",
+    "legal_bar": "Beach bar",
+    "legal_food": "Fast food & gelato bar",
+    "legal_registry": "Registered at",
+    "legal_vat": "VAT ID",
+    "legal_capital": "Share capital",
+    "legal_paid": "fully paid",
+    "legal_director": "Director",
     "privacy_link": "Privacy Policy"
   },
   "cjenik": {
@@ -331,6 +334,7 @@
     "anchor_short": "Anchor",
     "anchor_note": "The anchor price is the price valid on 10 Sep 2026, as required by Croatian law (NN 101/2026).",
     "vat_note": "All prices are in euro. Service and VAT are included in the price.",
+    "operator": "Operator",
     "published": "Published",
     "version": "Version",
     "open": "Open price list",
@@ -338,5 +342,45 @@
     "machine_desc": "Price lists in CSV and XML format, as required by Croatian law (NN 101/2026). These links always point to the current version.",
     "archive_title": "Archive",
     "archive_desc": "Every published version stays available for at least 30 days."
+  },
+  "hours": {
+    "open": "Open",
+    "closed": "Closed",
+    "closes_at": "closes at {time}",
+    "opens_today": "opens at {time}",
+    "opens_tomorrow": "opens tomorrow at {time}",
+    "opens_on": "opens {day} at {time}",
+    "opens_date": "opens {date}",
+    "closed_season": "closed until further notice",
+    "full": "Full opening hours",
+    "all_days": "all days",
+    "weekends": "Sat & Sun",
+    "closed_label": "closed",
+    "rest_of_year_closed": "Rest of the year — closed",
+    "seasons": {
+      "spring": "Spring",
+      "summer": "Summer",
+      "autumn": "Autumn",
+      "winter": "Winter"
+    },
+    "days_on": [
+      "on Sunday",
+      "on Monday",
+      "on Tuesday",
+      "on Wednesday",
+      "on Thursday",
+      "on Friday",
+      "on Saturday"
+    ],
+    "days_short": [
+      "Sun",
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu",
+      "Fri",
+      "Sat"
+    ],
+    "legal_toggle": "Legal information"
   }
 }

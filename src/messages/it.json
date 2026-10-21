@@ -270,9 +270,9 @@
   },
   "privacy": {
     "page_title": "Informativa sulla privacy",
-    "intro": "Questa pagina spiega come Zeppelin Beach Complex raccoglie, utilizza e protegge i tuoi dati personali.",
+    "intro": "Questa pagina spiega come Zeppelin Beach Bar raccoglie, utilizza e protegge i tuoi dati personali.",
     "who_heading": "Chi siamo",
-    "who_body": "Zeppelin Beach Complex opera sulla spiaggia di Saccorgiana, Pola, Croazia. Contatto: info@zeppelinbar.hr",
+    "who_body": "Zeppelin Beach Bar opera sulla spiaggia di Saccorgiana, Pola, Croazia. Contatto: info@zeppelinbar.hr",
     "data_heading": "Quali dati raccogliamo",
     "data_body": "Raccogliamo dati personali esclusivamente tramite il modulo di candidatura di lavoro: nome e cognome, numero di cellulare, indirizzo email e curriculum (PDF). Non vengono raccolti altri dati personali.",
     "purpose_heading": "Finalità del trattamento dei dati",
@@ -297,20 +297,23 @@
   "footer": {
     "hours_title": "Orari di apertura",
     "hours_bar_label": "Bar",
-    "hours_bar_summer": "Estate - tutti i giorni - 9:00–00:00",
-    "hours_bar_spring": "Primavera - tutti i giorni - 9:00–22:00",
-    "hours_bar_autumn": "Autunno - sab e dom - 9:00–18:00",
-    "hours_bar_winter": "Inverno - sab e dom - 9:00–18:00",
+    "hours_fastfood_label": "Fast food",
     "hours_sports_label": "Sport acquatici",
-    "hours_sports_summer": "Estate - tutti i giorni - 9:00–20:00",
-    "hours_sports_offseason": "Altre stagioni - chiuso",
     "contact_title": "Contatti",
     "phone": "+385 91 25 45 117",
     "email": "info@zeppelinbar.hr",
     "social_title": "Seguici",
     "instagram": "@zeppelin_bar_pula",
-    "copyright": "© 2025 Zeppelin Beach Complex",
+    "copyright": "© 2025 Zeppelin Beach Bar",
     "price_list_link": "Listino prezzi",
+    "legal_title": "Informazioni legali",
+    "legal_bar": "Beach bar",
+    "legal_food": "Fast food e gelateria",
+    "legal_registry": "Registrata presso",
+    "legal_vat": "Partita IVA",
+    "legal_capital": "Capitale sociale",
+    "legal_paid": "interamente versato",
+    "legal_director": "Direttore",
     "privacy_link": "Informativa sulla privacy"
   },
   "cjenik": {
@@ -330,6 +333,7 @@
     "anchor_short": "Riferimento",
     "anchor_note": "Il prezzo di riferimento è il prezzo in vigore il 10/09/2026, come previsto dalla legge croata (NN 101/2026).",
     "vat_note": "Prezzi espressi in euro. Servizio e IVA compresi nel prezzo.",
+    "operator": "Gestore",
     "published": "Pubblicato",
     "version": "Versione",
     "open": "Apri il listino",
@@ -337,5 +341,45 @@
     "machine_desc": "Listini in formato CSV e XML, come previsto dalla legge croata (NN 101/2026). I link portano sempre alla versione in vigore.",
     "archive_title": "Archivio",
     "archive_desc": "Ogni versione pubblicata resta disponibile per almeno 30 giorni."
+  },
+  "hours": {
+    "open": "Aperto",
+    "closed": "Chiuso",
+    "closes_at": "chiude alle {time}",
+    "opens_today": "apre alle {time}",
+    "opens_tomorrow": "apre domani alle {time}",
+    "opens_on": "apre {day} alle {time}",
+    "opens_date": "apre il {date}",
+    "closed_season": "chiuso fino a nuovo avviso",
+    "full": "Orari completi",
+    "all_days": "tutti i giorni",
+    "weekends": "sab e dom",
+    "closed_label": "chiuso",
+    "rest_of_year_closed": "Resto dell'anno — chiuso",
+    "seasons": {
+      "spring": "Primavera",
+      "summer": "Estate",
+      "autumn": "Autunno",
+      "winter": "Inverno"
+    },
+    "days_on": [
+      "domenica",
+      "lunedì",
+      "martedì",
+      "mercoledì",
+      "giovedì",
+      "venerdì",
+      "sabato"
+    ],
+    "days_short": [
+      "dom",
+      "lun",
+      "mar",
+      "mer",
+      "gio",
+      "ven",
+      "sab"
+    ],
+    "legal_toggle": "Informazioni legali"
   }
 }

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "Karijere | Posao na Plaži Pula | Zeppelin Beach",
     description: "Prijavi se za sezonu i radi na Saccorgiana plaži u Puli — bar, kuhinja, vodeni sportovi i više.",
     url: "https://www.zeppelinbar.hr/careers",
-    siteName: "Zeppelin Beach Complex",
+    siteName: "Zeppelin Beach Bar",
     images: [{ url: "https://www.zeppelinbar.hr/assets/og.jpg", width: 1200, height: 630, alt: "Karijere — Zeppelin Beach Pula" }],
     locale: "hr_HR",
     type: "website",

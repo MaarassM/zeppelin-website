@@ -6,6 +6,8 @@
 // barem 30 dana — one se objavljuju u arhivi. `anchor` (sidrena cijena) se NE
 // mijenja: to je cijena na dan 10. 9. 2026. (za novu stavku: cijena prvog dana prodaje).
 
+import { COMPANIES, type Company } from "@/data/companies";
+
 export type PriceItem = {
   code?: string;
   name: string;
@@ -33,6 +35,8 @@ export type PriceList = {
   title: string;
   /** oznaka prodajnog mjesta u nazivu datoteke */
   outletCode: string;
+  /** ugostitelj koji posluje ovim prodajnim mjestom */
+  operator: Company;
   versions: PriceListVersion[];
 };
 
@@ -343,18 +347,21 @@ export const PRICE_LISTS: PriceList[] = [
     slug: "bar",
     title: "Bar",
     outletCode: "BAR",
+    operator: COMPANIES.brid,
     versions: [{ no: 1, publishedAt: "2026-10-21T08:00:00+02:00", sections: BAR_V1 }],
   },
   {
     slug: "fastfood",
     title: "Fast Food",
     outletCode: "FASTFOOD",
+    operator: COMPANIES.zeppelin,
     versions: [{ no: 1, publishedAt: "2026-10-21T08:00:00+02:00", sections: FASTFOOD_V1 }],
   },
   {
     slug: "gelato",
     title: "Gelaterija",
     outletCode: "SLADOLED",
+    operator: COMPANIES.zeppelin,
     versions: [{ no: 1, publishedAt: "2026-10-21T08:00:00+02:00", sections: GELATO_V1 }],
   },
 ];

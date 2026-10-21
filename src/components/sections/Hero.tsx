@@ -3,11 +3,12 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
-import { Clock, MapPin, Sun, Waves, X } from "lucide-react";
+import { Clock, MapPin, X } from "lucide-react";
 import { useT } from "@/lib/i18n";
 import { Button } from "@/components/ui/Button";
 import { trackOutbound } from "@/lib/analytics";
 import { Wave } from "@/components/ui/Wave";
+import { OpeningHours } from "@/components/ui/OpeningHours";
 
 export function Hero() {
   const { t } = useT();
@@ -105,34 +106,8 @@ export function Hero() {
               </button>
             </div>
 
-            <div className="flex flex-col gap-3">
-              <div className="rounded-[16px] bg-white/70 p-4">
-                <div className="mb-2.5 flex items-center gap-2 text-red">
-                  <Sun size={16} strokeWidth={2} />
-                  <p className="text-xs font-semibold uppercase tracking-widest">
-                    {t.footer.hours_bar_label}
-                  </p>
-                </div>
-                <div className="flex flex-col gap-1 text-[15px] text-dark/80">
-                  <p>{t.footer.hours_bar_summer}</p>
-                  <p>{t.footer.hours_bar_spring}</p>
-                  <p>{t.footer.hours_bar_autumn}</p>
-                  <p>{t.footer.hours_bar_winter}</p>
-                </div>
-              </div>
-
-              <div className="rounded-[16px] bg-white/70 p-4">
-                <div className="mb-2.5 flex items-center gap-2 text-red">
-                  <Waves size={16} strokeWidth={2} />
-                  <p className="text-xs font-semibold uppercase tracking-widest">
-                    {t.footer.hours_sports_label}
-                  </p>
-                </div>
-                <div className="flex flex-col gap-1 text-[15px] text-dark/80">
-                  <p>{t.footer.hours_sports_summer}</p>
-                  <p>{t.footer.hours_sports_offseason}</p>
-                </div>
-              </div>
+            <div className="rounded-[16px] bg-white/70 p-4 sm:p-5">
+              <OpeningHours tone="onLight" />
             </div>
           </div>
         </div>,

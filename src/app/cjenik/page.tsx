@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: "Cjenik | Zeppelin Beach Pula",
     description: "Cjenici Zeppelin Beach Bara, Fast Fooda i Gelaterije — Saccorgiana plaža, Pula.",
     url: "https://www.zeppelinbar.hr/cjenik",
-    siteName: "Zeppelin Beach Complex",
+    siteName: "Zeppelin Beach Bar",
     locale: "hr_HR",
     type: "website",
   },

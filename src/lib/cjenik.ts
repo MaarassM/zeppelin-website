@@ -70,6 +70,8 @@ const rows = (version: PriceListVersion): Row[] =>
   version.sections.flatMap((s) => s.items.map((item) => ({ section: s.title, item })));
 
 const CSV_HEADER = [
+  "obveznik",
+  "oib_obveznika",
   "sifra",
   "naziv",
   "kategorija",
@@ -88,8 +90,10 @@ function csvCell(value: string) {
 }
 
 // UTF-8 with BOM, ";" separator and decimal comma so it opens correctly in Croatian Excel.
-export function toCsv(version: PriceListVersion) {
+export function toCsv(list: PriceList, version: PriceListVersion) {
   const lines = [CSV_HEADER, ...rows(version).map(({ section, item }) => [
+    list.operator.name,
+    list.operator.oib,
     item.code ?? "",
     item.note ? `${item.name} (${item.note})` : item.name,
     section,
@@ -137,6 +141,11 @@ export function toXml(list: PriceList, version: PriceListVersion) {
   return [
     '<?xml version="1.0" encoding="UTF-8"?>',
     `<cjenik broj_pohrane="${version.no}" datum_objave="${version.publishedAt}" valuta="EUR">`,
+    "  <obveznik>",
+    tag("naziv", list.operator.name, "    "),
+    tag("oib", list.operator.oib, "    "),
+    tag("adresa", list.operator.address, "    "),
+    "  </obveznik>",
     "  <prodajni_objekt>",
     tag("oblik", OUTLET.type, "    "),
     tag("naziv", `${OUTLET.name} – ${list.title}`, "    "),
@@ -174,5 +183,5 @@ export function allFiles(): PublishedFile[] {
 }
 
 export function renderFile({ list, version, format }: PublishedFile) {
-  return format === "csv" ? toCsv(version) : toXml(list, version);
+  return format === "csv" ? toCsv(list, version) : toXml(list, version);
 }

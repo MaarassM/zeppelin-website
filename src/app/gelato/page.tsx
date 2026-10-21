@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Gelato Bar Pula | Sladoled | Zeppelin Beach",
     description: "Ručno rađeni sladoled i smoothie bowlovi od svježih sastojaka — Saccorgiana plaža, Pula.",
     url: "https://www.zeppelinbar.hr/gelato",
-    siteName: "Zeppelin Beach Complex",
+    siteName: "Zeppelin Beach Bar",
     images: [{ url: "https://www.zeppelinbar.hr/assets/gelato.jpg", width: 1280, height: 853, alt: "Gelato Bar Pula — Zeppelin Beach" }],
     locale: "hr_HR",
     type: "website",

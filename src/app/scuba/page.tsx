@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description:
       "Ronjenje uz certificiranog instruktora — za početnike i iskusne ronioce. Saccorgiana plaža, Pula.",
     url: "https://www.zeppelinbar.hr/scuba",
-    siteName: "Zeppelin Beach Complex",
+    siteName: "Zeppelin Beach Bar",
     images: [{ url: "https://www.zeppelinbar.hr/assets/scuba-diving.jpg", width: 1280, height: 853, alt: "Ronjenje Pula — Zeppelin Beach" }],
     locale: "hr_HR",
     type: "website",

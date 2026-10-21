@@ -42,6 +42,9 @@ export function CjenikIndexClient() {
                   >
                     <div className="flex flex-col gap-1">
                       <h3 className="font-display text-2xl text-dark">{c.names[list.slug]}</h3>
+                      <p className="text-sm text-body">
+                        {c.operator}: {list.operator.name}
+                      </p>
                       <p className="text-xs text-muted">
                         {c.published} {formatDateTime(version.publishedAt)} · {c.version} {version.no}
                       </p>

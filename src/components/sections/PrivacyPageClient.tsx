@@ -17,7 +17,7 @@ export function PrivacyPageClient() {
               href="/"
               className="text-sm text-black/40 hover:text-black transition-colors"
             >
-              ← Zeppelin Beach Complex
+              ← Zeppelin Beach Bar
             </Link>
             <h1 className="font-display text-[34px] lg:text-[52px] leading-none text-black">
               {p.page_title}

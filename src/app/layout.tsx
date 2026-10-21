@@ -20,13 +20,13 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Zeppelin Beach Complex | Saccorgiana Beach, Pula",
+  title: "Zeppelin Beach Bar | Saccorgiana Beach, Pula",
   description:
     "Beach bar, vodeni sportovi, avanture i gastro na Saccorgiana plaži u Puli. Jet ski, ronjenje, Wibit Park, kokteli i hrana — sve na jednom mjestu.",
   keywords: [
     "beach bar pula",
     "zeppelin bar pula",
-    "zeppelin beach complex",
+    "zeppelin beach bar",
     "saccorgiana",
     "saccorgiana beach pula",
     "jet ski pula",
@@ -54,11 +54,11 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Zeppelin Beach Complex | Saccorgiana Beach, Pula",
+    title: "Zeppelin Beach Bar | Saccorgiana Beach, Pula",
     description:
       "Beach bar, vodeni sportovi, avanture i gastro na Saccorgiana plaži u Puli. Tvoja baza za chill i polazište za svaku avanturu.",
     url: "https://www.zeppelinbar.hr",
-    siteName: "Zeppelin Beach Complex",
+    siteName: "Zeppelin Beach Bar",
     locale: "hr_HR",
     type: "website",
     images: [
@@ -66,13 +66,13 @@ export const metadata: Metadata = {
         url: "https://www.zeppelinbar.hr/assets/og.jpg",
         width: 1200,
         height: 630,
-        alt: "Zeppelin Beach Complex — Saccorgiana Beach, Pula",
+        alt: "Zeppelin Beach Bar — Saccorgiana Beach, Pula",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zeppelin Beach Complex | Saccorgiana Beach, Pula",
+    title: "Zeppelin Beach Bar | Saccorgiana Beach, Pula",
     description:
       "Beach bar, vodeni sportovi, avanture i gastro na Saccorgiana plaži u Puli.",
     images: ["https://www.zeppelinbar.hr/assets/og.jpg"],
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "BarOrPub", "SportsActivityLocation"],
-  name: "Zeppelin Beach Complex",
+  name: "Zeppelin Beach Bar",
   description:
     "Beach bar, water sports, adventures and gastro on Saccorgiana Beach in Pula, Croatia. Jet ski, scuba diving, Wibit Park, cocktails, fast food and gelato.",
   url: "https://www.zeppelinbar.hr",
@@ -206,7 +206,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="hr" className={`${anton.variable} ${outfit.variable}`}>
+    <html lang="hr" data-scroll-behavior="smooth" className={`${anton.variable} ${outfit.variable}`}>
       <body>
         <script
           type="application/ld+json"

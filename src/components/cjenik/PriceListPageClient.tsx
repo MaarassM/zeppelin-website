@@ -28,9 +28,15 @@ export function PriceListPageClient({ slug }: { slug: PriceListSlug }) {
     <>
       <main className="min-h-screen bg-cream pt-16 lg:pt-[72px]">
         <CjenikHero title={c.names[slug]} backHref="/cjenik" active={slug}>
-          <p className="text-sm text-white/75">
-            {c.published} {formatDateTime(version.publishedAt)} · {c.version} {version.no}
-          </p>
+          <div className="flex flex-col gap-1 text-sm text-white/75">
+            <p>
+              {c.operator}: <span className="font-semibold text-white">{list.operator.name}</span> · OIB{" "}
+              {list.operator.oib}
+            </p>
+            <p>
+              {c.published} {formatDateTime(version.publishedAt)} · {c.version} {version.no}
+            </p>
+          </div>
         </CjenikHero>
 
         <div className="mx-auto flex max-w-[960px] flex-col gap-12 px-5 py-10 sm:px-8 lg:px-10 lg:py-16">
@@ -98,6 +104,10 @@ export function PriceListPageClient({ slug }: { slug: PriceListSlug }) {
           ))}
 
           <aside className="flex flex-col gap-4 rounded-2xl bg-white/60 p-5 ring-1 ring-border/50 sm:p-7">
+            <p className="text-sm text-body">
+              {c.operator}: <span className="font-semibold text-dark">{list.operator.name}</span>,{" "}
+              {list.operator.address}, OIB {list.operator.oib}
+            </p>
             <p className="text-sm font-medium text-dark">{c.vat_note}</p>
             <p className="text-sm text-body">{c.anchor_note}</p>
             <div className="flex flex-wrap items-center gap-2 pt-1">

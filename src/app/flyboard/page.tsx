@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description:
       "Uzleti iznad Jadrana uz flyboard — Zeppelin Beach, Saccorgiana, Pula. Nije potrebno iskustvo.",
     url: "https://www.zeppelinbar.hr/flyboard",
-    siteName: "Zeppelin Beach Complex",
+    siteName: "Zeppelin Beach Bar",
     images: [{ url: "https://www.zeppelinbar.hr/assets/flyboard.jpg", width: 1280, height: 853, alt: "Flyboard Pula — Zeppelin Beach" }],
     locale: "hr_HR",
     type: "website",

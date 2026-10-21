@@ -2,9 +2,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Phone, Mail } from "lucide-react";
+import { ChevronDown, Phone, Mail } from "lucide-react";
 import { useT } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
+import { COMPANIES } from "@/data/companies";
+import { OpeningHours } from "@/components/ui/OpeningHours";
+
+const formatCapital = (value: number) =>
+  new Intl.NumberFormat("hr-HR", { minimumFractionDigits: 2 }).format(value);
 
 export function Footer({ className }: { className?: string }) {
   const { t } = useT();
@@ -59,22 +64,7 @@ export function Footer({ className }: { className?: string }) {
             <p className="font-display text-xl text-white">
               {t.footer.hours_title}
             </p>
-            <div className="flex flex-col gap-1.5">
-              <p className="text-xs font-semibold uppercase tracking-widest text-white/55">
-                {t.footer.hours_bar_label}
-              </p>
-              <p className="text-[15px] text-white/85">{t.footer.hours_bar_summer}</p>
-              <p className="text-[15px] text-white/85">{t.footer.hours_bar_spring}</p>
-              <p className="text-[15px] text-white/85">{t.footer.hours_bar_autumn}</p>
-              <p className="text-[15px] text-white/85">{t.footer.hours_bar_winter}</p>
-            </div>
-            <div className="flex flex-col gap-1.5">
-              <p className="text-xs font-semibold uppercase tracking-widest text-white/55">
-                {t.footer.hours_sports_label}
-              </p>
-              <p className="text-[15px] text-white/85">{t.footer.hours_sports_summer}</p>
-              <p className="text-[15px] text-white/85">{t.footer.hours_sports_offseason}</p>
-            </div>
+            <OpeningHours />
           </div>
 
           <div className="flex flex-col gap-4">
@@ -101,6 +91,42 @@ export function Footer({ className }: { className?: string }) {
             </a>
           </div>
         </div>
+
+        <details className="group border-b border-white/15 py-3">
+          <summary className="inline-flex min-h-11 cursor-pointer list-none items-center gap-1.5 text-sm font-semibold text-white/70 transition-colors hover:text-white [&::-webkit-details-marker]:hidden">
+            {t.hours.legal_toggle}
+            <ChevronDown size={16} className="transition-transform duration-200 group-open:rotate-180" />
+          </summary>
+          <div className="grid grid-cols-1 gap-6 pt-3 pb-5 md:grid-cols-2 md:gap-10">
+            {[
+              { label: t.footer.legal_bar, company: COMPANIES.brid },
+              { label: t.footer.legal_food, company: COMPANIES.zeppelin },
+            ].map(({ label, company }) => (
+              <div key={company.id} className="flex flex-col gap-1 text-[13px] leading-relaxed text-white/70">
+                <p className="text-xs font-semibold uppercase tracking-widest text-white/55">{label}</p>
+                <p className="font-semibold text-white/90">{company.legalName}</p>
+                <p>{company.address}</p>
+                <p>
+                  <span className="whitespace-nowrap">OIB {company.oib}</span> ·{" "}
+                  <span className="whitespace-nowrap">
+                    {t.footer.legal_vat} {company.vatId}
+                  </span>{" "}
+                  · <span className="whitespace-nowrap">MBS {company.mbs}</span>
+                </p>
+                <p>
+                  {t.footer.legal_registry}: {company.court}
+                </p>
+                <p>
+                  {t.footer.legal_capital}: {formatCapital(company.shareCapital)} €
+                  {company.capitalPaidInFull && `, ${t.footer.legal_paid}`}
+                </p>
+                <p>
+                  {t.footer.legal_director}: {company.director}
+                </p>
+              </div>
+            ))}
+          </div>
+        </details>
 
         <div className="flex flex-col items-center justify-between gap-3 pt-6 sm:flex-row">
           <p className="text-xs text-white/50">{t.footer.copyright}</p>

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Fast Food Pula | Zeppelin Beach",
     description: "Burgeri, sendviči i roštilj — svježe i brzo na Saccorgiana plaži, Pula. Zeppelin Beach.",
     url: "https://www.zeppelinbar.hr/fastfood",
-    siteName: "Zeppelin Beach Complex",
+    siteName: "Zeppelin Beach Bar",
     images: [{ url: "https://www.zeppelinbar.hr/assets/food/DSC09600.jpg", width: 1280, height: 853, alt: "Fast Food — Zeppelin Beach Pula" }],
     locale: "hr_HR",
     type: "website",

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description:
       "Iznajmi jet ski ili guided safari na Jadranu — Zeppelin Beach, Saccorgiana, Pula. Nije potrebno iskustvo.",
     url: "https://www.zeppelinbar.hr/jetski",
-    siteName: "Zeppelin Beach Complex",
+    siteName: "Zeppelin Beach Bar",
     images: [{ url: "https://www.zeppelinbar.hr/assets/jet-ski.jpg", width: 1280, height: 853, alt: "Jet Ski Pula — Zeppelin Beach" }],
     locale: "hr_HR",
     type: "website",

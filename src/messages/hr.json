@@ -270,9 +270,9 @@
   },
   "privacy": {
     "page_title": "Pravila privatnosti",
-    "intro": "Ova stranica objašnjava kako Zeppelin Beach Complex prikuplja, koristi i štiti vaše osobne podatke.",
+    "intro": "Ova stranica objašnjava kako Zeppelin Beach Bar prikuplja, koristi i štiti vaše osobne podatke.",
     "who_heading": "Tko smo",
-    "who_body": "Zeppelin Beach Complex posluje na Saccorgiana plaži, Pula, Hrvatska. Kontakt: info@zeppelinbar.hr",
+    "who_body": "Zeppelin Beach Bar posluje na Saccorgiana plaži, Pula, Hrvatska. Kontakt: info@zeppelinbar.hr",
     "data_heading": "Koji podaci se prikupljaju",
     "data_body": "Osobne podatke prikupljamo isključivo putem obrasca za prijavu na posao: ime i prezime, broj mobitela, email adresa i životopis (PDF). Nikakvi drugi osobni podaci se ne prikupljaju.",
     "purpose_heading": "Svrha obrade podataka",
@@ -297,20 +297,23 @@
   "footer": {
     "hours_title": "Radno vrijeme",
     "hours_bar_label": "Bar",
-    "hours_bar_summer": "Ljeto — svi dani — 9:00–00:00",
-    "hours_bar_spring": "Proljeće — svi dani — 9:00–22:00",
-    "hours_bar_autumn": "Jesen — sub i ned — 9:00–18:00",
-    "hours_bar_winter": "Zima — sub i ned — 9:00–18:00",
+    "hours_fastfood_label": "Fast food",
     "hours_sports_label": "Vodeni sportovi",
-    "hours_sports_summer": "Ljeto — svi dani — 9:00–20:00",
-    "hours_sports_offseason": "Ostale sezone — zatvoreno",
     "contact_title": "Kontakt",
     "phone": "+385 91 25 45 117",
     "email": "info@zeppelinbar.hr",
     "social_title": "Pratite nas",
     "instagram": "@zeppelin_bar_pula",
-    "copyright": "© 2025 Zeppelin Beach Complex",
+    "copyright": "© 2025 Zeppelin Beach Bar",
     "price_list_link": "Cjenik",
+    "legal_title": "Pravne informacije",
+    "legal_bar": "Beach bar",
+    "legal_food": "Fast food i gelaterija",
+    "legal_registry": "Upisano u sudski registar",
+    "legal_vat": "PDV ID",
+    "legal_capital": "Temeljni kapital",
+    "legal_paid": "uplaćen u cijelosti",
+    "legal_director": "Direktor",
     "privacy_link": "Pravila privatnosti"
   },
   "cjenik": {
@@ -330,6 +333,7 @@
     "anchor_short": "Sidrena",
     "anchor_note": "Sidrena cijena je cijena koja je vrijedila 10. 9. 2026. (Odluka o isticanju dodatne cijene, NN 101/2026).",
     "vat_note": "Sve cijene su u eurima. Usluga i PDV su uključeni u cijenu.",
+    "operator": "Ugostitelj",
     "published": "Objavljeno",
     "version": "Broj pohrane",
     "open": "Otvori cjenik",
@@ -337,5 +341,45 @@
     "machine_desc": "Cjenici u CSV i XML formatu prema Odluci o objavi cjenika proizvoda i usluga (NN 101/2026). Poveznice uvijek vode na važeću verziju.",
     "archive_title": "Arhiva",
     "archive_desc": "Sve objavljene verzije cjenika dostupne su najmanje 30 dana od objave."
+  },
+  "hours": {
+    "open": "Otvoreno",
+    "closed": "Zatvoreno",
+    "closes_at": "zatvara u {time}",
+    "opens_today": "otvara u {time}",
+    "opens_tomorrow": "otvara sutra u {time}",
+    "opens_on": "otvara {day} u {time}",
+    "opens_date": "otvara {date}",
+    "closed_season": "zatvoreno do daljnjeg",
+    "full": "Cijelo radno vrijeme",
+    "all_days": "svi dani",
+    "weekends": "sub i ned",
+    "closed_label": "zatvoreno",
+    "rest_of_year_closed": "Ostatak godine — zatvoreno",
+    "seasons": {
+      "spring": "Proljeće",
+      "summer": "Ljeto",
+      "autumn": "Jesen",
+      "winter": "Zima"
+    },
+    "days_on": [
+      "u nedjelju",
+      "u ponedjeljak",
+      "u utorak",
+      "u srijedu",
+      "u četvrtak",
+      "u petak",
+      "u subotu"
+    ],
+    "days_short": [
+      "ned",
+      "pon",
+      "uto",
+      "sri",
+      "čet",
+      "pet",
+      "sub"
+    ],
+    "legal_toggle": "Pravne informacije"
   }
 }
